@@ -1,0 +1,11 @@
+/*
+  param: font-name, font-path, font-weight, font-style
+
+  Example:
+  @include font-face('OpenSans', '../fonts/OpenSans', bold, normal);
+*/
+
+@include font-face('Decima Nova', '../fonts/DecimaNovaPro-Bold', bold);
+@include font-face('Open Sans', '../fonts/OpenSans-Bold', bold);
+@include font-face('Open Sans', '../fonts/OpenSans-SemiBold', 600);
+@include font-face('Open Sans', '../fonts/OpenSans-Regular');
