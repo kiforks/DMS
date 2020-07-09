@@ -36,6 +36,14 @@
   @include active-opacity;
 }
 
+@mixin hover-white {
+  outline: 0;
+
+  &:hover {
+    color: white;
+  }
+}
+
 // Pseudo-elements
   /* Before & after */
 @mixin before {

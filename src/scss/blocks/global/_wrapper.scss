@@ -1,1 +1,22 @@
+.wrapper {
+  width: 100%;
+  max-width: 1650px + ($tablet-padding * 2);
+  @include padding-tablet;
+  @include center-margin;
+}
 
+//Tablet
+@include tablet {
+  .wrapper {
+    width: $tablet-width;
+    @include padding-tablet;
+  }
+}
+
+//Mobile
+@include mobile {
+  .wrapper {
+    width: 100%;
+    @include padding-mobile;
+  }
+}

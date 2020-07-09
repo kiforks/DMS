@@ -90,3 +90,9 @@
   transition: opacity $transition-delay ease-in-out;;
 }
 
+@mixin white-focus {
+  @include hover-white;
+  @include active-opacity;
+  @include transition;
+}
+

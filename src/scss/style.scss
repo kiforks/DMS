@@ -8,10 +8,10 @@
 // Mixins
 'mixins/font-face',
 'mixins/media',
-'mixins/other',
 'mixins/reset',
 'mixins/center',
 'mixins/pseudo',
+'mixins/other',
 'mixins/js/object-fit',
 'mixins/js/webp-retina',
 
@@ -32,6 +32,7 @@
 
 // Blocks
   /* global */
+'blocks/global/animations',
 'blocks/global/button',
 'blocks/global/title',
 'blocks/global/subtitle',

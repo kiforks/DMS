@@ -1,0 +1,26 @@
+@keyframes bounce {
+  0% {
+    background-position: left 3px top 15px;
+  }
+  3% {
+    background-position: left 3px top;
+  }
+  6% {
+    background-position: left 3px top 15px;
+  }
+  9% {
+    background-position: left 3px top 5px;
+  }
+  12% {
+    background-position: left 3px top 15px;
+  }
+  15% {
+    background-position: left 3px top 10px;
+  }
+  18% {
+    background-position: left 3px top 10px;
+  }
+  100% {
+    background-position: left 3px top 10px;
+  }
+}

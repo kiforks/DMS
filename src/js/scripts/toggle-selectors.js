@@ -40,3 +40,5 @@ function toggleSelectors(button, selector, accessibility = false, focus = false)
     })
   }
 }
+
+toggleSelectors('header__toggle-button','header');
