@@ -1,1 +1,31 @@
-
+.button {
+  position: relative;
+  @include padding-vertical(22px, 20px);
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: uppercase;
+  color: $black;
+  background: #FDFDFD;
+  box-shadow: -16px 24px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  @include before {
+    @include center-transform-vertical;
+    right: 60px;
+    z-index: 100;
+    width: 18px;
+    height: 18px;
+    border: 9px solid transparent;
+    border-left: 9px solid black;
+    @include transition;
+  }
+  @include hover {
+    @include before-clean {
+      right: 56px;
+      width: 22px;
+      height: 22px;
+      border: 11px solid transparent;
+      border-left: 11px solid black;
+    }
+  }
+}

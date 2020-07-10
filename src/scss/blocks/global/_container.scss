@@ -1,7 +1,19 @@
 .container {
   width: 100%;
-  //width: $desktop-width; // Тимчасово
   max-width: $desktop-width;
   @include center-margin;
   overflow: hidden;
+
+  &-left,
+  &-right {
+    max-width: 1785px;
+  }
+
+  &-left {
+    margin-left: $desktop-padding;
+  }
+
+  &-right {
+    margin-right: $desktop-padding;
+  }
 }

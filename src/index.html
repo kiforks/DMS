@@ -9,17 +9,18 @@
   <include src="src/html/templates/favicon.html"></include>
   <include src="src/html/templates/fonts.html"></include>
 </head>
-<body>
+<body class="gradient">
   <include src="src/html/templates/sprite.html"></include>
   <include src="src/html/blocks/_header.html"></include>
 
-  <main class="main">
-
+  <main class="main main-gradient">
+    <include src="src/html/blocks/_services.html"></include>
   </main>
 
   <include src="src/html/blocks/_footer.html"></include>
 
   <!--JS-->
+  <script src="js/plugins/swiper.js"></script>
   <script src="js/script.js"></script>
   <script>
     objectFitImages();

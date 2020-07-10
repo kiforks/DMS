@@ -14,6 +14,7 @@
 'mixins/other',
 'mixins/js/object-fit',
 'mixins/js/webp-retina',
+'mixins/js/swiper',
 
 // Normalize + fonts
 '../../node_modules/normalize.css/normalize',
@@ -25,6 +26,8 @@
 'blocks/global/clearfix',
 'blocks/global/container',
 'blocks/global/wrapper',
+'blocks/global/gradient',
+'blocks/global/slider-button',
 
 // JS
 
@@ -40,4 +43,5 @@
 'blocks/global/footer',
 
   /* main */
-'blocks/main';
+'blocks/main',
+'blocks/services';

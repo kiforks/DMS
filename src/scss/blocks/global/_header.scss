@@ -549,24 +549,25 @@
     }
 
     .header__buttons {
-      &--main {
-        position: absolute;
-        width: 40px;
-        height: 35px;
-        top: 10px;
-        right: 20px;
-      }
-
       &--personal-area {
         justify-content: flex-start;
         width: 100%;
         margin-bottom: 23px;
+      }
+
+      &--main {
+        position: absolute;
+        width: 40px;
+        height: 35px;
+        top: -63px;
+        right: 0;
       }
     }
 
     .header__button-burger {
       left: 5px;
     }
+
 
     &--closed {
       padding-top: 10px;
@@ -588,6 +589,11 @@
       .header__inner {
         width: 80px;
         padding-top: 0;
+        position: static;
+        padding-bottom: 0;
+        @include before-clean {
+          display: none;
+        }
       }
 
       .header__logo {
@@ -595,6 +601,13 @@
         opacity: 1;
         width: 200px;
         height: auto;
+      }
+
+      .header__buttons {
+        &--main {
+          top: 10px;
+          right: 20px;
+        }
       }
     }
 
@@ -607,6 +620,16 @@
     .header__call-box {
       width: 100%;
       justify-content: space-between;
+    }
+
+    .header__list {
+      &--languages {
+        position: absolute;
+        @include before-clean {
+          left: 26px;
+          top: 100%;
+        }
+      }
     }
   }
 
@@ -674,16 +697,21 @@
     }
 
     &--languages {
-      position: absolute;
-      @include before-clean {
-        left: 26px;
-        top: 100%;
+      @include center-transform-horizon;
+      bottom: 27px;
+      padding-bottom: 0;
+      @include before {
+        display: none;
       }
     }
   }
 
   .header__item {
     margin-bottom: 35px;
+  }
+
+  .header__link {
+    transition: none;
   }
 
   .header__auto-item {
@@ -701,5 +729,27 @@
     &--calc {
       background-size: 16px 22px;
     }
+  }
+
+  .header__inner {
+    position: relative;
+    padding-bottom: 115px;
+    @include before {
+      z-index: 100;
+      @include center-transform-horizon;
+      bottom: 81px;
+      height: 1px;
+      width: 53px;
+      background-color: #929292;
+    }
+  }
+
+  .header__languages-item {
+    margin-right: 0;
+    padding: 5px 6px;
+  }
+
+  .header__logo {
+    margin-bottom: 25px;
   }
 }

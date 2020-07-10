@@ -1,0 +1,107 @@
+.services {
+  @include swiper;
+}
+
+.services__wrapper {
+  position: relative;
+  @include flex;
+  align-content: flex-start;
+  width: 30%;
+  padding-top: 137px;
+}
+
+.services__list {
+  @include reset-list;
+  text-transform: uppercase;
+}
+
+.services__item {
+  position: relative;
+  padding-top: 97px;
+  padding-bottom: 108px;
+  background-repeat: no-repeat;
+
+  &--usa {
+    background-image: url('../img/main/services/background/usa.png');
+    background-size: 947px 472px;
+    background-position: bottom right 186px;
+  }
+
+  &--active {
+    .services__link {
+      opacity: 1;
+      @include transition-fade;
+      transition-delay: 0.3s;
+    }
+  }
+}
+
+.services__name {
+  position: relative;
+  @include reset-margin-text;
+  width: 100%;
+  padding-left: 69px;
+  margin-bottom: 18px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 36px;
+  @include before {
+    left: 0;
+    @include center-transform-vertical;
+    width: 53px;
+    height: 2px;
+    background-color: $grey-dark;
+  }
+}
+
+.services__link {
+  position: absolute;
+  bottom: -140px;
+  left: 0;
+  z-index: 100;
+  display: inline-block;
+  opacity: 0;
+  @include padding-horizon(95px, 128px);
+  background-image: url('../img/svg/services/car.svg');
+  background-repeat: no-repeat;
+  background-size: 41px 28px;
+  background-position: left 66px center;
+}
+
+.services__title {
+  position: relative;
+  @include reset-margin-text;
+  margin-bottom: 26px;
+  padding-right: 22px;
+  color: $grey-lighter;
+  font-family: $decima-nova;
+  font-weight: bold;
+  font-size: 80px;
+  line-height: 95px;
+  letter-spacing: normal;
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  @include before {
+    top: 8px;
+    right: 0;
+    z-index: -1;
+    height: 87%;
+    width: 36.5%;
+    background-color: #191E74;
+  }
+}
+
+.services__description {
+  @include reset-margin-text;
+  width: 100%;
+}
+
+.services__picture {
+  position: absolute;
+  z-index: 100;
+  @include reset-margin-text;
+
+  &--car {
+    bottom: -181px;
+    right: 198px;
+  }
+}
