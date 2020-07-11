@@ -20,7 +20,7 @@ function initSwiperJS(slider) {
     slideActiveClass: `${slider.container}__item--active`,
     slideDuplicateActiveClass: `${slider.container}__item-duplicate--active`,
     slideVisibleClass: `${slider.container}__item--visible`,
-    slideDuplicateClass: `${slider.container}__item--duplicate`,
+    slideDuplicateClass: `${slider.container}__item-duplicate`,
     slideNextClass: `${slider.container}__item--next`,
     slideDuplicateNextClass: `${slider.container}__item-duplicate--next`,
     slidePrevClass: `${slider.container}__item--prev`,
@@ -33,7 +33,7 @@ function initSwiperJS(slider) {
     progressbarFillClass: `${slider.container}__progressbar-fill`,
     clickableClass: `${slider.container}__clickable`,
     lockClass: `${slider.container}__lock`,
-    progressbarOppositeClass: `${slider.container}__progressbar-opposite`,
+    progressbarOppositeClass: `${slider.container}__progressbar-opposite`
   });
 }
 

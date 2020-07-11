@@ -1,0 +1,33 @@
+.slider-button {
+  position: relative;
+  display: inline-block;
+  @include reset-button;
+  width: 66px;
+  height: 60px;
+  background-color: #FDFDFD;
+  border-radius: 4px;
+  box-shadow: 16px 24px 24px rgba(0, 0, 0, 0.08);
+  outline: 0;
+  @include before {
+    z-index: 100;
+    width: 18px;
+    height: 18px;
+    border: 9px solid transparent;
+    @include center-transform-vertical;
+  }
+
+  &--prev {
+    @include before-clean {
+      left: 30px;
+      border-left: 9px solid black;
+    }
+  }
+
+  &--next {
+    margin-right: 3px;
+    @include before-clean {
+      right: 30px;
+      border-right: 9px solid black;
+    }
+  }
+}

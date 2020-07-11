@@ -3,40 +3,41 @@ const buildFolder = 'build';
 const sourceFolder = 'src';
 const path = {
         build: {
-            html: buildFolder + '/',
-            css: buildFolder + '/css/',
-            js: buildFolder + '/js/',
-            img: buildFolder + '/img/',
-            fonts: buildFolder + '/fonts/',
-            svg: buildFolder+ '/img/**/sprite.svg',
-            retina: [buildFolder + '/img/@1x/', buildFolder + '/img/@2x/', buildFolder + '/img/@3x/'],
-            libs: buildFolder + '/libs/',
-            webp: buildFolder + '/img/**/*.{jpg,png}',
-            video:  buildFolder + '/video'
+          html: buildFolder + '/',
+          css: buildFolder + '/css/',
+          uncss: buildFolder  + '/css/**/*.css',
+          js: buildFolder + '/js/',
+          img: buildFolder + '/img/',
+          webp: buildFolder + '/img/**/*.{jpg,png}',
+          svg: buildFolder+ '/img/**/sprite.svg',
+          retina: [buildFolder + '/img/@1x/', buildFolder + '/img/@2x/', buildFolder + '/img/@3x/'],
+          fonts: buildFolder + '/fonts/',
+          libs: buildFolder + '/libs/',
+          video:  buildFolder + '/video'
         },
         src: {
-            html: [sourceFolder + '/*.html', '!' + sourceFolder + '/_*.html'],
-            css: sourceFolder + '/scss/style.scss',
-            js: [sourceFolder + '/js/**/*.js', '!' + sourceFolder + '/js/templates/**/*', '!' + sourceFolder + '/js/plugins/**/*'],
-            jsIgnore: [ sourceFolder + '/js/plugins/**/*'],
-            img: [sourceFolder + '/img/**/*.{jpg,svg,png,gif,ico,webp}', '!' + sourceFolder + '/img/**/icon-*.svg',  '!' + sourceFolder + '/img/**/_*'],
-            imgIgnore: sourceFolder + '/img/**/_*',
-            fonts: sourceFolder + '/fonts/**/*.ttf',
-            otf: sourceFolder + '/fonts/**/*.otf',
-            retina: sourceFolder + '/img/main/**/*{jpg,png}',
-            libs: sourceFolder + '/libs/**/*',
-            video: sourceFolder + '/video/**/*'
+          html: [sourceFolder + '/*.html', '!' + sourceFolder + '/_*.html'],
+          css: sourceFolder + '/scss/style.scss',
+          js: [sourceFolder + '/js/**/*.js', '!' + sourceFolder + '/js/templates/**/*', '!' + sourceFolder + '/js/plugins/**/*'],
+          jsIgnore: [ sourceFolder + '/js/plugins/**/*'],
+          img: [sourceFolder + '/img/**/*.{jpg,svg,png,gif,ico,webp}', '!' + sourceFolder + '/img/**/icon-*.svg',  '!' + sourceFolder + '/img/**/_*'],
+          imgIgnore: sourceFolder + '/img/**/_*',
+          fonts: sourceFolder + '/fonts/**/*.ttf',
+          otf: sourceFolder + '/fonts/**/*.otf',
+          retina: sourceFolder + '/img/main/**/*{jpg,png}',
+          libs: sourceFolder + '/libs/**/*',
+          video: sourceFolder + '/video/**/*'
         },
         watch: {
-            html: sourceFolder + '/**/*.html',
-            css: sourceFolder + '/scss/**/*.scss',
-            js: sourceFolder + '/js/**/*.js',
-            img: sourceFolder + '/img/**/*.{jpg,svg,png,gif,ico,webp}',
-            imgWatch: [buildFolder + '/img/**/*.{jpg,svg,png,gif,ico}', '!' + buildFolder + '/img/**/_*'],
-            fonts: sourceFolder + '/fonts/**/*.ttf',
-            otf: sourceFolder + '/fonts/**/*.otf',
-            svg: sourceFolder + '/img/**/icon-*.svg',
-            video: sourceFolder + '/video/**/*'
+          html: sourceFolder + '/**/*.html',
+          css: sourceFolder + '/scss/**/*.scss',
+          js: sourceFolder + '/js/**/*.js',
+          img: sourceFolder + '/img/**/*.{jpg,svg,png,gif,ico,webp}',
+          imgWatch: [buildFolder + '/img/**/*.{jpg,svg,png,gif,ico}', '!' + buildFolder + '/img/**/_*'],
+          fonts: sourceFolder + '/fonts/**/*.ttf',
+          otf: sourceFolder + '/fonts/**/*.otf',
+          svg: sourceFolder + '/img/**/icon-*.svg',
+          video: sourceFolder + '/video/**/*'
         },
         clean: './' + buildFolder + '/'
     };
@@ -44,11 +45,11 @@ const path = {
 
 // Plugins
 const { src, dest } = require('gulp'),
-        browserSync = require('browser-sync').create(),
-        imageminPngquant = require('imagemin-pngquant'),
-        fonter = require('gulp-fonter'),
         gulp = require('gulp'),
         del = require('del'),
+        browserSync = require('browser-sync').create(),
+        pngMinify = require('imagemin-pngquant'),
+        fonter = require('gulp-fonter'),
         posthtml = require('gulp-posthtml'),
         htmlValidator = require('gulp-w3c-html-validator'),
         include = require('posthtml-include'),
@@ -65,13 +66,14 @@ const { src, dest } = require('gulp'),
         bemValidator = require('gulp-html-bem-validator'),
         gulpStylelint = require('gulp-stylelint'),
         imagemin = require('gulp-imagemin'),
-        // webp = require('gulp-webp'),
+        webp = require('gulp-webp'),
         svgstore = require('gulp-svgstore'),
         htmlmin = require('gulp-htmlmin'),
         ttf2woff = require('gulp-ttf2woff'),
-        ttf2woff2 = require('gulp-ttf2woff2');
-        // imageResize = require('gulp-image-resize'),
-        // imageMagick = require('imagemagick');
+        ttf2woff2 = require('gulp-ttf2woff2'),
+        uncss = require('gulp-uncss');
+        imageResize = require('gulp-image-resize'),
+        imageMagick = require('imagemagick');
 
 
 // Server
@@ -130,6 +132,15 @@ function css() {
       .pipe(browserSync.stream())
 }
 
+function uncssInit() {
+  return src(path.build.uncss)
+    .pipe(plumber())
+    .pipe(uncss({
+      html: ['build/**/*.html']
+    }))
+    .pipe(dest(path.build.css))
+}
+
 
 // JS
 function js() {
@@ -158,7 +169,7 @@ function jsIgnoreBuild() {
 function images() {
   return src(path.watch.imgWatch)
     .pipe(imagemin([
-      imageminPngquant(),
+      pngMinify(),
       imagemin.mozjpeg({
         quality: 75, progressive: true
       }),
@@ -182,18 +193,18 @@ function ignoreImagesBuild() {
 }
 
   /* Resize to retina + sorting images */
-// function retinaImages() {
-//   for(let i = 1; i < 2; i++) { // If you don’t need retina images x3 set the value 'i < 3' to 'i < 2' or vice versa
-//     return src(path.src.retina)
-//       .pipe(imageResize({
-//         width: `${i + 1}00%`
-//       }))
-//       .pipe(rename({
-//         suffix: `@${i + 1}x`
-//       }))
-//       .pipe(dest(path.build.retina[i]))
-//   }
-// }
+function retinaImages() {
+  for(let i = 1; i < 2; i++) { // If you don’t need retina images x3 set the value 'i < 3' to 'i < 2' or vice versa
+    return src(path.src.retina)
+      .pipe(imageResize({
+        width: `${i + 1}00%`
+      }))
+      .pipe(rename({
+        suffix: `@${i + 1}x`
+      }))
+      .pipe(dest(path.build.retina[i]))
+  }
+}
 
 function imageSorting () {
     return src(path.src.img)
@@ -209,13 +220,13 @@ function sprite() {
     .pipe(dest(path.build.img))
 }
 
-// function webpBuild() {
-//   return src(path.build.webp)
-//     .pipe(webp({
-//       quality: 70
-//     }))
-//     .pipe(dest(path.build.img))
-// }
+function webpBuild() {
+  return src(path.build.webp)
+    .pipe(webp({
+      quality: 70
+    }))
+    .pipe(dest(path.build.img))
+}
 
 
 // Fonts
@@ -244,8 +255,7 @@ function ttfConversion() {
 function watchFiles() {
     gulp.watch([path.watch.html], html);
     gulp.watch([path.watch.css], css);
-    gulp.watch([path.watch.js], js);
-    gulp.watch([path.watch.js], jsIgnoreBuild);
+    gulp.watch([path.watch.js], gulp.series(js, jsIgnoreBuild));
     gulp.watch([path.watch.img], imageBuild);
     gulp.watch([path.watch.fonts], woffConversion);
     gulp.watch([path.watch.otf], ttfConversion);
@@ -268,7 +278,6 @@ function videoBuild() {
     .pipe(browserSync.stream())
 }
 
-
 function libs() {
   return src(path.src.libs)
     .pipe(plumber())
@@ -279,15 +288,16 @@ function libs() {
 
 // Build
 const fonts = gulp.series(ttfConversion, woffConversion);
-const imageBuild = gulp.series(ignoreImagesBuild, sprite, imageSorting, images); // if you don't need retina images just delete task 'retinaImages' from here
-const build = gulp.series(clean, gulp.series(imageBuild, videoBuild, css, html, js, jsIgnoreBuild, libs, fonts));
+const imageBuild = gulp.series(ignoreImagesBuild, sprite, imageSorting, /*retinaImages,  webpBuild,*/ images);
+const build = gulp.series(clean, gulp.series(imageBuild, videoBuild, css, html, /*uncssInit,*/ js, jsIgnoreBuild, libs, fonts));
 const watch = gulp.parallel(watchFiles, serve);
 
 
 
 //Exports
 exports.videoBuild = videoBuild;
-// exports.webpBuild = webpBuild;
+exports.uncssInit = uncssInit;
+exports.webpBuild = webpBuild;
 exports.sprite = sprite;
 exports.libs = libs;
 exports.jsIgnoreBuild = jsIgnoreBuild;
@@ -295,7 +305,7 @@ exports.ignoreImagesBuild = ignoreImagesBuild;
 exports.woffConversion = woffConversion;
 exports.ttfConversion = ttfConversion;
 exports.imageSorting = imageSorting;
-// exports.retinaImages = retinaImages;
+exports.retinaImages = retinaImages;
 exports.cleanGit = cleanGit;
 exports.clean = clean;
 exports.css = css;

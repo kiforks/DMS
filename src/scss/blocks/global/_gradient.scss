@@ -1,6 +1,8 @@
 .gradient {
   .header {
     &--closed {
+      position: relative;
+      z-index: 2;
       background-color: transparent;
     }
   }

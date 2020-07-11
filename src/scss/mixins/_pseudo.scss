@@ -36,13 +36,16 @@
   @include active-opacity;
 }
 
-@mixin hover-white {
+@mixin color-focus($color: white) {
   outline: 0;
+  transition: color $transition-delay ease, opacity $transition-delay ease;
+  @include active-opacity;
 
   &:hover {
-    color: white;
+    color: $color;
   }
 }
+
 
 // Pseudo-elements
   /* Before & after */

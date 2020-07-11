@@ -1,5 +1,11 @@
 .header {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
   padding-top: 34px;
+  padding-bottom: 115px;
   color: $grey;
   font-weight: 600;
   font-size: 16px;
@@ -9,7 +15,9 @@
   background-color: $black;
 
   &--closed {
+    position: static;
     padding-top: 29px;
+    padding-bottom: 0;
 
     .header__list-box {
       visibility: hidden;
@@ -45,6 +53,12 @@
     .header__buttons {
       width: auto;
       padding-left: 0;
+    }
+
+    .header__list {
+      &--main {
+        padding-left: 0;
+      }
     }
 
     .header__button-burger {
@@ -370,7 +384,7 @@
 .header__link,
 .header__auto-link,
 .header__languages-link {
-  @include white-focus;
+  @include color-focus();
 }
 
 //Laptop
