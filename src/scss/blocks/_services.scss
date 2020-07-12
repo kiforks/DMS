@@ -22,6 +22,16 @@
   justify-content: space-between;
   padding-top: 97px;
   background-repeat: no-repeat;
+  opacity: 0;
+  @include after {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    height: 108px;
+    width: 100%;
+    background-color: white;
+  }
 
   &--usa {
     background-image: url('../img/main/services/background/usa.png');
@@ -32,11 +42,12 @@
   &--track {
     @include before {
       right: 0;
-      top: 62px;
+      top: 178px;
+      z-index: -1;
       width: 995.84px;
       height: 513.02px;
       background: #191E72;
-      box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25);
       border-radius: 20px;
       transform: rotate(-14.21deg);
     }
@@ -46,18 +57,11 @@
     background-image: url('../img/main/services/background/ua.png');
     background-size: 895px;
     background-position: top 102px right 218px;
-    @include after {
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 1;
-      height: 108px;
-      width: 100%;
-      background-color: white;
-    }
   }
 
   &--active {
+    opacity: 1;
+
     .services__link {
       opacity: 1;
       @include transition-fade;
@@ -94,6 +98,12 @@
     background-image: url('../img/svg/services/car.svg');
     background-position: left 66px center;
     background-size: 41px 28px;
+  }
+
+  &--track {
+    background-image: url('../img/svg/services/track.svg');
+    background-position: left 68px center;
+    background-size: 30px;
   }
 
   &--car-ua {
@@ -194,4 +204,54 @@
 
 .services__total {
   margin-left: -7px;
+}
+
+.services__quantity {
+  @include flex;
+  width: 900px;
+  padding-top: 229px;
+  font-size: 16px;
+  line-height: 50px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.services__quantity-description {
+  @include reset-margin-text;
+  color: $grey;
+}
+
+.services__number {
+  @include reset-margin-text;
+  color: $black;
+  font-size: 50px;
+  letter-spacing: -2.5px;
+}
+
+.services__quantity-box {
+  margin-right: 137px;
+
+  &:nth-child(2) {
+    margin-right: 113px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.services__background {
+  position: relative;
+  @include before {
+    top: 3px;
+    left: -1px;
+    z-index: -1;
+    width: 32px;
+    height: 87%;
+    background-color: #47484A;
+  }
+
+  &--first {
+    margin-right: 11px;
+  }
 }
