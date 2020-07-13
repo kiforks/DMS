@@ -16,6 +16,13 @@
   }
 }
 
+.main__tab {
+  padding-top: 103px;
+  margin-top: -2px;
+  background-color: white;
+}
+
+
 //Tablet
 @include tablet {
   .main__services {

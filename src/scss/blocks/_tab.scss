@@ -1,0 +1,70 @@
+.tab {
+  @include swiper;
+  @include reset-list;
+}
+
+.tab__page {
+  position: absolute;
+  right: 74px;
+  top: 14px;
+  z-index: 10;
+  @include reset-margin-text;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 36px;
+  color: #FAFAFA;
+}
+
+.tab__page-current {
+  font-size: 16px;
+}
+
+.tab__pagination {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 36px;
+}
+
+.tab__bullet {
+  &--active {
+    color: $black;
+  }
+}
+
+.tab__subtitle {
+  @include reset-margin-text;
+  margin-bottom: 41px;
+  font-weight: bold;
+  font-size: 40px;
+  font-family: $decima-nova;
+  line-height: 48px;
+  text-transform: uppercase;
+  color: $black;
+}
+
+.tab__description {
+  @include reset-margin-text;
+  font-weight: 600;
+}
+
+.tab__item {
+  @include flex;
+}
+
+.tab__photo {
+  position: relative;
+  width: 50.1%;
+  @include reset-margin-text;
+}
+
+.tab__wrapper {
+  @include flex;
+  width: 49.9%;
+  padding-top: 141px;
+  padding-left: 80px;
+}
+
+.tab__image {
+  width: 100%;
+  @include object-fit(cover);
+}

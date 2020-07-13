@@ -1,5 +1,6 @@
 .button {
   position: relative;
+  display: inline-block;
   @include padding-vertical(22px, 20px);
   font-weight: bold;
   font-size: 18px;
