@@ -71,6 +71,7 @@ function initSwiperBullets(slider) {
     },
     loop: true,
     speed: 500,
+    autoHeight: true,
     slidesPerView: 1,
     wrapperClass: `${slider.container}__list`,
     slideClass: `${slider.container}__item`,
@@ -93,13 +94,11 @@ function initSwiperBullets(slider) {
 }
 
 const slider = {
-  container: 'services',
-  item: 3
+  container: 'services'
 };
 
 const tab = {
-  container: 'tab',
-  item: 3
+  container: 'tab'
 };
 
 initSwiperJS(slider);
