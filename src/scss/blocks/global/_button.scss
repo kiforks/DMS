@@ -20,3 +20,26 @@
     border-left: 9px solid black;
   }
 }
+
+//Tablet
+@include tablet {
+  .button {
+    @include padding-vertical(12px);
+    font-size: 14px;
+    line-height: 120%;
+    @include before-clean {
+      right: 5px;
+      width: 14px;
+      height: 14px;
+      border: 7px solid transparent;
+      border-left: 7px solid black;
+    }
+  }
+}
+
+//Mobile
+@include mobile {
+  .button {
+    @include padding-vertical(10px);
+  }
+}

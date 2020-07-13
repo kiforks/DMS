@@ -31,3 +31,24 @@
     }
   }
 }
+
+//Tablet
+@include tablet {
+  .slider-button {
+    width: 50px;
+    height: 47px;
+
+    &--prev {
+      @include before-clean {
+        left: 23px;
+      }
+    }
+
+    &--next {
+      margin-right: 3px;
+      @include before-clean {
+        right: 23px;
+      }
+    }
+  }
+}

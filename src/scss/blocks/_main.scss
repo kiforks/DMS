@@ -15,3 +15,21 @@
     background-color: white;
   }
 }
+
+//Tablet
+@include tablet {
+  .main__services {
+    @include after-clean {
+      height: 51px;
+    }
+  }
+}
+
+//Mobile
+@include mobile {
+  .main__services {
+    @include after-clean {
+      display: none;
+    }
+  }
+}

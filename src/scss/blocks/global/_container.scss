@@ -17,3 +17,29 @@
     margin-right: $desktop-padding;
   }
 }
+
+//Tablet
+@include tablet {
+  .container {
+    &-left {
+      width: $tablet-width;
+      @include center-margin;
+      padding-right: $tablet-padding;
+      padding-left: $tablet-padding * 3;
+    }
+  }
+}
+
+//Mobile
+@include mobile {
+  .container {
+    &-left {
+      width: 100%;
+      @include padding-mobile;
+    }
+  }
+
+  .services__picture {
+    padding: 15px 0 0;
+  }
+}

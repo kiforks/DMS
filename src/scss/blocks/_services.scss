@@ -7,7 +7,7 @@
   z-index: 2;
   @include flex;
   align-content: flex-start;
-  width: 35%;
+  width: 40%;
   padding-top: 137px;
 }
 
@@ -24,18 +24,18 @@
   background-repeat: no-repeat;
   opacity: 0;
   @include after {
-    bottom: 0;
+    bottom: -3px;
     left: 0;
     right: 0;
     z-index: 1;
-    height: 108px;
+    height: 111px;
     width: 100%;
     background-color: white;
   }
 
   &--usa {
     background-image: url('../img/main/services/background/usa.png');
-    background-size: 988px;
+    background-size: 55%;
     background-position: top 96px right 165px;
   }
 
@@ -44,7 +44,7 @@
       right: 0;
       top: 178px;
       z-index: -1;
-      width: 995.84px;
+      width: 56%;
       height: 513.02px;
       background: #191E72;
       box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25);
@@ -55,7 +55,7 @@
 
   &--ua {
     background-image: url('../img/main/services/background/ua.png');
-    background-size: 895px;
+    background-size: 51%;
     background-position: top 102px right 218px;
   }
 
@@ -68,6 +68,10 @@
       transition-delay: 0.3s;
     }
   }
+}
+
+.services__image {
+  width: 100%;
 }
 
 .services__name {
@@ -138,6 +142,9 @@
     width: 36.5%;
     background-color: #191E74;
   }
+  @media (max-width: 1635px) {
+    font-size: 73px;
+  }
 }
 
 .services__description {
@@ -150,12 +157,12 @@
 .services__picture {
   position: relative;
   z-index: 2;
-  flex-grow: 1;
   @include reset-margin-text;
 
   &--car {
     padding-top: 229px;
-    padding-left: 107px;
+    padding-right: 14%;
+    width: 59%;
   }
 }
 
@@ -208,7 +215,7 @@
 
 .services__quantity {
   @include flex;
-  width: 900px;
+  width: 50.5%;
   padding-top: 229px;
   font-size: 16px;
   line-height: 50px;
@@ -229,10 +236,10 @@
 }
 
 .services__quantity-box {
-  margin-right: 137px;
+  margin-right: 15%;
 
   &:nth-child(2) {
-    margin-right: 113px;
+    margin-right: 13%;
   }
 
   &:last-child {
@@ -253,5 +260,300 @@
 
   &--first {
     margin-right: 11px;
+  }
+}
+
+//Laptop
+@include laptop {
+  .services__title {
+    font-size: 55px;
+    line-height: 120%;
+  }
+
+  .services__description {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 120%;
+
+    &--track {
+      margin-bottom: 20px;
+    }
+  }
+
+  .services__buttons {
+    bottom: 73px;
+    right: 30px;
+  }
+
+  .services__wrapper {
+    padding-top: 100px;
+  }
+
+  .services__picture {
+    &--car {
+      padding-top: 268px;
+      padding-right: 10%;
+      padding-left: 33px;
+    }
+  }
+
+  .services__pagination {
+    top: 200px;
+    right: 75px;
+  }
+
+  .services__quantity {
+    padding-top: 210px;
+    line-height: 40px;
+  }
+
+  .services__quantity-description {
+    font-size: 14px;
+  }
+
+  .services__number {
+    font-size: 36px;
+  }
+
+  .services__background {
+    @include before-clean {
+      top: 3px;
+      left: 0;
+      width: 22px;
+      height: 85%;
+    }
+  }
+
+  .services__quantity-box {
+    margin-right: 10%;
+
+    &:nth-child(2) {
+      margin-right: 9%;
+    }
+  }
+
+  .services__item {
+    @include before-clean {
+      width: 52%;
+    }
+
+    &--track {
+      @include after-clean {
+        bottom: -77px;
+        z-index: 1;
+        height: 185px;
+      }
+    }
+  }
+}
+
+//Tablet
+@include tablet {
+  .services__item {
+    padding-top: 115px;
+    @include after-clean {
+      height: 54px;
+    }
+
+    &--usa {
+      background-position: top 96px right 30px;
+    }
+
+    &--ua {
+      background-position: top 120px right 60px;
+    }
+
+    &--track {
+      @include before-clean {
+        right: -15px;
+        top: 116px;
+      }
+      @include after-clean {
+        height: 128px;
+      }
+    }
+  }
+
+  .services__wrapper {
+    padding-top: 0;
+  }
+
+  .services__picture {
+    &--car {
+      padding-top: 103px;
+    }
+  }
+
+  .services__name {
+    font-size: 14px;
+    line-height: 120%;
+    margin-bottom: 10px;
+  }
+
+  .services__title {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .services__description {
+    padding-right: 0;
+    font-size: 14px;
+    margin-bottom: 38px;
+
+    &--track {
+      margin-bottom: 20px;
+    }
+
+    &--ua {
+      margin-bottom: 17px;
+    }
+  }
+
+  .services__link {
+    @include padding-horizon(35px, 50px);
+    background-position: left 16px center;
+    background-size: 20px;
+
+    &--car {
+      background-position: left 10px center;
+      background-size: 30px;
+    }
+  }
+
+  .services__quantity {
+    padding-top: 65px;
+    line-height: 22px;
+  }
+
+  .services__pagination {
+    top: 120px;
+    right: 0;
+  }
+
+  .services__current {
+    font-size: 18px;
+  }
+
+  .services__total {
+    font-size: 13px;
+  }
+
+  .services__quantity-description {
+    font-size: 8px;
+  }
+
+  .services__number {
+    font-size: 27px;
+  }
+
+  .services__background {
+    @include before-clean {
+      top: 4px;
+      left: 0;
+      width: 16px;
+      height: 80%;
+    }
+
+    &--first {
+      margin-right: 5px;
+    }
+  }
+
+  .services__quantity-box {
+    margin-right: 30px;
+
+    &:nth-child(2) {
+      margin-right: 26px;
+    }
+  }
+
+  .services__buttons {
+    bottom: 19px;
+    right: 0;
+  }
+}
+
+//Mobile
+@include mobile {
+  .services__wrapper {
+    width: 100%;
+    align-self: flex-start;
+  }
+
+  .services__name {
+    font-size: 12px;
+    margin-bottom: 9px;
+  }
+
+  .services__description {
+    margin-bottom: 15px;
+  }
+
+  .services__link {
+    width: 100%;
+  }
+
+  .services__item {
+    align-content: flex-start;
+    padding-bottom: 50px;
+    @include after-clean {
+      display: none;
+    }
+
+    &--ua {
+      background-position: top 306px right 14px;
+      background-size: 213px;
+
+      .services__picture {
+        padding-top: 50px;
+        padding-bottom: 25px;
+      }
+    }
+
+    &--usa {
+      background-size: 200px;
+      background-position: bottom 180px right 15px;
+    }
+
+    &--track {
+      @include before-clean {
+        display: none;
+      }
+    }
+  }
+
+  .services__picture {
+    width: 100%;
+
+    &--car {
+      padding-top: 50px;
+    }
+  }
+
+  .services__pagination {
+    bottom: 30px;
+    top: auto;
+    right: auto;
+    left: 0;
+  }
+
+  .services__quantity {
+    justify-content: center;
+    width: 100%;
+    padding-top: 64px;
+  }
+
+  .services__quantity-box {
+    margin-right: 30px;
+    justify-content: center;
+
+    &:nth-child(2) {
+      margin-right: 30px;
+    }
+  }
+
+  .services__quantity-description {
+    font-size: 7px;
+    letter-spacing: 0;
   }
 }

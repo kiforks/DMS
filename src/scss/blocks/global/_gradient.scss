@@ -12,3 +12,16 @@
     margin-top: -97px;
   }
 }
+
+//Tablet
+@include tablet {
+  .gradient {
+    .container {
+      padding-bottom: 21px;
+    }
+
+    .main-gradient {
+      margin-top: -111px;
+    }
+  }
+}
