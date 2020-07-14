@@ -28,6 +28,7 @@
     @include padding-vertical(12px);
     font-size: 14px;
     line-height: 120%;
+    box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.08);
     @include before-clean {
       right: 5px;
       width: 14px;

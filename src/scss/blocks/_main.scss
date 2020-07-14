@@ -61,13 +61,14 @@
 
   .main__tab {
     padding-top: 30px;
+    padding-bottom: 15px;
   }
 
   .main__slider {
     padding-top: 0;
+    padding-bottom: 0;
   }
 }
-
 
 
 //Mobile
@@ -80,6 +81,11 @@
 
   .main__tab {
     padding-top: 15px;
+    padding-bottom: 0;
+  }
+
+  .main__slider {
+    padding-bottom: 20px;
   }
 }
 

@@ -69,7 +69,7 @@ function initBullets(slider) {
       nextEl: `.${slider.container}__button--next`,
       prevEl: `.${slider.container}__button--prev`,
     },
-    loop: true,
+    loop: false,
     noSwiping: true,
     onlyExternal: true,
     speed: 500,
@@ -107,7 +107,8 @@ function initMainSlider(slider) {
       currentClass: `${slider.container}__current`,
       totalClass: `${slider.container}__total`,
       bulletClass: `${slider.container}__bullet`,
-      bulletActiveClass: `${slider.container}__bullet--active`
+      bulletActiveClass: `${slider.container}__bullet--active`,
+      clickable: true
     },
     navigation: {
       nextEl: `.${slider.container}__button--next`,
@@ -134,7 +135,19 @@ function initMainSlider(slider) {
     progressbarFillClass: `${slider.container}__progressbar-fill`,
     clickableClass: `${slider.container}__clickable`,
     lockClass: `${slider.container}__lock`,
-    progressbarOppositeClass: `${slider.container}__progressbar-opposite`
+    progressbarOppositeClass: `${slider.container}__progressbar-opposite`,
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 10
+      },
+      768: {
+        spaceBetween: 15
+      },
+      1200: {
+        spaceBetween: 30
+      }
+    }
   });
 }
 

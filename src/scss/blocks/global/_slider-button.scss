@@ -37,6 +37,7 @@
   .slider-button {
     width: 40px;
     height: 40px;
+    box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.08);
     @include before-clean {
       height: 14px;
       width: 14px;
