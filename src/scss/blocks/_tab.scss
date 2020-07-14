@@ -32,13 +32,39 @@
   font-size: 18px;
   line-height: 36px;
   text-transform: uppercase;
+
+  &--blue {
+    top: 0;
+    left: 0;
+    justify-content: flex-start;
+    width: auto;
+    padding-left: 0;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 36px;
+    color: $grey-dark;
+
+    .tab__bullet {
+      margin-right: 92px;
+
+      &--active {
+        color: $grey-light;
+        @include before-clean {
+          background-color: $grey-light;
+        }
+      }
+    }
+  }
 }
 
 .tab__bullet {
+  outline: 0;
   @include transition;
+  cursor: pointer;
   @include before {
+    width: 0;
     opacity: 0;
-    @include transition-fade;
+    @include transition;
   }
 
   &--active {
@@ -46,6 +72,7 @@
     display: inline-block;
     padding-left: 75px;
     color: $black;
+    cursor: default;
     @include before-clean {
       left: 0;
       z-index: 10;
@@ -61,23 +88,32 @@
 .tab__subtitle {
   @include reset-margin-text;
   margin-bottom: 41px;
-  font-weight: bold;
-  font-size: 40px;
-  font-family: $decima-nova;
-  line-height: 48px;
-  text-transform: uppercase;
   color: $black;
+
+  &--blue {
+    color: $grey-light;
+  }
 }
 
 .tab__description {
   @include reset-margin-text;
   padding-bottom: 45px;
   font-weight: 600;
+
+  &--blue {
+    padding-bottom: 0;
+    margin-bottom: 94px;
+    color: $grey-lighter-2;
+  }
 }
 
 .tab__item {
   @include flex;
   align-self: flex-start;
+
+  &--blue {
+    padding-bottom: 0;
+  }
 }
 
 .tab__photo {
@@ -85,6 +121,11 @@
   width: 50.1%;
   height: 518px;
   @include reset-margin-text;
+
+  &--blue {
+    width: 51.2%;
+    height: 564px;
+  }
 }
 
 .tab__wrapper {
@@ -92,6 +133,14 @@
   width: 49.9%;
   padding-top: 141px;
   padding-left: 80px;
+
+  &--blue {
+    align-self: flex-start;
+    width: 48.8%;
+    padding-left: 0;
+    padding-top: 120px;
+    padding-right: 145px;
+  }
 }
 
 .tab__image {
@@ -103,18 +152,21 @@
 
 .tab__link {
   align-self: flex-start;
-  margin-top: auto;
-  @include padding-horizon(63px, 42px);
+  @include padding-horizon(77px, 42px);
+  margin-right: 131px;
   @include before-clean {
-    right: 18px;
+    right: 31px;
   }
 }
 
+.tab__link-shadow {
+  padding-bottom: 50px;
+}
+
 .tab__button-box {
-  position: absolute;
-  bottom: 0;
-  right: 17%;
   @include flex;
+  margin-top: auto;
+  //padding-bottom: 50px;
 }
 
 .tab__button-description {
@@ -128,46 +180,174 @@
   color: $black;
 }
 
-//Laptop
-@include laptop {
+.tab__inner {
+  @include flex;
+}
+
+.tab__button {
+  height: 66px;
+}
+
+
+//XXL
+@include desktop-xxl {
   .tab__pagination {
-    top: 0;
-    padding-left: 40px;
     font-size: 14px;
     line-height: 120%;
   }
 
   .tab__bullet {
     &--active {
-      padding-left: 45px;
+      padding-left: 50px;
       @include before-clean {
-        width: 35px;
+        width: 40px;
+      }
+    }
+  }
+
+  .tab__wrapper {
+    padding-top: 80px;
+  }
+}
+
+
+//Desktop
+@include desktop {
+  .tab__pagination {
+    top: 0;
+    padding-left: 40px;
+    font-size: 13px;
+  }
+
+  .tab__bullet {
+    &--active {
+      padding-left: 40px;
+      @include before-clean {
+        width: 30px;
       }
     }
   }
 
   .tab__wrapper {
     padding-left: 40px;
-    padding-top: 40px;
-  }
-
-  .tab__subtitle {
-    margin-bottom: 15px;
-    font-size: 35px;
-    line-height: 120%;
   }
 
   .tab__description {
-    padding-bottom: 25px;
     font-size: 20px;
     line-height: 120%;
   }
 
   .tab__photo {
+    height: 450px;
+  }
+
+  .tab__link {
+    margin-right: 65px;
+  }
+}
+
+//Tablet
+@include tablet {
+  .tab__photo {
+    width: 100%;
     height: 400px;
+    margin-bottom: 70px;
+  }
+
+  .tab__wrapper {
+    width: 100%;
+    padding-top: 0;
+    padding-left: 0;
+  }
+
+  .tab__page {
+    right: 15px;
+    top: 10px;
+    font-size: 14px;
+    line-height: 120%;
+  }
+
+  .tab__page-current {
+    font-size: 9px;
+    line-height: 120%;
+  }
+
+  .tab__pagination {
+    top: 429px;
+    width: 100%;
+    padding-left: 0;
+    font-size: 15px;
+  }
+
+  .tab__subtitle {
+    margin-bottom: 20px;
+  }
+
+  .tab__description {
+    padding-bottom: 0;
+    margin-bottom: 35px;
+    font-size: 18px;
+  }
+
+  .tab__link {
+    margin-right: 75px;
+    @include padding-horizon(35px, 15px);
+  }
+
+  .tab__button-description {
+    margin-left: 10px;
+    font-size: 14px;
+    line-height: 120%;
+  }
+}
+
+//Mobile
+@include mobile {
+  .tab {
+    padding-top: 100px;
+  }
+
+  .tab__photo {
+    height: 170px;
+    margin-bottom: 15px;
+  }
+
+  .tab__subtitle {
+    margin-bottom: 10px;
+  }
+
+  .tab__description {
+    margin-bottom: 25px;
+    font-size: 15px;
   }
 
   .tab__button-box {
-    right: 0;
+    justify-content: space-between;
+  }
+
+  .tab__link {
+    margin-right: 0;
+    @include padding-horizon(30px, 10px);
+    font-size: 12px;
+    line-height: 120%;
+  }
+
+  .tab__button-description {
+    font-size: 12px;
+  }
+
+  .tab__pagination {
+    top: 0;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .tab__bullet {
+    &--active {
+      padding-left: 30px;
+      @include before-clean {
+        width: 25px;
+      }
+    }
   }
 }

@@ -1,0 +1,190 @@
+.slider {
+  @include swiper;
+  padding-top: 115px;
+  background-color: white;
+}
+
+.slider__container {
+  position: relative;
+  width: 76.8%;
+  padding-bottom: 80px;
+}
+
+.slider__wrapper {
+  @include flex-column;
+  align-items: center;
+  width: 800px;
+  @include center-margin;
+  margin-bottom: 77px;
+}
+
+.slider__title {
+  @include reset-margin-text;
+  padding-left: 25px;
+  margin-bottom: 37px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $black;
+}
+
+.slider__title-span {
+  position: relative;
+  display: inline-block;
+  @include before {
+    left: -75px;
+    z-index: 10;
+    @include center-transform-vertical;
+    width: 53px;
+    height: 1px;
+    background-color: $black;
+  }
+}
+
+.slider__description {
+  @include reset-margin-text;
+  margin-bottom: 38px;
+  text-align: center;
+  color: $black;
+}
+
+.slider__show {
+  @include reset-margin-text;
+  width: 650px;
+  text-align: center;
+  font-weight: 600;
+  color: $grey--darker;
+}
+
+.slider__list {
+  @include reset-list;
+}
+
+.slider__photo {
+  @include reset-margin-text;
+  height: 504px;
+}
+
+.slider__image {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  @include object-fit(cover);
+}
+
+.slider__item {
+  position: relative;
+  cursor: pointer;
+  @include hover {
+    .slider__image-description-box {
+      z-index: 100;
+      background: rgba(78, 78, 78, 0.3);
+      opacity: 1;
+    }
+  }
+}
+
+.slider__image-description-box {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  @include flex-column;
+  width: 100%;
+  height: 100%;
+  padding: 34px 27px 39px;
+  background-color: transparent;
+  opacity: 0;
+  @include transition-fade;
+}
+
+.slider__image-title,
+.slider__image-description {
+  @include reset-margin-text;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.05em;
+  color: $grey-light;
+}
+
+.slider__image-description {
+  margin-top: auto;
+}
+
+.slider__text-before {
+  position: relative;
+  display: inline-block;
+  padding-left: 81px;
+  @include before {
+    left: 0;
+    @include center-transform-vertical;
+    z-index: 10;
+    width: 53px;
+    height: 1px;
+    background-color: $grey-light;
+  }
+}
+
+.slider__button-box {
+  position: absolute;
+  z-index: 101;
+  bottom: 50px;
+  left: -2px;
+  @include flex;
+}
+
+.slider__button {
+  @include before-clean {
+    border: 9px solid transparent;
+  }
+
+  &--prev {
+    margin-right: 7px;
+    @include before-clean {
+      right: 30px;
+      left: auto;
+      border-right: 9px solid black;
+    }
+  }
+
+  &--next {
+    @include before-clean {
+      left: 30px;
+      border-left: 9px solid black;
+    }
+  }
+}
+
+//Desktop
+@include desktop {
+  .slider__photo {
+    height: 425px;
+  }
+}
+
+//Tablet
+@include tablet {
+  .slider__title {
+    margin-bottom: 25px;
+  }
+
+  .slider__description {
+    margin-bottom: 20px;
+  }
+
+  .slider__show {
+    font-size: 16px;
+    line-height: 120%;
+  }
+
+  .slider__wrapper {
+    margin-bottom: 25px;
+  }
+}
+

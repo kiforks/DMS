@@ -7,6 +7,7 @@
   &-left,
   &-right {
     max-width: 1785px;
+    overflow: hidden;
   }
 
   &-left {
@@ -25,7 +26,22 @@
       width: $tablet-width;
       @include center-margin;
       padding-right: $tablet-padding;
-      padding-left: $tablet-padding * 3;
+      padding-left: $tablet-padding * 2;
+
+      &--clean {
+        padding-left: $tablet-padding;
+      }
+    }
+
+    &-right {
+      width: $tablet-width;
+      @include center-margin;
+      padding-left: $tablet-padding;
+      padding-right: $tablet-padding * 2;
+
+      &--clean {
+        padding-right: $tablet-padding;
+      }
     }
   }
 }
@@ -34,6 +50,11 @@
 @include mobile {
   .container {
     &-left {
+      width: 100%;
+      @include padding-mobile;
+    }
+
+    &-right {
       width: 100%;
       @include padding-mobile;
     }

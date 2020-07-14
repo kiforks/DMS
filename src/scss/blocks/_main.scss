@@ -20,6 +20,34 @@
   padding-top: 103px;
   margin-top: -2px;
   background-color: white;
+
+  &--blue {
+    position: relative;
+    padding-top: 165px;
+    background-image: url('../img/main/tab/buy/background.png'),
+                      linear-gradient(180deg, #121773 0%, #0D1038 100%);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 835px, cover;
+    background-position: left 403px top, left top;
+  }
+}
+
+.main__slider {
+  margin-top: -2px;
+  padding-bottom: 182px;
+}
+
+
+//Desktop
+@include desktop {
+  .main__tab {
+    padding-top: 75px;
+  }
+
+  .main__slider {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
 }
 
 
@@ -30,7 +58,17 @@
       height: 51px;
     }
   }
+
+  .main__tab {
+    padding-top: 30px;
+  }
+
+  .main__slider {
+    padding-top: 0;
+  }
 }
+
+
 
 //Mobile
 @include mobile {
@@ -39,4 +77,9 @@
       display: none;
     }
   }
+
+  .main__tab {
+    padding-top: 15px;
+  }
 }
+

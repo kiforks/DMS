@@ -1,9 +1,9 @@
-function initSwiperJS(slider) {
+function initServices(slider) {
   if(!slider) {
     return;
   }
 
-  let mySwiper = new Swiper(`.${slider.container}`, {
+  let services = new Swiper(`.${slider.container}`, {
     pagination: {
       el: `.${slider.container}__pagination`,
       type: `fraction`,
@@ -41,14 +41,14 @@ function initSwiperJS(slider) {
   });
 }
 
-function initSwiperBullets(slider) {
+function initBullets(slider) {
   if(!slider) {
     return;
   }
 
-  let tabText = document.querySelectorAll(`.${slider.container}__text`);
+  let tabText = document.querySelectorAll(`.${slider.textClass}`);
 
-  let mySwiper2 = new Swiper(`.${slider.container}`, {
+  let tab = new Swiper(`.${slider.containerClass}`, {
     pagination: {
       el: `.${slider.container}__pagination`,
       type: `bullets`,
@@ -70,6 +70,8 @@ function initSwiperBullets(slider) {
       prevEl: `.${slider.container}__button--prev`,
     },
     loop: true,
+    noSwiping: true,
+    onlyExternal: true,
     speed: 500,
     autoHeight: true,
     slidesPerView: 1,
@@ -93,16 +95,74 @@ function initSwiperBullets(slider) {
   });
 }
 
-const slider = {
+function initMainSlider(slider) {
+  if(!slider) {
+    return;
+  }
+
+  let services = new Swiper(`.${slider.containerClass}`, {
+    pagination: {
+      el: `.${slider.container}__pagination`,
+      type: `bullets`,
+      currentClass: `${slider.container}__current`,
+      totalClass: `${slider.container}__total`,
+      bulletClass: `${slider.container}__bullet`,
+      bulletActiveClass: `${slider.container}__bullet--active`
+    },
+    navigation: {
+      nextEl: `.${slider.container}__button--next`,
+      prevEl: `.${slider.container}__button--prev`,
+    },
+    speed: 500,
+    slidesPerView: 2,
+    spaceBetween: 30,
+    wrapperClass: `${slider.container}__list`,
+    slideClass: `${slider.container}__item`,
+    slideActiveClass: `${slider.container}__item--active`,
+    slideDuplicateActiveClass: `${slider.container}__item-duplicate--active`,
+    slideVisibleClass: `${slider.container}__item--visible`,
+    slideDuplicateClass: `${slider.container}__item-duplicate`,
+    slideNextClass: `${slider.container}__item--next`,
+    slideDuplicateNextClass: `${slider.container}__item-duplicate--next`,
+    slidePrevClass: `${slider.container}__item--prev`,
+    slideDuplicatePrevClass: `${slider.container}__item-duplicate--prev`,
+    slideBlankClass: `${slider.container}__invisible-blank`,
+    bulletClass: `${slider.container}__bullet`,
+    bulletActiveClass: `${slider.container}__bullet--active`,
+    modifierClass: `${slider.container}__pagination`,
+    hiddenClass: `${slider.container}__hidden`,
+    progressbarFillClass: `${slider.container}__progressbar-fill`,
+    clickableClass: `${slider.container}__clickable`,
+    lockClass: `${slider.container}__lock`,
+    progressbarOppositeClass: `${slider.container}__progressbar-opposite`
+  });
+}
+
+const services = {
   container: 'services'
 };
 
 const tab = {
-  container: 'tab'
+  container: 'tab',
+  containerClass: 'tab',
+  textClass: 'tab__text'
 };
 
-initSwiperJS(slider);
-initSwiperBullets(tab);
+const tabBuy = {
+  container: 'tab',
+  containerClass: 'tab__box',
+  textClass: 'tab__text--blue'
+};
+
+const mainSlider = {
+  container: 'slider',
+  containerClass: 'slider__container'
+};
+
+initMainSlider(mainSlider);
+initServices(services);
+initBullets(tab);
+initBullets(tabBuy);
 
 
 

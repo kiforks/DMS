@@ -1,0 +1,22 @@
+.title {
+  font-weight: bold;
+  font-size: 40px;
+  font-family: $decima-nova;
+  line-height: 48px;
+  text-transform: uppercase;
+}
+
+//Desktop
+@include desktop {
+  .title {
+    font-size: 35px;
+    line-height: 120%;
+  }
+}
+
+//Mobile
+@include mobile {
+  .title {
+    font-size: 25px;
+  }
+}
