@@ -1,0 +1,244 @@
+.footer {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: $grey;
+  background-color: $black;
+}
+
+.footer__container {
+  padding-top: 85px;
+}
+
+.footer__wrapper {
+  @include flex;
+  justify-content: space-between;
+  margin-bottom: 61px;
+}
+
+.footer__section {
+  max-width: 32%;
+
+  &--nav {
+    padding-top: 7px;
+  }
+
+  &--services {
+    @include flex-column;
+    min-width: 25.5%;
+  }
+
+  &--inner {
+    @include flex-column;
+  }
+}
+
+.footer__list {
+  @include reset-list;
+}
+
+.footer__item {
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.footer__services-list {
+  @include reset-list;
+}
+
+.footer__services-item,
+.footer__personal-area {
+  padding-left: 67px;
+}
+
+.footer__services-item {
+  padding-top: 7px;
+  padding-bottom: 30px;
+  background-repeat: no-repeat;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--car {
+    background-image: url('../img/svg/header/car.svg');
+    background-size: 40px;
+    background-position: left top 4px;
+  }
+
+  &--track {
+    padding-top: 19px;
+    padding-bottom: 40px;
+    background-image: url('../img/svg/header/track.svg');
+    background-size: 30px;
+    background-position: left top;
+    animation: bounce linear 5s infinite;
+  }
+
+  &--calc {
+    background-image: url('../img/svg/header/calc.svg');
+    background-size: 26px;
+    background-position: left 3px top -2px;
+  }
+}
+
+.footer__logo {
+  @include reset-margin-text;
+}
+
+.footer__image {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+.footer__personal-area {
+  display: block;
+  margin-top: auto;
+  @include padding-vertical(8px);
+  background-image: url('../img/svg/user.svg');
+  background-repeat: no-repeat;
+  background-size: 36px;
+  background-position: left top;
+}
+
+.footer__languages-list {
+  @include flex;
+  justify-content: space-between;
+  @include reset-list;
+  @include padding-horizon(10px);
+  margin-top: auto;
+}
+
+.footer__languages-item {
+  @include padding-vertical(19px);
+  padding-left: 23px;
+  padding-right: 23px;
+
+  &--active {
+    background-color: #232527;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.footer__copyright {
+  position: relative;
+  width: 810px;
+  @include reset-margin-text;
+  @include center-margin;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-size: 18px;
+  line-height: 140%;
+  text-align: center;
+  color: $grey--darker;
+  @include before {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $grey--darker;
+  }
+}
+
+.footer__copyright-text {
+  text-transform: none;
+}
+
+.footer__link,
+.footer__services-link,
+.footer__languages-link,
+.footer__personal-area {
+  @include color-focus();
+}
+
+//Tablet
+@include tablet {
+  .footer {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .footer__container {
+    padding-top: 50px;
+  }
+
+  .footer__section {
+    max-width: 49%;
+    margin-bottom: 60px;
+
+    &--inner {
+      align-items: center;
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 0;
+    }
+  }
+
+  .footer__logo {
+    width: 300px;
+    margin-bottom: 30px;
+  }
+
+  .footer__copyright {
+    width: 80%;
+    font-size: 14px;
+    line-height: 120%;
+  }
+}
+
+//Tablet min-max
+@include min-max-tablet {
+  .footer__services-item {
+    padding-left: 0;
+    padding-right: 67px;
+    text-align: right;
+
+    &--car {
+      background-position: right top 4px;
+    }
+
+    &--track {
+      background-position: right top;
+      animation: bounce-right linear 5s infinite;
+    }
+
+    &--calc {
+      background-position: right 3px top 15px;
+    }
+  }
+
+  .footer__personal-area {
+    padding-left: 0;
+    padding-right: 67px;
+    background-position: right top;
+    text-align: right;
+  }
+}
+
+
+//Mobile
+@include mobile {
+  .footer__container {
+    padding-top: 25px;
+  }
+
+  .footer__wrapper {
+    width: 100%;
+  }
+
+  .footer__section {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .footer__logo {
+    width: 200px;
+  }
+}

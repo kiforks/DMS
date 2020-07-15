@@ -103,7 +103,7 @@
 
 .tab__description {
   @include reset-margin-text;
-  width: 84%;
+  width: 87%;
   padding-bottom: 45px;
   font-weight: 600;
 
@@ -386,6 +386,18 @@
   .tab__contacts-icon-box {
     margin-right: 25px;
   }
+
+  .tab__list {
+    @include min-max-tablet {
+      height: auto !important;
+    }
+  }
+
+  .tab__item {
+    &--next {
+      display: none;
+    }
+  }
 }
 
 //Tablet
@@ -456,6 +468,10 @@
     margin-left: 10px;
     font-size: 14px;
     line-height: 120%;
+
+    &--contacts {
+      margin-bottom: 0;
+    }
   }
 
   .tab__item {
@@ -517,12 +533,6 @@
 
   .tab__contacts {
     padding-bottom: 145px;
-  }
-
-  .tab__description {
-    &--contacts {
-      margin-bottom: 0;
-    }
   }
 }
 
@@ -627,7 +637,7 @@
   }
 
   .tab__slide-buttons {
-    bottom: 0;
+    bottom: 7px;
   }
 
   .tab__contacts-link {
@@ -661,9 +671,5 @@
         left: 5px;
       }
     }
-  }
-
-  .tab__slide-buttons {
-    bottom: 7px;
   }
 }

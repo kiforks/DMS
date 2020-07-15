@@ -5,11 +5,22 @@
   @include center-margin;
 }
 
+.wrapper-md {
+  width: 100%;
+  max-width: 1370px + ($tablet-padding * 2);
+  @include center-margin;
+  @include padding-tablet;
+}
+
 //Tablet
 @include tablet {
   .wrapper {
     width: $tablet-width;
     @include padding-tablet;
+  }
+
+  .wrapper-md {
+    width: $tablet-width;
   }
 }
 
@@ -19,4 +30,10 @@
     width: 100%;
     @include padding-mobile;
   }
+
+  .wrapper-md {
+    width: 100%;
+    @include padding-mobile;
+  }
 }
+

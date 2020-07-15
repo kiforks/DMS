@@ -45,7 +45,7 @@
 
   &--contacts {
     padding-top: 156px;
-    padding-bottom: 210px;
+    padding-bottom: 207px;
 
     @include before-clean {
       height: 332px;
@@ -131,12 +131,18 @@
 
     &--blue {
       @include before-clean {
-        height: 80px;
+        height: 63px;
       }
     }
 
     &--about {
       padding-bottom: 25px;
+    }
+
+    &--contacts {
+      @include before-clean {
+        height: 80px;
+      }
     }
   }
 
@@ -169,7 +175,7 @@
 
     &--blue {
       @include before-clean {
-        height: 58px;
+        height: 68px;
       }
     }
 
