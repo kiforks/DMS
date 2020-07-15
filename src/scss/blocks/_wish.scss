@@ -1,0 +1,97 @@
+.wish {
+  background-color: white;
+}
+
+.wish__wrapper {
+  @include flex;
+  align-items: center;
+  width: 1090px;
+  @include center-margin;
+}
+
+.wish__inner {
+  width: 55%;
+  margin-right: 103px;
+}
+
+.wish__title {
+  margin-bottom: 16px;
+  color: $black;
+}
+
+.wish__description {
+  @include reset-margin-text;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: $grey--darker;
+}
+
+.wish__link {
+  @include padding-horizon(60px, 126px);
+  background-image: url('../img/svg/services/car.svg');
+  background-repeat: no-repeat;
+  background-position: left 63px center;
+  background-size: 40px;
+  @include before-clean {
+    right: 24px;
+  }
+}
+
+
+//Tablet
+@include tablet {
+  .wish__wrapper {
+    justify-content: space-between;
+    width: $tablet-width;
+    @include padding-tablet;
+  }
+
+  .wish__inner {
+    width: 50%;
+    margin-right: 0;
+  }
+
+  .wish__description {
+    font-size: 16px;
+    line-height: 120%;
+  }
+
+  .wish__link {
+    @include padding-horizon(30px, 45px);
+    background-size: 25px;
+    background-position: left 10px center;
+  }
+}
+
+//Mobile
+@include mobile {
+  .wish__wrapper {
+    width: 100%;
+    @include padding-mobile;
+  }
+
+  .wish__inner {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .wish__description {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .wish__title {
+    text-align: center;
+  }
+
+  .wish__link {
+    @include padding-vertical(12px);
+    @include padding-horizon(40px, 65px);
+    background-size: 35px;
+    background-position: left 20px center;
+    width: 100%;
+    text-align: center;
+  }
+}

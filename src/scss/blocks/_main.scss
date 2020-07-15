@@ -29,12 +29,61 @@
     background-repeat: no-repeat, no-repeat;
     background-size: 835px, cover;
     background-position: left 403px top, left top;
+    @include before {
+      left: 0;
+      bottom: -2px;
+      right: 0;
+      width: 100%;
+      height: 120px;
+      background-color: white;
+    }
+  }
+
+  &--about {
+    padding-top: 236px;
+  }
+
+  &--contacts {
+    padding-top: 156px;
+    padding-bottom: 210px;
+
+    @include before-clean {
+      height: 332px;
+    }
   }
 }
 
 .main__slider {
   margin-top: -2px;
   padding-bottom: 182px;
+  padding-top: 115px;
+
+  &--car {
+    padding-top: 182px;
+    padding-bottom: 0;
+  }
+}
+
+.main__wish {
+  margin-top: -2px;
+  padding-top: 72px;
+  padding-bottom: 159px;
+}
+
+//XXL
+@include desktop-xxl {
+  .main__slider {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    &--car {
+      padding-bottom: 0;
+    }
+  }
+
+  .main__wish {
+    padding: 25px 0 100px;
+  }
 }
 
 
@@ -42,10 +91,27 @@
 @include desktop {
   .main__tab {
     padding-top: 75px;
+
+    &--blue {
+      @include before-clean {
+        height: 89px;
+      }
+    }
+
+    &--contacts {
+      @include before-clean {
+        height: 290px;
+      }
+    }
   }
 
   .main__slider {
-    padding-top: 75px;
+    padding-top: 35px;
+    padding-bottom: 25px;
+  }
+
+  .main__wish {
+    padding-top: 0;
     padding-bottom: 75px;
   }
 }
@@ -62,11 +128,29 @@
   .main__tab {
     padding-top: 30px;
     padding-bottom: 15px;
+
+    &--blue {
+      @include before-clean {
+        height: 80px;
+      }
+    }
+
+    &--about {
+      padding-bottom: 25px;
+    }
   }
 
   .main__slider {
     padding-top: 0;
     padding-bottom: 0;
+
+    &--car {
+      padding-bottom: 35px;
+    }
+  }
+
+  .main__wish {
+    padding-bottom: 50px;
   }
 }
 
@@ -81,11 +165,29 @@
 
   .main__tab {
     padding-top: 15px;
-    padding-bottom: 0;
+    padding-bottom: 25px;
+
+    &--blue {
+      @include before-clean {
+        height: 58px;
+      }
+    }
+
+    &--about {
+      padding-top: 0;
+    }
   }
 
   .main__slider {
     padding-bottom: 20px;
+
+    &--car {
+      padding-bottom: 35px;
+    }
+  }
+
+  .main__container-contacts {
+    padding-top: 215px;
   }
 }
 

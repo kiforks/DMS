@@ -155,16 +155,28 @@ const services = {
   container: 'services'
 };
 
-const tab = {
+const tabMain = {
   container: 'tab',
   containerClass: 'tab',
   textClass: 'tab__text'
 };
 
-const tabBuy = {
+const tabBlue = {
   container: 'tab',
   containerClass: 'tab__box',
   textClass: 'tab__text--blue'
+};
+
+const tabAbout = {
+  container: 'tab',
+  containerClass: 'tab--about',
+  textClass: 'tab__text--about'
+};
+
+const tabContacts = {
+  container: 'tab',
+  containerClass: 'tab__contacts',
+  textClass: 'tab__text--contacts'
 };
 
 const mainSlider = {
@@ -172,10 +184,14 @@ const mainSlider = {
   containerClass: 'slider__container'
 };
 
+
+
 initMainSlider(mainSlider);
 initServices(services);
-initBullets(tab);
-initBullets(tabBuy);
+initBullets(tabMain);
+initBullets(tabBlue);
+initBullets(tabAbout);
+initBullets(tabContacts);
 
 
 

@@ -19,6 +19,19 @@
   }
 }
 
+//Desktop
+@include desktop {
+  .container {
+    &-left {
+      margin-left: 75px;
+    }
+
+    &-right {
+      margin-right: 75px;
+    }
+  }
+}
+
 //Tablet
 @include tablet {
   .container {
