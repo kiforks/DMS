@@ -15,8 +15,9 @@ function initServices(slider) {
     navigation: {
       nextEl: `.${slider.container}__button--next`,
       prevEl: `.${slider.container}__button--prev`,
+      disabledClass: `${slider.container}__button--disabled`,
     },
-    loop: true,
+    loop: false,
     speed: 500,
     slidesPerView: 1,
     wrapperClass: `${slider.container}__list`,
@@ -37,7 +38,20 @@ function initServices(slider) {
     progressbarFillClass: `${slider.container}__progressbar-fill`,
     clickableClass: `${slider.container}__clickable`,
     lockClass: `${slider.container}__lock`,
-    progressbarOppositeClass: `${slider.container}__progressbar-opposite`
+    progressbarOppositeClass: `${slider.container}__progressbar-opposite`,
+    breakpoints: {
+      320: {
+        pagination: {
+          type: 'bullets',
+          clickable: true
+        }
+      },
+      768: {
+        pagination: {
+          type: 'fraction'
+        }
+      }
+    }
   });
 }
 
@@ -68,6 +82,7 @@ function initBullets(slider) {
     navigation: {
       nextEl: `.${slider.container}__button--next`,
       prevEl: `.${slider.container}__button--prev`,
+      disabledClass: `${slider.container}__button--disabled`,
     },
     loop: false,
     noSwiping: true,
@@ -91,7 +106,7 @@ function initBullets(slider) {
     progressbarFillClass: `${slider.container}__progressbar-fill`,
     clickableClass: `${slider.container}__clickable`,
     lockClass: `${slider.container}__lock`,
-    progressbarOppositeClass: `${slider.container}__progressbar-opposite`
+    progressbarOppositeClass: `${slider.container}__progressbar-opposite`,
   });
 }
 
@@ -113,6 +128,7 @@ function initMainSlider(slider) {
     navigation: {
       nextEl: `.${slider.container}__button--next`,
       prevEl: `.${slider.container}__button--prev`,
+      disabledClass: `${slider.container}__button--disabled`,
     },
     speed: 500,
     slidesPerView: 2,

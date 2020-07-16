@@ -34,7 +34,7 @@
       bottom: -2px;
       right: 0;
       width: 100%;
-      height: 120px;
+      height: 87px;
       background-color: white;
     }
   }
@@ -46,7 +46,6 @@
   &--contacts {
     padding-top: 156px;
     padding-bottom: 207px;
-
     @include before-clean {
       height: 332px;
     }
@@ -175,12 +174,18 @@
 
     &--blue {
       @include before-clean {
-        height: 68px;
+        height: 94px;
       }
     }
 
     &--about {
       padding-top: 0;
+    }
+
+    &--contacts {
+      @include before-clean {
+        height: 61px;
+      }
     }
   }
 

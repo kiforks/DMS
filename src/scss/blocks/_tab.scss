@@ -65,6 +65,7 @@
 
 .tab__bullet {
   outline: 0;
+  @include focus-opacity;
   @include transition;
   cursor: pointer;
   @include before {
@@ -74,6 +75,12 @@
   }
 
   &--active {
+    @include hover {
+      opacity: 1;
+    }
+    @include active {
+      opacity: 1;
+    }
     position: relative;
     display: inline-block;
     padding-left: 75px;
@@ -103,7 +110,7 @@
 
 .tab__description {
   @include reset-margin-text;
-  width: 87%;
+  width: 88%;
   padding-bottom: 45px;
   font-weight: 600;
 
@@ -133,12 +140,14 @@
 }
 
 .tab__photo {
-  position: relative;
   width: 50.1%;
   height: 518px;
   @include reset-margin-text;
 
   &--blue {
+    position: absolute;
+    right: 0;
+    top: 0;
     width: 51.2%;
     height: 564px;
   }
@@ -225,6 +234,14 @@
       border-left: 9px solid black;
     }
   }
+
+  &--disabled {
+    cursor: default;
+    background-color: $grey-light;
+    @include before-clean {
+      opacity: 50%;
+    }
+  }
 }
 
 .tab__contacts-list {
@@ -286,6 +303,11 @@
   @include before-clean {
     right: 15px;
   }
+}
+
+.tab__contacts-link {
+  @include color-focus();
+  @include transition;
 }
 
 //XXL
@@ -408,6 +430,7 @@
     margin-bottom: 70px;
 
     &--blue {
+      position: static;
       order: -1;
     }
   }
@@ -627,6 +650,14 @@
   .tab__list {
     &--contacts {
       padding-top: 0;
+    }
+  }
+
+  .tab__item {
+    padding-bottom: 25px;
+
+    &--contacts {
+      padding-bottom: 0;
     }
   }
 

@@ -11,6 +11,7 @@
   box-shadow: 16px 24px 24px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
   @include focus-opacity;
+  @include transition;
   @include before {
     @include center-transform-vertical;
     right: 60px;
@@ -36,12 +37,5 @@
       border: 7px solid transparent;
       border-left: 7px solid black;
     }
-  }
-}
-
-//Mobile
-@include mobile {
-  .button {
-    @include padding-vertical(10px);
   }
 }

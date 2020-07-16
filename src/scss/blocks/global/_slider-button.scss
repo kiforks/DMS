@@ -30,7 +30,16 @@
       border-right: 9px solid black;
     }
   }
+
+  &--disabled {
+    cursor: default;
+    background-color: $grey-light;
+    @include before-clean {
+      opacity: 50%;
+    }
+  }
 }
+
 
 //Tablet
 @include tablet {

@@ -225,6 +225,11 @@
 
 //Mobile
 @include mobile {
+  .footer {
+    font-size: 16px;
+    line-height: 120%;
+  }
+
   .footer__container {
     padding-top: 25px;
   }
@@ -236,6 +241,10 @@
   .footer__section {
     width: 100%;
     max-width: 100%;
+
+    &--nav {
+      margin-bottom: 45px;
+    }
   }
 
   .footer__logo {

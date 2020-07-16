@@ -172,6 +172,16 @@
   right: 134px;
 }
 
+.services__button {
+  &--disabled {
+    cursor: default;
+    background-color: $grey-light;
+    @include before-clean {
+      opacity: 50%;
+    }
+  }
+}
+
 .services__pagination {
   position: absolute;
   z-index: 10;
@@ -480,8 +490,9 @@
 //Mobile
 @include mobile {
   .services__wrapper {
-    width: 100%;
     align-self: flex-start;
+    width: 100%;
+    margin-bottom: 25px;
   }
 
   .services__name {
@@ -493,30 +504,20 @@
     margin-bottom: 15px;
   }
 
-  .services__link {
-    width: 100%;
-  }
-
   .services__item {
-    align-content: flex-start;
-    padding-bottom: 50px;
+    padding-bottom: 0;
     @include after-clean {
       display: none;
     }
 
     &--ua {
-      background-position: top 306px right 14px;
-      background-size: 213px;
-
-      .services__picture {
-        padding-top: 50px;
-        padding-bottom: 25px;
-      }
+      background-position: bottom 25px right;
+      background-size: 313px;
     }
 
     &--usa {
-      background-size: 200px;
-      background-position: bottom 180px right 15px;
+      background-size: 300px;
+      background-position: bottom 85px right -25px;
     }
 
     &--track {
@@ -531,21 +532,16 @@
     padding: 15px 0 0;
 
     &--car {
-      padding-top: 50px;
+      padding: 0;
+      margin-top: auto;
     }
-  }
-
-  .services__pagination {
-    bottom: 30px;
-    top: auto;
-    right: auto;
-    left: 0;
   }
 
   .services__quantity {
     justify-content: center;
     width: 100%;
-    padding-top: 64px;
+    margin-bottom: auto;
+    padding-top: 0;
   }
 
   .services__quantity-box {
@@ -560,5 +556,46 @@
   .services__quantity-description {
     font-size: 7px;
     letter-spacing: 0;
+  }
+
+  .services__buttons {
+    display: none;
+  }
+
+  .services__pagination {
+    position: static;
+    @include flex;
+    justify-content: center;
+    padding-left: 0;
+    @include padding-vertical(15px);
+    @include before-clean {
+      display: none;
+    }
+  }
+
+  .services__bullet {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    background-color: transparent;
+    border: 2px solid $grey-light;
+    border-radius: 50%;
+
+    &--active {
+      position: relative;
+      @include before {
+        @include center-transform;
+        z-index: 10;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: $grey-light;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }

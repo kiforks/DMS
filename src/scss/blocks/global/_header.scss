@@ -1,5 +1,5 @@
 .header {
-  position: absolute;
+  height: 100vh;
   z-index: 1000;
   top: 0;
   left: 0;
@@ -15,8 +15,8 @@
   background-color: $black;
 
   &--closed {
-    position: static;
-    padding-top: 29px;
+    height: auto;
+    padding-top: 13px;
     padding-bottom: 0;
 
     .header__list-box {
@@ -39,6 +39,7 @@
       width: auto;
       align-self: flex-start;
       padding-top: 5px;
+      padding-bottom: 25px;
     }
 
     .header__nav {
@@ -47,7 +48,9 @@
     }
 
     .header__logo {
+      display: block;
       width: 383px;
+      cursor: pointer;
     }
 
     .header__buttons {
@@ -142,7 +145,6 @@
 }
 
 .header__logo {
-  @include reset-margin-text;
   width: 0;
   height: 0;
 }
@@ -387,6 +389,12 @@
   @include color-focus();
 }
 
+.header__call-link,
+.header__phone {
+  @include color-focus();
+  @include transition;
+}
+
 //Laptop
 @include laptop {
   .header {
@@ -544,6 +552,12 @@
 //Mobile
 @include mobile {
   .header {
+    position: absolute;
+    height: auto;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
     font-size: 18px;
     line-height: 21px;
     padding-bottom: 0;
@@ -585,6 +599,7 @@
 
 
     &--closed {
+      position: static;
       padding-top: 10px;
       padding-bottom: 10px;
 
