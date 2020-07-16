@@ -11,9 +11,12 @@
   background-color: $black;
 
   &--closed {
+    position: relative;
+    z-index: 10;
     height: auto;
     padding-top: 27px;
     padding-bottom: 0;
+    background-color: transparent;
 
     .header__list-box {
       visibility: hidden;

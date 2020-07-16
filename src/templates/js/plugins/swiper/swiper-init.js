@@ -210,8 +210,8 @@ const mainSlider = {
 
 
 initMainSlider(mainSlider);
-initServices(services);
-initServices(gallery);
+// initServices(services);
+// initServices(gallery);
 initBullets(tabMain);
 initBullets(tabBlue);
 initBullets(tabAbout);
