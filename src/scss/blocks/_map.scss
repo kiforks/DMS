@@ -1,0 +1,63 @@
+.map {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 162px;
+  width: 47.6%;
+  height: 564px;
+  background-color: transparent;
+  background-image: url('../img/main/tab/contacts/map.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left top;
+}
+
+.map__link {
+  position: absolute;
+  bottom: 83px;
+  @include center-transform-horizon;
+  z-index: 10;
+  @include padding-horizon(45px, 25px);
+  @include before-clean {
+    right: 15px;
+  }
+}
+
+//Desktop
+@include desktop {
+  .map {
+    height: 450px;
+  }
+
+  .map__link {
+    font-size: 14px;
+    line-height: 120%;
+  }
+}
+
+//Tablet
+@include tablet {
+  .map {
+    top: 0;
+    right: auto;
+    left: 30px;
+    height: 400px;
+    width: 708px;
+  }
+}
+
+//Mobile
+@include mobile {
+  .map {
+    left: 0;
+    right: 0;
+    height: 200px;
+    width: 100%;
+    @include padding-mobile;
+  }
+
+  .map__link {
+    width: 280px;
+    bottom: 25px;
+  }
+}

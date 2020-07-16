@@ -1,9 +1,5 @@
 .header {
   height: 100vh;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  right: 0;
   padding-top: 34px;
   padding-bottom: 115px;
   color: $grey;
@@ -16,7 +12,7 @@
 
   &--closed {
     height: auto;
-    padding-top: 13px;
+    padding-top: 27px;
     padding-bottom: 0;
 
     .header__list-box {
@@ -463,6 +459,19 @@
 
     &--auto {
       padding-top: 0;
+    }
+  }
+}
+
+//Desktop
+@include desktop {
+  .header__item {
+    margin-bottom: 25px;
+  }
+
+  .header__list {
+    &--languages {
+      padding-top: 15px;
     }
   }
 }

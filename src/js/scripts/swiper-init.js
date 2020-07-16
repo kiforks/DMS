@@ -3,7 +3,8 @@ function initServices(slider) {
     return;
   }
 
-  let services = new Swiper(`.${slider.container}`, {
+
+  let services = new Swiper(`.${slider.containerClass}`, {
     pagination: {
       el: `.${slider.container}__pagination`,
       type: `fraction`,
@@ -168,7 +169,13 @@ function initMainSlider(slider) {
 }
 
 const services = {
-  container: 'services'
+  container: 'services',
+  containerClass: 'services'
+};
+
+const gallery = {
+  container: 'gallery',
+  containerClass: 'gallery'
 };
 
 const tabMain = {
@@ -204,6 +211,7 @@ const mainSlider = {
 
 initMainSlider(mainSlider);
 initServices(services);
+initServices(gallery);
 initBullets(tabMain);
 initBullets(tabBlue);
 initBullets(tabAbout);
