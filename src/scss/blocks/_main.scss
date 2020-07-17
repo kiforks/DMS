@@ -70,14 +70,6 @@
   .main__wish {
     padding: 25px 0 100px;
   }
-
-  .main__services {
-    &--about {
-      @include after-clean {
-        height: 140px;
-      }
-    }
-  }
 }
 
 
@@ -102,25 +94,11 @@
     padding-top: 0;
     padding-bottom: 75px;
   }
-
-  .main__services {
-    &--about {
-      @include after-clean {
-        height: 145px;
-      }
-    }
-  }
 }
 
 
 //Tablet
 @include tablet {
-  .main__services {
-    @include after-clean {
-      height: 51px;
-    }
-  }
-
   .main__tab {
     padding-top: 30px;
     padding-bottom: 15px;
@@ -161,9 +139,6 @@
 @include mobile {
   .main__services {
     margin-bottom: 25px;
-    @include after-clean {
-      display: none;
-    }
   }
 
   .main__tab {

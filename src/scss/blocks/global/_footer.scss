@@ -195,6 +195,10 @@
 
 //Tablet min-max
 @include min-max-tablet {
+  .footer {
+    font-size: 14px;
+  }
+
   .footer__services-item {
     padding-left: 0;
     padding-right: 67px;
@@ -219,6 +223,10 @@
     padding-right: 67px;
     background-position: right top;
     text-align: right;
+  }
+
+  .footer__copyright {
+    font-size: 12px;
   }
 }
 

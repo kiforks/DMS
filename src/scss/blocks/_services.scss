@@ -20,6 +20,13 @@
   width: 100%;
 }
 
+.services__list {
+  &--gallery {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
 .services__item {
   position: relative;
   @include flex;
@@ -62,12 +69,25 @@
       transform: rotate(-14.21deg);
     }
   }
+
+  &--gallery {
+    width: 33%;
+  }
+}
+
+.services__gallery {
+  padding-top: 134px;
+  width: 66.3%;
 }
 
 .services__inner {
   @include flex-column;
   width: 41%;
   padding-top: 110px;
+
+  &--gallery {
+    width: 100%;
+  }
 }
 
 .services__name {
@@ -108,6 +128,17 @@
     height: 100%;
     background-color: $dark-blue;
   }
+
+  &--gallery {
+    @include before-clean {
+      z-index: 0;
+    }
+  }
+}
+
+.services__title-blue {
+  position: relative;
+  z-index: 10;
 }
 
 .services__description {
@@ -263,6 +294,12 @@
 
 //XXL
 @include desktop-xxl {
+  .services {
+    @include after-clean {
+      height: 140px;
+    }
+  }
+
   .services__inner {
     padding-top: 50px;
   }
@@ -319,6 +356,12 @@
 
 //Desktop
 @include desktop {
+  .services {
+    @include after-clean {
+      height: 145px;
+    }
+  }
+
   .services,
   .services__item {
     @include before-clean {
@@ -347,6 +390,10 @@
 
     &--usa {
       background-position: right 50px bottom 71px;
+    }
+
+    &--gallery {
+      overflow: visible;
     }
   }
 
@@ -382,12 +429,25 @@
       margin-right: 5px;
     }
   }
+
+  .services__link {
+    &--gallery {
+      background-position: left 55px center;
+      @include padding-horizon(70px, 118px);
+      @include before-clean {
+        right: 35px;
+      }
+    }
+  }
 }
 
 //Tablet
 @include tablet {
   .services {
     margin-top: -115px;
+    @include after-clean {
+      height: 51px;
+    }
   }
 
   .services,
@@ -493,6 +553,14 @@
   .services__current {
     font-size: 16px;
   }
+
+  .services__gallery {
+    padding-top: 125px;
+  }
+
+  .services__inner {
+    padding-top: 22px;
+  }
 }
 
 //Mobile
@@ -504,8 +572,24 @@
     }
   }
 
+  .services {
+    @include after-clean {
+      display: none;
+    }
+
+    &--gallery {
+      @include before-clean {
+        height: 31px;
+      }
+    }
+  }
+
   .services__container {
     padding-right: 0;
+
+    &--gallery {
+      padding-right: $mobile-padding;
+    }
   }
 
   .services__item {
@@ -541,6 +625,16 @@
 
     &--ua {
       background-position: right 29px bottom 108px;
+    }
+
+    &--gallery {
+      width: 100%;
+      padding-right: 0;
+      padding-bottom: 0;
+      margin-bottom: 20px;
+      @include before-clean {
+        display: none;
+      }
     }
   }
 
@@ -627,5 +721,14 @@
     &:last-child {
       margin-right: 0;
     }
+  }
+
+  .services__gallery {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .services__list {
+    flex-wrap: wrap;
   }
 }

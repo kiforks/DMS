@@ -1,0 +1,25 @@
+.main-about__services {
+  margin-bottom: 86px;
+}
+
+
+//Desktop
+@include desktop {
+  .main-about__services {
+    margin-bottom: 35px;
+  }
+}
+
+//Tablet
+@include tablet {
+  .main-about__services {
+    margin-bottom: 20px;
+  }
+}
+
+//Mobile
+@include mobile {
+  .main-about__services {
+    margin-bottom: 15px;
+  }
+}

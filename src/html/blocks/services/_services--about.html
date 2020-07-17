@@ -1,25 +1,21 @@
-<section class="main__services main__services--about">
-
-  <h2 class="visually-hidden">Наші послуги</h2>
-
-  <div class="container-left main__about-container">
-
+<section class="main-about__services services services--gallery">
+  <h2 class="visually-hidden">Галерея</h2>
+  <div class="container-left services__container services__container--gallery">
     <!-- Swiper -->
-    <div class="services swiper-no-swiping">
-      <section class="services__list">
-        <div class="services__item services__item--about">
-          <div class="services__wrapper services__wrapper--about">
+    <div class="services__wrapper services__wrapper--gallery">
+      <section class="services__list services__list--gallery">
+        <div class="services__item services__item--gallery">
+          <div class="services__inner services__inner--gallery">
             <p class="services__name">DMS autogroup llc</p>
-            <h3 class="services__title">Про нас</h3>
-            <p class="services__description services__description--about">DMS AUTOGROUP LLC - компанія з продажу авто із США</p>
-            <a href="#" class="services__link services__link--car button">Підібрати авто</a>
+            <h3 class="services__title services__title--gallery">
+              <span class="services__title-blue">Про нас</span>
+            </h3>
+            <p class="services__description">DMS AUTOGROUP LLC - компанія з продажу авто із США</p>
+            <a href="#" class="services__link services__link--car services__link--gallery button">Підібрати авто</a>
           </div>
-          <include src="src/html/blocks/_gallery.html"></include>
         </div>
+        <include src="src/html/blocks/gallery/_gallery.html"></include>
       </section>
     </div>
-
   </div>
-
-
 </section>

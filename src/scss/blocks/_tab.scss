@@ -119,7 +119,6 @@
 .tab__description {
   @include reset-margin-text;
   width: 88%;
-  padding-bottom: 45px;
   font-weight: 600;
 
   &--blue {
@@ -130,6 +129,10 @@
 
   &--contacts {
     margin-bottom: 0;
+  }
+
+  &--story {
+    width: 100%;
   }
 }
 
@@ -318,6 +321,11 @@
   .tab__page {
     right: 50px;
   }
+
+  .tab__description {
+    font-size: 20px;
+    line-height: 120%;
+  }
 }
 
 
@@ -339,6 +347,7 @@
   }
 
   .tab__wrapper {
+    padding-top: 55px;
     padding-left: 40px;
 
     &--blue {
@@ -397,6 +406,10 @@
   .tab__page-current {
     font-size: 10px;
     line-height: 120%;
+  }
+
+  .tab__subtitle {
+    margin-bottom: 20px;
   }
 }
 
@@ -575,7 +588,7 @@
     position: static;
     order: -1;
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 28px;
 
     &--contacts {

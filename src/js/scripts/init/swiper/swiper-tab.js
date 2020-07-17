@@ -78,10 +78,17 @@ const tabContacts = {
   textClass: 'tab__text--contacts'
 };
 
+const tabStory = {
+  container: 'tab',
+  containerClass: 'tab--story',
+  textClass: 'tab__text--story'
+};
+
 
 initBullets(tabMain);
 initBullets(tabBlue);
 initBullets(tabAbout);
 initBullets(tabContacts);
+initBullets(tabStory);
 
 
