@@ -41,12 +41,16 @@ function initServices(slider) {
     progressbarOppositeClass: `${slider.mainClass}__progressbar-opposite`,
     breakpoints: {
       320: {
+        spaceBetween: 20,
+        autoHeight: true,
         pagination: {
           type: 'bullets',
           clickable: true
         }
       },
       768: {
+        spaceBetween: 60,
+        autoHeight: false,
         pagination: {
           type: 'fraction'
         }
