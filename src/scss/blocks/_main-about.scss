@@ -2,11 +2,19 @@
   margin-bottom: 86px;
 }
 
+.main-about__tab {
+  margin-bottom: 112px;
+}
+
 
 //Desktop
 @include desktop {
   .main-about__services {
     margin-bottom: 35px;
+  }
+
+  .main-about__tab {
+    margin-bottom: 85px;
   }
 }
 
@@ -15,11 +23,19 @@
   .main-about__services {
     margin-bottom: 20px;
   }
+
+  .main-about__tab {
+    margin-bottom: 30px;
+  }
 }
 
 //Mobile
 @include mobile {
   .main-about__services {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+  }
+
+  .main-about__tab {
+    margin-bottom: 20px;
   }
 }

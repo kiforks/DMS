@@ -12,7 +12,7 @@
 .slider__wrapper {
   @include flex-column;
   align-items: center;
-  width: 800px;
+  width: 830px;
   @include center-margin;
   margin-bottom: 77px;
 
@@ -34,6 +34,10 @@
   color: $black;
 
   &--car {
+    padding-left: 75px;
+  }
+
+  &--advantages {
     padding-left: 75px;
   }
 }
