@@ -1,4 +1,5 @@
 .footer {
+  position: relative;
   font-weight: 600;
   font-size: 16px;
   line-height: 22px;
@@ -158,6 +159,57 @@
   @include color-focus();
 }
 
+.footer__button-up {
+  position: absolute;
+  top: -35px;
+  right: 357px;
+  z-index: 10;
+  display: inline-block;
+  width: 77px;
+  height: 70px;
+  background-color: white;
+  box-shadow: -16px -24px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  cursor: pointer;
+  @include before {
+    top: 20px;
+    z-index: 10;
+    @include center-transform-horizon;
+    background-color: transparent;
+    border: 9px solid transparent;
+    border-bottom: 9px solid $black;
+  }
+}
+
+.form-window__button {
+  @include focus-opacity;
+  @include transition;
+}
+
+
+//Desktop
+@include desktop {
+  .footer__button-up {
+    right: 170px;
+  }
+}
+
+
+//Tablet
+@include tablet {
+  .footer__button-up {
+    top: -25px;
+    right: 120px;
+    width: 50px;
+    height: 50px;
+    box-shadow: -6px -12px 12px rgba(0, 0, 0, 0.08);
+    @include before-clean {
+      top: 13px;
+    }
+  }
+}
+
+
 //Tablet
 @include tablet {
   .footer {
@@ -257,5 +309,9 @@
 
   .footer__logo {
     width: 200px;
+  }
+
+  .footer__button-up {
+    right: 90px;
   }
 }

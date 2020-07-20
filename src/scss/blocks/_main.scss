@@ -9,7 +9,7 @@
     background-image: url('../img/main/tab/buy/background.png'),
                       linear-gradient(180deg, #121773 0%, #0D1038 100%);
     background-repeat: no-repeat, no-repeat;
-    background-size: 835px, cover;
+    background-size: 949px, cover;
     background-position: left 403px top, left top;
     @include before {
       left: 0;
@@ -40,7 +40,7 @@
   padding-top: 115px;
 
   &--car {
-    padding-top: 182px;
+    padding-top: 184px;
     padding-bottom: 0;
   }
 }
@@ -131,6 +131,12 @@
 
   .main__wish {
     padding-bottom: 50px;
+  }
+
+
+  .main__container-contacts {
+    position: relative;
+    padding-top: 430px;
   }
 }
 

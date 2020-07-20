@@ -3,6 +3,10 @@
   @include reset-list;
 }
 
+.tab__list {
+  height: auto !important;
+}
+
 .tab__page {
   position: absolute;
   display: inline-block;
@@ -118,10 +122,11 @@
 
 .tab__description {
   @include reset-margin-text;
-  width: 88%;
+  width: 84%;
   font-weight: 600;
 
   &--blue {
+    width: 87%;
     padding-bottom: 0;
     margin-bottom: 94px;
     color: $grey-lighter-2;
@@ -134,12 +139,22 @@
   &--story {
     width: 100%;
   }
+
+  &--selection {
+    margin-bottom: 29px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .tab__item {
   @include flex;
   align-self: flex-start;
   padding-bottom: 50px;
+  height: 1px;
+  width: 0;
 
   &--blue {
     padding-bottom: 0;
@@ -147,6 +162,8 @@
 
   &--active {
     z-index: 100;
+    height: auto;
+    width: auto;
   }
 }
 
@@ -182,6 +199,12 @@
 
   &--contacts {
     padding-bottom: 0;
+  }
+
+  &--selection {
+    padding-bottom: 83px;
+    padding-top: 126px;
+    padding-right: 70px;
   }
 }
 
@@ -298,6 +321,11 @@
   @include transition;
 }
 
+.tab__selection {
+  padding-bottom: 117px;
+}
+
+
 //XXL
 @include desktop-xxl {
   .tab__pagination {
@@ -366,6 +394,10 @@
     &--contacts {
       margin-bottom: 0;
     }
+
+    &--selection {
+      margin-bottom: 25px;
+    }
   }
 
   .tab__photo {
@@ -382,6 +414,11 @@
 
   .tab__slide-buttons {
     bottom: 35px;
+
+    &--selection {
+      bottom: 0;
+      left: 40px;
+    }
   }
 
   .tab__contacts-list {
@@ -411,10 +448,20 @@
   .tab__subtitle {
     margin-bottom: 20px;
   }
+
+  .tab__selection {
+    padding-bottom: 40px;
+  }
 }
 
 //Tablet
 @include tablet {
+  .tab {
+    &--selection {
+      margin-bottom: 0;
+    }
+  }
+
   .tab__photo {
     width: 100%;
     height: 400px;
@@ -519,11 +566,6 @@
     }
   }
 
-  .main__container-contacts {
-    position: relative;
-    padding-top: 430px;
-  }
-
   .tab__list {
     &--contacts {
       padding-top: 40px;
@@ -539,7 +581,18 @@
   }
 
   .tab__contacts {
-    padding-bottom: 145px;
+    padding-bottom: 90px;
+  }
+
+  .tab__selection {
+    padding-bottom: 65px;
+  }
+
+  .tab__slide-buttons {
+    &--selection {
+      left: 0;
+      bottom: 11px;
+    }
   }
 }
 
@@ -567,6 +620,10 @@
   .tab__description {
     margin-bottom: 25px;
     font-size: 14px;
+
+    &--selection {
+      margin-bottom: 5px;
+    }
   }
 
   .tab__button-box {
