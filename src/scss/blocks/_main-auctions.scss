@@ -1,0 +1,26 @@
+.main-auctions__services {
+  margin-bottom: 63px;
+}
+
+
+//Desktop
+@include desktop {
+  .main-auctions__services {
+    margin-bottom: 45px;
+  }
+}
+
+
+//Tablet
+@include tablet {
+  .main-auctions__services {
+    margin-bottom: 30px;
+  }
+}
+
+//Mobile
+@include tablet {
+  .main-auctions__services {
+    margin-bottom: 0;
+  }
+}

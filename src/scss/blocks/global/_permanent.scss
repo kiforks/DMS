@@ -81,3 +81,12 @@ button {
   color: white;
   background-color: #004fe4;
 }
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+footer {
+  z-index: 10;
+}

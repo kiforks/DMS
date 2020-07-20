@@ -84,11 +84,27 @@ const tabStory = {
   textClass: 'tab__text--story'
 };
 
+const tabCopart = {
+  container: 'tab',
+  containerClass: 'tab--copart',
+  textClass: 'tab__text--copart'
+};
+
+const tabIaai = {
+  container: 'tab',
+  containerClass: 'tab--iaai',
+  textClass: 'tab__text--iaai'
+};
+
+
 
 initBullets(tabMain);
 initBullets(tabBlue);
 initBullets(tabAbout);
 initBullets(tabContacts);
 initBullets(tabStory);
+initBullets(tabCopart);
+initBullets(tabIaai);
+
 
 
