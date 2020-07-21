@@ -148,11 +148,13 @@
     margin-bottom: 0;
   }
 
-  &--story {
+  &--story,
+  &--purchase {
     width: 100%;
   }
 
-  &--selection {
+  &--selection,
+  &--purchase {
     margin-bottom: 29px;
 
     &:last-child {
@@ -162,6 +164,10 @@
 
   &--copart {
     width: 97%;
+  }
+
+  &--info {
+    margin-bottom: 62px;
   }
 }
 
@@ -246,6 +252,30 @@
   margin-right: 116px;
   @include before-clean {
     right: 31px;
+  }
+
+  &--info {
+    padding-left: 12.5%;
+    padding-right: 11.3%;
+    margin-right: 20px;
+    background-position: left 16% center;
+    background-repeat: no-repeat;
+    background-size: 34px;
+    @include before-clean {
+      right: 50px;
+    }
+  }
+
+  &--viber {
+    background-image: url('../img/svg/viber.svg');
+  }
+
+  &--whatsup {
+    background-image: url('../img/svg/whatsup.svg');
+  }
+
+  &:last-child {
+    margin-right: 0;
   }
 }
 
@@ -350,6 +380,10 @@
   padding-bottom: 117px;
 }
 
+.tab__link-phone {
+  @include focus-opacity;
+}
+
 
 //XXL
 @include desktop-xxl {
@@ -378,6 +412,17 @@
   .tab__description {
     font-size: 20px;
     line-height: 120%;
+  }
+
+  .tab__link {
+    &--info {
+      @include padding-horizon(50px);
+      background-position: left 10px center;
+      background-size: 25px;
+      @include before-clean {
+        right: 15px;
+      }
+    }
   }
 }
 
@@ -409,7 +454,7 @@
   }
 
   .tab__description {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 120%;
 
     &--blue {
@@ -420,7 +465,8 @@
       margin-bottom: 0;
     }
 
-    &--selection {
+    &--selection,
+    &--purchase {
       margin-bottom: 25px;
     }
   }
@@ -431,6 +477,16 @@
 
   .tab__link {
     margin-right: 65px;
+
+    &--info {
+      padding: 10px 36px;
+      margin-right: 5px;
+      @include before-clean {
+        right: 5px;
+      }
+      background-size: 20px;
+      background-position: left 10px center;
+    }
   }
 
   .tab__contacts {
@@ -555,11 +611,22 @@
     padding-bottom: 0;
     margin-bottom: 20px;
     font-size: 18px;
+
+    &--info {
+      margin-bottom: 30px;
+    }
   }
 
   .tab__link {
     margin-right: 75px;
     @include padding-horizon(35px, 15px);
+
+    &--info {
+      @include padding-horizon(40px);
+      @include before-clean {
+        right: 15px;
+      }
+    }
   }
 
   .tab__button-description {
@@ -622,6 +689,10 @@
 
   .tab__selection {
     padding-bottom: 65px;
+
+    &--info {
+      padding-bottom: 0;
+    }
   }
 
   .tab__slide-buttons {
@@ -638,6 +709,10 @@
   .tab {
     @include flex;
     padding-top: 0;
+
+    &--info {
+      margin-bottom: 25px;
+    }
   }
 
   .tab__photo {
@@ -657,17 +732,15 @@
     margin-bottom: 25px;
     font-size: 14px;
 
-    &--selection {
-      margin-bottom: 5px;
+    &--selection,
+    &--purchase {
+      margin-bottom: 15px;
     }
   }
 
   .tab__button-box {
     justify-content: space-between;
-
-    &--padding {
-      padding-bottom: 25px;
-    }
+    padding-bottom: 25px;
   }
 
   .tab__link {
@@ -675,6 +748,19 @@
     @include padding-horizon(30px, 10px);
     font-size: 12px;
     line-height: 120%;
+
+    &--info {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 15px 55px;
+      font-size: 16px;
+      text-align: center;
+      background-size: 25px;
+      background-position: left 25px center;
+      @include before-clean {
+        right: 35px;
+      }
+    }
   }
 
   .tab__button-description {
@@ -685,7 +771,7 @@
     position: static;
     order: -1;
     margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 28px;
 
     &--contacts {
@@ -752,10 +838,7 @@
 
   .tab__wrapper {
     padding-bottom: 0;
-
-    &--contacts {
-      padding-right: 0;
-    }
+    padding-right: 0;
   }
 
   .tab__button {
@@ -769,6 +852,12 @@
       @include before-clean {
         left: 5px;
       }
+    }
+  }
+
+  .tab__selection {
+    &--info {
+      padding-bottom: 0;
     }
   }
 }

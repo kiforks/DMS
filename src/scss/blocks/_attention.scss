@@ -1,0 +1,187 @@
+.attention {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: $grey--darker;
+
+  strong {
+    font-weight: bold;
+    color: $black;
+  }
+}
+
+.attention__title {
+  @include reset-margin-text;
+  padding-left: 24px;
+  margin-bottom: 37px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $black;
+
+  &--car {
+    padding-left: 75px;
+  }
+
+  &--advantages {
+    padding-left: 75px;
+  }
+}
+
+.attention__title-span {
+  position: relative;
+  display: inline-block;
+  @include before {
+    left: -75px;
+    z-index: 10;
+    @include center-transform-vertical;
+    width: 53px;
+    height: 1px;
+    background-color: $black;
+  }
+}
+
+.attention__subtitle {
+  @include reset-margin-text;
+  @include padding-horizon(30px);
+  margin-bottom: 29px;
+}
+
+.attention__description {
+  @include reset-margin-text;
+  width: 72%;
+  @include center-margin;
+  padding-right: 42px;
+  margin-bottom: 40px;
+  font-weight: 600;
+  color: $black;
+  text-align: center;
+
+  &--auctions {
+    padding-right: 20px;
+  }
+}
+
+.attention__text {
+  @include reset-margin-text;
+  @include before-clean {
+    content: '';
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: -3px;
+    width: 9px;
+    height: 9px;
+    border: 9px solid transparent;
+    border-left: 9px solid $black;
+  }
+}
+
+.attention__list {
+  @include reset-list;
+  height: 240px;
+  margin-bottom: 30px;
+  overflow-y: scroll;
+}
+
+.attention__item {
+  margin-bottom: 30px;
+}
+
+//Desktop
+@include desktop {
+  .attention {
+    font-size: 18px;
+    line-height: 160%;
+  }
+
+  .attention__title {
+    margin-bottom: 25px;
+    font-size: 12px;
+    line-height: 120%;
+  }
+
+  .attention__description {
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 35px;
+    line-height: 120%;
+  }
+
+  .attention__subtitle,
+  .attention__item {
+    margin-bottom: 15px;
+  }
+
+  .attention__list {
+    height: 220px;
+  }
+}
+
+
+//Tablet
+@include tablet {
+  .attention__title {
+    width: 100%;
+    padding-left: 0;
+    margin-bottom: 25px;
+    font-size: 16px;
+    line-height: 120%;
+  }
+
+  .attention__title-span {
+    @include before-clean {
+      width: 35px;
+      left: -50px;
+    }
+  }
+
+  .attention__description {
+    margin-bottom: 30px;
+  }
+
+  .attention__list {
+    height: 210px;
+  }
+}
+
+
+//Mobile
+@include mobile {
+  .attention {
+    font-size: 14px;
+    line-height: 120%;
+  }
+
+  .attention__title {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+  .attention__title-span {
+    @include before-clean {
+      width: 20px;
+      left: -30px;
+    }
+  }
+
+  .attention__description {
+    padding-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .attention__text {
+    @include before-clean {
+      margin-right: 5px;
+      margin-bottom: 0;
+      width: 6px;
+      height: 6px;
+      border: 6px solid transparent;
+      border-left: 6px solid $black;
+    }
+  }
+
+}

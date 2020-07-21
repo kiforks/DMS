@@ -15,6 +15,16 @@
     height: 457px;
     background-color: white;
   }
+
+  &--info {
+    @include before-clean {
+      height: 331px;
+    }
+  }
+}
+
+.selection__container {
+  @include flex-column;
 }
 
 //XXL
@@ -23,6 +33,13 @@
     padding-bottom: 150px;
     @include before-clean {
       height: 274px;
+    }
+
+    &--info {
+      padding-bottom: 0;
+      @include before-clean {
+        height: 238px;
+      }
     }
   }
 }
@@ -37,6 +54,12 @@
     @include before-clean {
       height: 45px;
     }
+
+    &--info {
+      @include before-clean {
+        height: 147px;
+      }
+    }
   }
 }
 
@@ -47,6 +70,13 @@
     @include before-clean {
       height: 523px;
     }
+
+    &--info {
+      margin-bottom: 0;
+      @include before-clean {
+        height: 446px;
+      }
+    }
   }
 }
 
@@ -56,6 +86,12 @@
     padding-top: 15px;
     @include before-clean {
       height: 466px;
+    }
+
+    &--info {
+      @include before-clean {
+        height: 240px;
+      }
     }
   }
 }

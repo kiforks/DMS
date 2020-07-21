@@ -108,6 +108,18 @@ const tabManheim = {
   textClass: 'tab__text--manheim'
 };
 
+const tabPurchase = {
+  container: 'tab',
+  containerClass: 'tab--purchase',
+  textClass: 'tab__text--purchase'
+};
+
+const tabInfo = {
+  container: 'tab',
+  containerClass: 'tab--info',
+  textClass: 'tab__text--info'
+};
+
 
 initBullets(tabMain);
 initBullets(tabBlue);
@@ -118,6 +130,8 @@ initBullets(tabCopart);
 initBullets(tabIaai);
 initBullets(tabAdesa);
 initBullets(tabManheim);
+initBullets(tabPurchase);
+initBullets(tabInfo);
 
 
 

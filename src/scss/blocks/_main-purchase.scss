@@ -1,0 +1,61 @@
+.main-purchase__services {
+  margin-bottom: 63px;
+}
+
+.main-purchase__tab {
+  margin-bottom: 76px;
+}
+
+.main-purchase__attention {
+  width: 63%;
+  padding-left: 50px;
+  margin-bottom: 160px;
+  @include center-margin;
+}
+
+.main-purchase__selection {
+  padding-bottom: 97px;
+}
+
+
+//Desktop
+@include desktop {
+  .main-purchase__tab {
+    margin-bottom: 30px;
+  }
+}
+
+
+//Tablet
+@include tablet {
+  .main-purchase {
+    margin-bottom: 65px;
+  }
+
+  .main-purchase__services {
+    margin-bottom: 0;
+  }
+
+  .main-purchase__tab {
+    margin-bottom: 0;
+  }
+
+  .main-purchase__attention {
+    padding-left: 0;
+    margin-bottom: 45px;
+    width: 500px;
+  }
+}
+
+
+//Mobile
+@include mobile {
+  .main-purchase__services {
+    margin-bottom: 20px;
+  }
+
+  .main-purchase__attention {
+    width: 100%;
+    @include padding-mobile;
+  }
+}
