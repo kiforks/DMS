@@ -461,6 +461,14 @@
         right: 35px;
       }
     }
+
+    &--delivery {
+      @include padding-horizon(70px, 90px);
+      background-position: left 40px center;
+      @include before-clean {
+        right: 30px;
+      }
+    }
   }
 }
 
@@ -501,6 +509,10 @@
 
     &--ua {
       background-position: right 36px bottom 15px;
+    }
+
+    &--delivery {
+      padding-right: 18px;
     }
   }
 

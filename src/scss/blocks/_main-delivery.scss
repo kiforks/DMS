@@ -1,0 +1,47 @@
+.main-delivery__services {
+  margin-bottom: 63px;
+}
+
+.main-delivery__tab {
+  &--delivery {
+    margin-bottom: 93px;
+  }
+
+  &--speed {
+    margin-bottom: 112px;
+  }
+}
+
+//Desktop
+@include desktop {
+  .main-delivery__tab {
+    &--delivery {
+      margin-bottom: 45px;
+    }
+
+    &--speed {
+      margin-bottom: 75px;
+    }
+  }
+}
+
+
+//Tablet
+@include tablet {
+  .main-delivery {
+    margin-bottom: 60px;
+  }
+
+  .main-delivery__services {
+    margin-bottom: 25px;
+  }
+}
+
+//Mobile
+@include mobile {
+  .main-delivery__tab {
+    &--delivery {
+      margin-bottom: 15px;
+    }
+  }
+}

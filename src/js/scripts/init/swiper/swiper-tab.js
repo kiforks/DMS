@@ -120,6 +120,24 @@ const tabInfo = {
   textClass: 'tab__text--info'
 };
 
+const tabDelivery = {
+  container: 'tab',
+  containerClass: 'tab--delivery',
+  textClass: 'tab__text--delivery'
+};
+
+const tabSpeed = {
+  container: 'tab',
+  containerClass: 'tab--speed',
+  textClass: 'tab__text--speed'
+};
+
+const tabPort = {
+  container: 'tab',
+  containerClass: 'tab--port',
+  textClass: 'tab__text--port'
+};
+
 
 initBullets(tabMain);
 initBullets(tabBlue);
@@ -132,6 +150,10 @@ initBullets(tabAdesa);
 initBullets(tabManheim);
 initBullets(tabPurchase);
 initBullets(tabInfo);
+initBullets(tabDelivery);
+initBullets(tabSpeed);
+initBullets(tabPort);
+
 
 
 

@@ -21,6 +21,13 @@
       height: 331px;
     }
   }
+
+  &--port {
+    padding-bottom: 97px;
+    @include before-clean {
+      height: 331px;
+    }
+  }
 }
 
 .selection__container {
@@ -35,7 +42,8 @@
       height: 274px;
     }
 
-    &--info {
+    &--info,
+    &--port {
       padding-bottom: 0;
       @include before-clean {
         height: 238px;
@@ -55,7 +63,8 @@
       height: 45px;
     }
 
-    &--info {
+    &--info,
+    &--port {
       @include before-clean {
         height: 147px;
       }
@@ -71,7 +80,8 @@
       height: 523px;
     }
 
-    &--info {
+    &--info,
+    &--port {
       margin-bottom: 0;
       @include before-clean {
         height: 446px;
@@ -88,7 +98,8 @@
       height: 466px;
     }
 
-    &--info {
+    &--info,
+    &--port {
       @include before-clean {
         height: 240px;
       }
