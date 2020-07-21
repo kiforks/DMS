@@ -206,6 +206,18 @@
   &--iaai {
     order: 2;
   }
+
+  &--auctions {
+    position: relative;
+    @include hover {
+      .tab__link {
+        &--auctions {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
 }
 
 .tab__wrapper {
@@ -276,6 +288,21 @@
 
   &:last-child {
     margin-right: 0;
+  }
+
+  &--auctions {
+    position: absolute;
+    z-index: 100;
+    width: 390px;
+    @include center-transform;
+    margin: 0;
+    padding-right: 50px;
+    visibility: hidden;
+    opacity: 0;
+    @include transition-fade;
+    @include before-clean {
+      right: 20px;
+    }
   }
 }
 
@@ -627,6 +654,10 @@
         right: 15px;
       }
     }
+
+    &--auctions {
+      width: 280px;
+    }
   }
 
   .tab__button-description {
@@ -760,6 +791,10 @@
       @include before-clean {
         right: 35px;
       }
+    }
+
+    &--auctions {
+      width: 250px;
     }
   }
 
