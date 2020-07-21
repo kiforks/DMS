@@ -37,7 +37,8 @@ const path = {
           fonts: sourceFolder + '/fonts/**/*.ttf',
           otf: sourceFolder + '/fonts/**/*.otf',
           svg: sourceFolder + '/img/**/icon-*.svg',
-          video: sourceFolder + '/video/**/*'
+          video: sourceFolder + '/video/**/*',
+          libs: sourceFolder + '/libs/**/*'
         },
         clean: './' + buildFolder + '/'
     };
@@ -260,6 +261,7 @@ function watchFiles() {
     gulp.watch([path.watch.fonts], woffConversion);
     gulp.watch([path.watch.otf], ttfConversion);
     gulp.watch([path.watch.video], videoBuild);
+    gulp.watch([path.watch.libs], libs);
 }
 
 
@@ -282,14 +284,15 @@ function libs() {
   return src(path.src.libs)
     .pipe(plumber())
     .pipe(dest(path.build.libs))
+    .pipe(browserSync.stream())
 }
 
 
 
 // Build
 const fonts = gulp.series(ttfConversion, woffConversion);
-const imageBuild = gulp.series(ignoreImagesBuild, sprite, imageSorting, /*retinaImages,  webpBuild,*/ images);
-const build = gulp.series(clean, gulp.series(imageBuild, videoBuild, css, html, /*uncssInit,*/ js, jsIgnoreBuild, libs, fonts));
+const imageBuild = gulp.series(ignoreImagesBuild, sprite, imageSorting, /* retinaImages,  webpBuild, */ images);
+const build = gulp.series(clean, gulp.series(imageBuild, videoBuild, css, html, /* uncssInit, */ js, jsIgnoreBuild, libs, fonts));
 const watch = gulp.parallel(watchFiles, serve);
 
 

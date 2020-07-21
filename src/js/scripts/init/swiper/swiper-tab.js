@@ -96,6 +96,17 @@ const tabIaai = {
   textClass: 'tab__text--iaai'
 };
 
+const tabAdesa = {
+  container: 'tab',
+  containerClass: 'tab--adesa',
+  textClass: 'tab__text--adesa'
+};
+
+const tabManheim = {
+  container: 'tab',
+  containerClass: 'tab--manheim',
+  textClass: 'tab__text--manheim'
+};
 
 
 initBullets(tabMain);
@@ -105,6 +116,9 @@ initBullets(tabContacts);
 initBullets(tabStory);
 initBullets(tabCopart);
 initBullets(tabIaai);
+initBullets(tabAdesa);
+initBullets(tabManheim);
+
 
 
 

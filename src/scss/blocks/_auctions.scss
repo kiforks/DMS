@@ -1,5 +1,13 @@
+.auctions {
+  @include reset-list;
+}
+
 .auctions__tab {
   margin-bottom: 150px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 //Desktop

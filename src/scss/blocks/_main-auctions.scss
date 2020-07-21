@@ -2,11 +2,30 @@
   margin-bottom: 63px;
 }
 
+.main-auctions__container {
+  margin-bottom: 116px;
+}
+
+
+//XXL
+@include desktop-xxl {
+  .main-about__auctions {
+    padding-bottom: 150px;
+    @include before-clean {
+      height: 274px;
+    }
+  }
+}
+
 
 //Desktop
 @include desktop {
   .main-auctions__services {
     margin-bottom: 45px;
+  }
+
+  .main-auctions__container {
+    margin-bottom: 80px;
   }
 }
 
@@ -16,11 +35,20 @@
   .main-auctions__services {
     margin-bottom: 30px;
   }
+
+  .main-auctions__container {
+    margin-bottom: 50px;
+  }
 }
 
+
 //Mobile
-@include tablet {
+@include mobile {
   .main-auctions__services {
     margin-bottom: 0;
+  }
+
+  .main-auctions__container {
+    margin-bottom: 20px;
   }
 }

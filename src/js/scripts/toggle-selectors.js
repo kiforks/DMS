@@ -43,3 +43,7 @@ function toggleSelectors(button, selector, accessibility = false, focus = false)
 
 toggleSelectors('header__toggle-button','header');
 toggleSelectors('header__toggle-button','main-body');
+toggleSelectors('services__link--car','modal');
+toggleSelectors('modal__button','modal');
+
+

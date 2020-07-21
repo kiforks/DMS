@@ -1,0 +1,46 @@
+<div class="modal modal-overlay modal--closed">
+  <form class="form-window modal__wrapper">
+    <h3 class="modal__title">Підбір авто</h3>
+    <p class="modal__description">Заповніть кілька параметрів і ми підберемо Вам 5 підходящих авто протягом 24 годин</p>
+    <button class="modal__button" type="button">
+      <span class="visually-hidden">Закрити вікно</span>
+    </button>
+    <ul class="form-window__list modal__list">
+      <li class="form-window__item modal__item">
+        <label for="full-name-modal" class="visually-hidden">
+          Імя та прізвище
+        </label>
+        <input type="text" class="form-window__input form-window__input--name" id="full-name-modal" placeholder="Ваше ім'я та прізвище">
+      </li>
+      <li class="form-window__item modal__item">
+        <label for="telephone-modal" class="visually-hidden">
+          Номер телефону
+        </label>
+        <input type="tel" class="form-window__input form-window__input--phone" id="telephone-modal" placeholder="Номер телефону">
+      </li>
+      <li class="form-window__item modal__item">
+        <label for="email-modal" class="visually-hidden">
+          E-mail
+        </label>
+        <input type="email" class="form-window__input form-window__input--email" id="email-modal" placeholder="E-mail">
+      </li>
+    </ul>
+    <div class="form-window__inner modal__inner">
+      <ul class="form-window__select form-window__select--car">
+        <li class="form-window__option form-window__option--car form-window__option--disabled">Cедан</li>
+        <li class="form-window__option form-window__option--car">Седан</li>
+        <li class="form-window__option form-window__option--car">Lorem</li>
+        <li class="form-window__option form-window__option--car">Ipsum</li>
+      </ul>
+      <ul class="form-window__select form-window__select--price">
+        <li class="form-window__option form-window__option--price form-window__option--disabled">До 7 000$</li>
+        <li class="form-window__option form-window__option--price">До 7 000$</li>
+        <li class="form-window__option form-window__option--price">До 8 000$</li>
+        <li class="form-window__option form-window__option--price">До 9 000$</li>
+      </ul>
+    </div>
+    <textarea name="wishes-modal" class="form-window__wishes modal__wishes" placeholder="Побажання (наприклад: комплектація чи ступінь пошкоджень)"></textarea>
+    <button class="form-window__button" type="submit">Надіслати</button>
+  </form>
+</div>
+
