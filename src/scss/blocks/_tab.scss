@@ -80,6 +80,14 @@
     }
   }
 
+  &--info {
+    .tab__bullet {
+      &:last-of-type {
+        display: none;
+      }
+    }
+  }
+
   &--contacts {
     .tab__bullet {
       margin-right: 130px;
@@ -180,6 +188,10 @@
 
   &--info {
     margin-bottom: 62px;
+
+    &:last-of-type {
+      margin-bottom: 62px;
+    }
   }
 
   &--port {
@@ -708,6 +720,10 @@
 
     &--info {
       margin-bottom: 30px;
+
+      &:last-of-type {
+        margin-bottom: 30px;
+      }
     }
   }
 

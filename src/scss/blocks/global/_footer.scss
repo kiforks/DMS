@@ -42,6 +42,21 @@
 .footer__item {
   margin-bottom: 30px;
 
+  &--active {
+    position: relative;
+    padding-left: 30px;
+    color: white;
+    @include before {
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 18px;
+      height: 18px;
+      border: 9px solid transparent;
+      border-left: 9px solid white;
+    }
+  }
+
   &:last-child {
     margin-bottom: 0;
   }

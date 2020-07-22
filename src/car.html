@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <title>Доставка</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <include src="src/html/templates/favicon.html"></include>
+  <include src="src/html/templates/fonts.html"></include>
+</head>
+<body class="main-body">
+<include src="src/html/templates/sprite.html"></include>
+<include src="src/html/blocks/_header.html"></include>
+<include src="src/html/blocks/form-window/_form-window--modal.html"></include>
+
+<main class="main-delivery">
+  <include src="src/html/blocks/services/_services--delivery.html"></include>
+  <include src="src/html/blocks/tab/_tab--delivery.html"></include>
+  <include src="src/html/blocks/tab/_tab--speed.html"></include>
+  <include src="src/html/blocks/tab/_tab--port.html"></include>
+</main>
+
+<include src="src/html/blocks/footer/_footer--delivery.html"></include>
+
+<!--JS-->
+<script src="libs/jquery-3.5.1.min.js"></script>
+<script src="js/plugins/swiper.js"></script>
+<script src="js/plugins/select.js"></script>
+<script src="js/plugins/responsive-textarea.js"></script>
+<script src="js/script.js"></script>
+<script>
+  objectFitImages();
+</script>
+</body>
+</html>
