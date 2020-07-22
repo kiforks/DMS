@@ -1,5 +1,5 @@
 .site-map {
-  width: 320px;
+  width: 600px;
   @include reset-list;
   @include center-margin;
   font-size: 35px;
@@ -10,4 +10,14 @@
 
 .site-map__item {
   @include focus-opacity;
+}
+
+
+//Mobile
+@include mobile {
+  .site-map {
+    width: 280px;
+    font-size: 16px;
+    line-height: 160%;
+  }
 }

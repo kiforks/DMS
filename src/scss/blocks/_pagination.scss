@@ -1,0 +1,125 @@
+.pagination {
+  @include flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1370px + ($tablet-padding * 2);
+  @include padding-tablet;
+  @include padding-vertical(55px);
+  @include center-margin;
+  font-size: 18px;
+  font-weight: bold;
+  color: $black;
+  text-transform: uppercase;
+  border-top: 1px solid #C5C5C5;
+  border-bottom: 1px solid #C5C5C5;
+}
+
+.pagination__show-more {
+  @include reset-margin-text;
+}
+
+.pagination__wrapper {
+  @include flex;
+  align-items: center;
+}
+
+.pagination__button {
+  display: inline-block;
+  width: 66px;
+  height: 60px;
+  margin-right: 10px;
+  box-shadow: -16px 24px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  background-color: #FDFDFD;
+  background-image: url('../img/svg/arrow.svg');
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: center;
+  cursor: pointer;
+  transition: transform $transition-delay ease;
+  @include hover {
+    transform: scale(0.95);
+    box-shadow: -14px 20px 20px rgba(0, 0, 0, 0.08);
+  }
+  @include active {
+    transform: scale(0.9);
+    opacity: $down-opacity;
+  }
+}
+
+.pagination__list {
+  @include flex;
+  @include reset-list;
+}
+
+.pagination__item {
+  display: flex;
+  align-items: center;
+  margin-right: 35px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &--points {
+    @include after-clean {
+      content: '...';
+      display: inline-block;
+      margin-left: 35px;
+    }
+  }
+}
+
+.pagination__link {
+  display: inline-block;
+  line-height: 100%;
+
+  &:not(.pagination__link--active) {
+    @include color-focus($grey-dark);
+  }
+
+  &--active {
+    color: #0F1355;
+    border-bottom: 1px solid #0F1355;
+    cursor: default;
+  }
+}
+
+//Tablet
+@include tablet {
+  .pagination {
+    width: $tablet-width;
+    @include padding-vertical(25px);
+  }
+}
+
+//Mobile
+@include mobile {
+  .pagination {
+    justify-content: center;
+    width: 100%;
+    @include padding-mobile;
+  }
+
+  .pagination__wrapper {
+    justify-content: center;
+    order: 2;
+    width: 100%;
+  }
+
+  .pagination__list {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .pagination__item {
+    margin-right: 43px;
+
+    &--points {
+      @include after-clean {
+        margin-left: 43px;
+      }
+    }
+  }
+}

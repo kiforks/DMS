@@ -1,0 +1,166 @@
+.car {
+  position: relative;
+  @include before {
+    left: 0;
+    right: 0;
+    top: 492px;
+    z-index: -1;
+    width: 100%;
+    height: 16%;
+    background-color: $grey-lighter;
+  }
+}
+
+.car__wrapper {
+  width: 100%;
+  max-width: 1370px + ($tablet-padding * 2);
+  @include center-margin;
+  @include padding-tablet;
+  padding-top: 43px;
+}
+
+.car__list {
+  @include flex;
+  justify-content: space-between;
+  width: 100%;
+  @include reset-list;
+  text-transform: uppercase;
+}
+
+.car__item {
+  width: 49%;
+  margin-bottom: 90px;
+}
+
+.car__photo {
+  @include reset-margin-text;
+  width: 100%;
+  margin-bottom: 41px;
+  height: 505px;
+}
+
+.car__image {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  @include object-fit(cover);
+}
+
+.car__inner {
+  @include flex;
+  justify-content: space-between;
+  width: 100%;
+  @include padding-horizon(57px, 48px);
+}
+
+.car__description {
+  @include reset-margin-text;
+  color: $black;
+  font-weight: bold;
+
+  &--doors {
+    font-weight: normal;
+  }
+
+  &--price {
+    width: 30%;
+    color: #0E1148;
+    text-align: right;
+  }
+
+  &--inner {
+    width: 65%;
+  }
+}
+
+
+//Desktop
+@include desktop {
+  .car {
+    @include before-clean {
+      top: 350px;
+    }
+  }
+
+  .car__list {
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  .car__photo {
+    height: 420px;
+    margin-bottom: 20px;
+  }
+
+  .car__inner {
+    @include padding-horizon(47px, 40px);
+  }
+}
+
+
+//Tablet
+@include tablet {
+  .car {
+    width: $tablet-width;
+    @include center-margin;
+    @include before-clean {
+      height: 350px;
+      top: 230px;
+    }
+  }
+
+  .car__list {
+    font-size: 12px;
+  }
+
+  .car__item {
+    margin-bottom: 30px;
+  }
+
+  .car__photo {
+    height: 260px;
+    margin-bottom: 20px;
+  }
+
+  .car__inner {
+    @include padding-horizon(17px, 10px);
+  }
+
+  .car__description {
+    &--inner {
+      width: 68%;
+    }
+  }
+}
+
+//Mobile
+@include mobile {
+  .car {
+    width: 100%;
+    @include padding-mobile;
+    @include before-clean {
+      height: 250px;
+      top: 210px;
+    }
+  }
+
+  .car__wrapper {
+    width: 100%;
+    @include padding-horizon(0);
+    padding-top: 30px;
+  }
+
+  .car__item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .car__photo {
+    height: 210px;
+    margin-bottom: 10px;
+  }
+
+  .car__list {
+    font-size: 9px;
+  }
+}

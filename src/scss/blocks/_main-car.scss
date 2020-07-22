@@ -1,0 +1,94 @@
+.main-car__services {
+  position: relative;
+}
+
+.main-car__button-down {
+  position: absolute;
+  bottom: 65px;
+  z-index: 100;
+  @include center-transform-horizon;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  @include focus-opacity;
+  @include before {
+    bottom: 0;
+    left: 9px;
+    width: 18px;
+    height: 18px;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: jump;
+    animation-timing-function: ease;
+    border: 9px solid transparent;
+    border-top: 9px solid $black;
+    @include transition;
+  }
+}
+
+.main-car__wish {
+  margin-top: -19px;
+  margin-bottom: 75px;
+}
+
+.main-car__car {
+  margin-bottom: -16px;
+}
+
+.main-car__pagination {
+  margin-bottom: 102px;
+}
+
+.main-car__slider {
+  margin-bottom: 122px;
+}
+
+//Desktop
+@include desktop {
+  .main-car__button-down {
+    bottom: 30px;
+  }
+}
+
+//Tablet
+@include tablet {
+  .main-car__button-down {
+    bottom: 20px;
+  }
+
+  .main-car__wish {
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  .main-car__car {
+    margin-bottom: 20px;
+  }
+
+  .main-car__pagination {
+    margin-bottom: 25px;
+  }
+
+  .main-car__slider {
+    margin-bottom: 25px;
+  }
+
+  .main-car__tab {
+    margin-bottom: 25px;
+  }
+}
+
+//Mobile
+@include mobile {
+  .main-car__services {
+    padding-bottom: 60px;
+    @include before-clean {
+      height: 90px;
+    }
+  }
+
+  .main-car__button-down {
+    bottom: 0;
+  }
+}

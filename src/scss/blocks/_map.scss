@@ -12,6 +12,25 @@
   background-position: left top;
 }
 
+.map-blue {
+  position: relative;
+  padding-top: 156px;
+  padding-bottom: 207px;
+  background-image: url('../img/main/tab/buy/background.png'),
+  linear-gradient(180deg, #121773 0%, #0D1038 100%);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 949px, cover;
+  background-position: left 403px top, left top;
+  @include before {
+    left: 0;
+    bottom: -2px;
+    right: 0;
+    width: 100%;
+    height: 332px;
+    background-color: white;
+  }
+}
+
 .map__link {
   position: absolute;
   bottom: 83px;
@@ -23,6 +42,7 @@
   }
 }
 
+
 //Desktop
 @include desktop {
   .map {
@@ -32,6 +52,13 @@
   .map__link {
     font-size: 14px;
     line-height: 120%;
+  }
+
+  .map-blue {
+    padding-top: 75px;
+    @include before-clean {
+      height: 290px;
+    }
   }
 }
 
@@ -43,6 +70,18 @@
     left: 30px;
     height: 400px;
     width: 708px;
+  }
+
+  .map-blue {
+    padding-bottom: 0;
+    @include before-clean {
+      height: 68px;
+    }
+  }
+
+  .map-container {
+    position: relative;
+    padding-top: 430px;
   }
 }
 
@@ -59,5 +98,17 @@
   .map__link {
     width: 280px;
     bottom: 25px;
+  }
+
+  .map-blue {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    @include before-clean {
+      height: 61px;
+    }
+  }
+
+  .map-container {
+    padding-top: 215px;
   }
 }

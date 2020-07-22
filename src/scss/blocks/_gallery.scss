@@ -163,6 +163,10 @@
         bottom: 81px;
       }
     }
+
+    &--car {
+      height: 280px;
+    }
   }
 
   .gallery__buttons {
@@ -213,6 +217,10 @@
         bottom: 81px;
       }
     }
+
+    &--car {
+      height: 193px;
+    }
   }
 
   .gallery__pagination {
@@ -262,6 +270,10 @@
         height: 70px;
       }
     }
+
+    &--car {
+      height: 210px;
+    }
   }
 
   .gallery__buttons {
@@ -289,6 +301,10 @@
           content: '';
         }
       }
+    }
+
+    &--car {
+      padding-left: 18px;
     }
   }
 
