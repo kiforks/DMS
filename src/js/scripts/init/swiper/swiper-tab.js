@@ -138,6 +138,13 @@ const tabPort = {
   textClass: 'tab__text--port'
 };
 
+const personalArea = {
+  container: 'personal-area',
+  containerClass: 'personal-area',
+  textClass: 'personal-area__subtitle'
+};
+
+
 
 initBullets(tabMain);
 initBullets(tabBlue);
@@ -153,6 +160,8 @@ initBullets(tabInfo);
 initBullets(tabDelivery);
 initBullets(tabSpeed);
 initBullets(tabPort);
+initBullets(personalArea);
+
 
 
 

@@ -1,1 +1,68 @@
+.personal-area {
+  @include swiper;
+  @include flex;
+  justify-content: space-between;
+  padding-top: 44px;
+  text-transform: uppercase;
+  background-color: #232527;
+}
 
+.personal-area__list {
+  width: 100%;
+}
+
+.personal-area__item {
+  width: 100%;
+}
+
+.personal-area__title {
+  @include center-flex;
+  @include reset-margin-text;
+  width: 100%;
+  font-weight: bold;
+  font-size: 40px;
+  font-family: $decima-nova;
+  line-height: 48px;
+  text-align: center;
+  color: $grey-light;
+  @include before-clean {
+    content: '';
+    margin-right: 26px;
+    width: 30px;
+    height: 30px;
+    background-image: url('../img/svg/user.svg');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: left center;
+  }
+}
+
+.personal-area__pagination {
+  @include flex;
+  justify-content: space-between;
+  width: 85%;
+  @include reset-list;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  color: #BBBABA;
+}
+
+.personal-area__bullet {
+  &:not(.personal-area__bullet--active) {
+    cursor: pointer;
+    @include color-focus();
+    @include transition;
+  }
+
+  &--active {
+    cursor: default;
+  }
+}
+
+
+.personal-area__output {
+  display: inline-block;
+  width: 15%;
+  text-align: right;
+}
