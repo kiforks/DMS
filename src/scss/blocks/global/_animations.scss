@@ -57,3 +57,18 @@
   50%  { transform: translateY(-100%); }
   100% { transform: translateY(0); }
 }
+
+@keyframes animation-background {
+  0% {
+    background-position-y: center;
+  }
+
+  50% {
+    background-position-y: top;
+  }
+
+  100% {
+    background-position-y: center;
+  }
+}
+

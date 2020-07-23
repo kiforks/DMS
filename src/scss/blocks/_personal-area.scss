@@ -2,23 +2,38 @@
   @include swiper;
   @include flex;
   justify-content: space-between;
-  padding-top: 44px;
+  padding-top: 38px;
   text-transform: uppercase;
   background-color: #232527;
 }
 
 .personal-area__list {
   width: 100%;
+  height: auto !important;
 }
 
 .personal-area__item {
+  @include flex;
+  justify-content: space-between;
+  padding-left: 62px;
+  background-color: #FAFAFA;
   width: 100%;
+  min-height: 532px;
+
+  &:not(.personal-area__item--active) {
+    height: 0;
+  }
+
+  &--active {
+    z-index: 10000;
+  }
 }
 
 .personal-area__title {
   @include center-flex;
   @include reset-margin-text;
   width: 100%;
+  margin-bottom: 32px;
   font-weight: bold;
   font-size: 40px;
   font-family: $decima-nova;
@@ -39,8 +54,7 @@
 
 .personal-area__pagination {
   @include flex;
-  justify-content: space-between;
-  width: 85%;
+  width: 86%;
   @include reset-list;
   font-weight: 600;
   font-size: 18px;
@@ -49,20 +63,717 @@
 }
 
 .personal-area__bullet {
+  @include flex;
+  justify-content: center;
+  flex-grow: 2;
+  @include padding-vertical(23px, 18px);
+  background-repeat: no-repeat;
+  @include transition;
+
   &:not(.personal-area__bullet--active) {
     cursor: pointer;
     @include color-focus();
     @include transition;
   }
 
+  &:first-of-type {
+    justify-content: flex-start;
+    flex-grow: 1;
+    @include padding-horizon(0, 105px);
+    background-image: url('../img/svg/personal-area/entrance--gray.svg');
+    background-size: 25px;
+    background-position: left 67px center;
+
+    &.personal-area__bullet--active {
+      background-image: url('../img/svg/personal-area/entrance.svg');
+    }
+  }
+
+  &:last-of-type {
+    @include center-flex;
+    justify-content: flex-start;
+    flex-grow: 0;
+    @include padding-horizon(12px, 60px);
+    background-image: url('../img/svg/header/track.svg');
+    background-size: 21px;
+    background-position: left 23px center;
+    animation: animation-background 1s ease 12s infinite;
+
+    &.personal-area__bullet--active {
+      background-image: url('../img/svg/personal-area/track--active.svg');
+    }
+  }
+
   &--active {
     cursor: default;
+    color: $black;
+    background-color: #FAFAFA;
   }
 }
 
 
 .personal-area__output {
-  display: inline-block;
-  width: 15%;
+  @include center-flex;
+  padding-left: 43px;
+  width: 14%;
   text-align: right;
+  @include color-focus($grey-dark);
+}
+
+.personal-area__form,
+.personal-area__inner {
+  padding-top: 137px;
+}
+
+.personal-area__form {
+  width: 37.5%;
+}
+
+.personal-area__inner {
+  width: 53.8%;
+  padding-right: 62px;
+
+  &--track {
+    @include flex;
+    width: 56.4%;
+    justify-content: space-between;
+    padding-top: 88px;
+    padding-right: 10px;
+    margin-left: auto;
+  }
+}
+
+.personal-area__input {
+  @include reset-input;
+  width: 100%;
+  @include padding-horizon(17px);
+  padding-bottom: 2px;
+  border-bottom: 1px solid $black;
+  @include placeholder {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 36px;
+    color: $black;
+  }
+  @include placeholder-focus;
+
+  &--name {
+    margin-bottom: 5px;
+  }
+
+  &--password {
+    margin-bottom: 63px;
+  }
+
+  &--car {
+    padding-top: 9px;
+    margin-bottom: 7px;
+  }
+}
+
+.personal-area__label {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 36px;
+  color: #BBBABA;
+  text-transform: none;
+  margin-bottom: 32px;
+}
+
+.personal-area__tel {
+  font-weight: bold;
+  color: $grey-dark;
+}
+
+.personal-area__button {
+  @include center-flex;
+  width: 100%;
+  @include reset-button;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: uppercase;
+  color: $black;
+  border: 1px solid $black;
+  border-radius: 4px;
+  @include before-clean {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    margin-right: 30px;
+    background-color: transparent;
+    background-image: url('../img/svg/personal-area/come-in.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: left top;
+  }
+  @include after-clean {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-left: 30px;
+    background-color: transparent;
+    border: 9px solid transparent;
+    border-left: 9px solid $black;
+  }
+
+  &--car {
+    @include before-clean {
+      background-image: url('../img/svg/services/track.svg');
+      background-size: 21px;
+      margin-right: 9px;
+    }
+  }
+}
+
+.personal-area__subtitle-main {
+  @include reset-margin-text;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 40px;
+  font-family: $decima-nova;
+  line-height: 48px;
+  color: $black;
+}
+
+.personal-area__description {
+  @include reset-margin-text;
+  margin-bottom: 30px;
+  text-transform: none;
+
+  &:last-of-type {
+    margin-bottom: 45px;
+  }
+}
+
+.personal-area__restoration {
+  display: inline-block;
+  text-transform: none;
+  color: #0E124B;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted #0E124B;
+  @include focus-opacity;
+  @include transition;
+}
+
+.personal-area__box {
+  align-self: flex-start;
+  width: 49%;
+  text-transform: none;
+
+  &--photo {
+    width: 49.3%;
+  }
+
+  &--track {
+    padding: 26px 17px;
+    background-color: $grey-light;
+  }
+}
+
+.personal-area__photo {
+  @include reset-margin-text;
+  height: 290px;
+  margin-bottom: 20px;
+}
+
+.personal-area__image {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  @include object-fit(cover);
+}
+
+.personal-area__description-wrapper {
+  @include flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: $black;
+}
+
+.personal-area__description-inner {
+  width: 75%;
+}
+
+.personal-area__description-photo {
+  @include reset-margin-text;
+
+  &--door {
+    font-weight: normal;
+  }
+}
+
+.personal-area__price {
+  width: 25%;
+  @include reset-margin-text;
+  text-align: right;
+  color: #0F1357;
+}
+
+.personal-area__track {
+  @include reset-margin-text;
+  width: 33%;
+}
+
+.personal-area__track-description {
+  width: 63%;
+  @include reset-margin-text;
+  font-weight: bold;
+  color: $black;
+
+  &--download {
+    align-self: flex-start;
+    width: auto;
+    margin-right: auto;
+    padding-left: 53px;
+    font-weight: bold;
+    color: #0F1357;
+    background-image: url('../img/svg/personal-area/download.svg');
+    background-repeat: no-repeat;
+    background-position: left 18px center;
+    background-size: 18px;
+    cursor: pointer;
+    @include focus-opacity;
+    @include transition;
+  }
+}
+
+.personal-area__track-box {
+  @include flex;
+  justify-content: space-between;
+
+  &:not(:last-of-type) {
+    margin-bottom: 64px;
+  }
+}
+
+
+//XXL
+@include desktop-xxl {
+  .personal-area__input {
+    &--car {
+      padding-top: 0;
+    }
+  }
+
+  .personal-area__photo {
+    height: 239px;
+    margin-bottom: 10px;
+  }
+
+  .personal-area__description-wrapper {
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  .personal-area__box {
+    &--track {
+      font-size: 16px;
+      line-height: 140%;
+    }
+  }
+
+  .personal-area__track-box {
+    &:not(:last-of-type) {
+      margin-bottom: 57px;
+    }
+  }
+}
+
+
+//Desktop
+@include desktop {
+  .personal-area__pagination {
+    font-size: 14px;
+    line-height: 120%;
+  }
+
+  .personal-area__bullet {
+    @include padding-vertical(15px);
+  }
+
+  .personal-area__output {
+    padding-left: 25px;
+    font-size: 14px;
+    line-height: 120%;
+  }
+
+  .personal-area__item {
+    padding-left: 50px;
+    min-height: 450px;
+  }
+
+  .personal-area__title {
+    font-size: 35px;
+    line-height: 120%;
+    @include before-clean {
+      margin-right: 15px;
+      width: 28px;
+      height: 28px;
+      background-size: 100%;
+    }
+  }
+
+  .personal-area__inner,
+  .personal-area__form {
+    padding-top: 100px;
+  }
+
+  .personal-area__input {
+    &--name {
+      margin-bottom: 0;
+    }
+
+    &--password {
+      margin-bottom: 50px;
+    }
+  }
+
+  .personal-area__label {
+    margin-bottom: 20px;
+  }
+
+  .personal-area__subtitle-main {
+    margin-bottom: 20px;
+    font-size: 35px;
+    line-height: 120%;
+  }
+
+  .personal-area__description {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  .personal-area__restoration {
+    font-size: 14px;
+    line-height: 120%;
+  }
+
+  .personal-area__button {
+    @include padding-vertical(15px,15px);
+    font-size: 16px;
+    line-height: 120%;
+  }
+
+  .personal-area__photo {
+    height: 197px;
+  }
+
+  .personal-area__box {
+    &--track {
+      font-size: 14px;
+      padding: 20px 10px;
+    }
+  }
+}
+
+
+//Tablet
+@include tablet {
+  .personal-area {
+    padding-top: 20px;
+  }
+
+  .personal-area__title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    @include before-clean {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  .personal-area__pagination {
+    font-size: 10px;
+  }
+
+  .personal-area__bullet {
+    &:first-of-type,
+    &:last-of-type {
+      padding-left: 30px;
+      background-size: 15px;
+      background-position: left 5px center;
+    }
+  }
+
+  .personal-area__output {
+    font-size: 12px;
+  }
+
+  .personal-area__form,
+  .personal-area__inner {
+    padding-top: 50px;
+  }
+
+  .personal-area__item {
+    padding-left: 30px;
+    min-height: 300px;
+  }
+
+  .personal-area__input {
+    @include padding-horizon(10px);
+    padding-bottom: 5px;
+    font-size: 14px;
+    line-height: 120%;
+    @include placeholder {
+      font-size: 14px;
+      line-height: 120%;
+    }
+
+    &--name {
+      margin-bottom: 0;
+    }
+  }
+
+  .personal-area__label {
+    font-size: 9px;
+    line-height: 120%;
+  }
+
+  .personal-area__button {
+    font-size: 14px;
+    @include before-clean {
+      width: 20px;
+      height: 20px;
+      margin-right: 15px;
+    }
+    @include after-clean {
+      width: 14px;
+      height: 14px;
+      border: 7px solid transparent;
+      border-left: 7px solid $black;
+      margin-left: 15px;
+    }
+
+    &--car {
+      @include before-clean {
+        background-size: contain;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .personal-area__subtitle-main {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  .personal-area__description {
+    margin-bottom: 10px;
+    font-size: 12px;
+
+    &:last-of-type {
+      margin-bottom: 15px;
+    }
+  }
+
+  .personal-area__inner {
+    width: 50%;
+    padding-right: 30px;
+
+    &--track {
+      width: 55%;
+      padding-right: 5px;
+    }
+  }
+
+  .personal-area__restoration {
+    padding-bottom: 3px;
+    font-size: 12px;
+  }
+
+  .personal-area__form {
+    width: 40%;
+  }
+
+  .personal-area__photo {
+    height: 111px;
+    margin-bottom: 5px;
+  }
+
+  .personal-area__description-wrapper {
+    font-size: 10px;
+  }
+
+  .personal-area__price {
+    width: 30%;
+  }
+
+  .personal-area__description-inner {
+    width: 68%;
+  }
+
+  .personal-area__box {
+    &--track {
+      padding: 10px 5px;
+      font-size: 13px;
+      line-height: 120%;
+    }
+  }
+
+  .personal-area__track {
+    width: 100%;
+    margin-bottom: 5px;
+
+    &:last-of-type {
+      margin-bottom: 15px;
+    }
+  }
+
+  .personal-area__track-description {
+    width: 100%;
+
+    &--download {
+      padding-left: 25px;
+      background-size: contain;
+      background-position: left 5px center;
+    }
+  }
+
+  .personal-area__track-box {
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+//Mobile
+@include mobile {
+  .personal-area__title {
+    margin-bottom: 15px;
+    @include padding-horizon(10px);
+    font-size: 20px;
+    @include before-clean {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+  }
+
+  .personal-area__pagination {
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    @include padding-horizon(10px);
+    font-size: 9px;
+  }
+
+  .personal-area__bullet {
+    flex-grow: 0;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 10px 6px;
+
+    &:nth-child(3n+2) {
+      justify-content: center;
+    }
+
+    &:nth-child(3n+3) {
+      justify-content: flex-end;
+    }
+
+    &:first-of-type,
+    &:last-of-type {
+      flex-grow: 0;
+      padding-left: 25px;
+      padding-right: 5px;
+    }
+  }
+
+  .personal-area__output {
+    width: 100%;
+    padding-left: 0;
+    font-size: 14px;
+    padding-bottom: 10px;
+  }
+
+  .personal-area__item {
+    align-content: flex-start;
+    padding: 0 10px 25px;
+    min-height: 0;
+    font-size: 12px;
+    @include transition;
+  }
+
+  .personal-area__inner,
+  .personal-area__form {
+    align-self: flex-start;
+    width: 100%;
+    padding-top: 15px;
+  }
+
+  .personal-area__input {
+    font-size: 12px;
+    @include placeholder {
+      font-size: 12px;
+    }
+
+    &--password {
+      margin-bottom: 25px;
+    }
+  }
+
+  .personal-area__label {
+    margin-bottom: 10px;
+  }
+
+  .personal-area__button {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .personal-area__form {
+    margin-bottom: 10px;
+  }
+
+  .personal-area__subtitle-main {
+    font-size: 20px;
+  }
+
+  .personal-area__description {
+    font-size: 11px;
+
+    &:last-of-type {
+      margin-bottom: 5px;
+    }
+  }
+
+  .personal-area__box {
+    width: 100%;
+
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+
+    &--track {
+      padding-bottom: 0;
+    }
+  }
+
+  .personal-area__photo {
+    height: 171px;
+  }
+
+  .personal-area__track {
+    width: 34%;
+  }
+
+  .personal-area__track-description {
+    width: 60%;
+    margin-left: auto;
+  }
+
+  .personal-area__track-box {
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+  }
 }

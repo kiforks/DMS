@@ -1,0 +1,45 @@
+.personal-area-white {
+  position: relative;
+  padding-bottom: 84px;
+  @include after {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    width: 100%;
+    height: 468px;
+    background-color: #FAFAFA;
+  }
+}
+
+
+//Desktop
+@include desktop {
+  .personal-area-white {
+    @include after-clean {
+      height: 400px;
+    }
+  }
+}
+
+
+//Tablet
+@include tablet {
+  .personal-area-white {
+    padding-bottom: 50px;
+    @include after-clean {
+      height: 300px;
+    }
+  }
+}
+
+
+//Mobile
+@include mobile {
+  .personal-area-white {
+    padding-bottom: 25px;
+    @include after-clean {
+      display: none;
+    }
+  }
+}

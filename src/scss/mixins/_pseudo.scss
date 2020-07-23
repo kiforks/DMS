@@ -206,6 +206,9 @@
 }
 
 @mixin placeholder-focus{
+  & {
+    outline: 0;
+  }
   &:focus::-webkit-input-placeholder {
     opacity: 0;
     -webkit-transition: $transition-delay ease-in-out;
