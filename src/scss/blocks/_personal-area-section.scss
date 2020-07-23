@@ -1,0 +1,51 @@
+.personal-area-section {
+  padding-top: 229px;
+  margin-top: -110px;
+  background: radial-gradient(24.11% 128.12% at 67.21% 104.82%, rgba(26, 28, 30, 0.73) 0%, #1A1C1E 100%);
+}
+
+.personal-area-section__container {
+  position: relative;
+  z-index: 10;
+  max-width: 1650px + ($tablet-padding * 2);
+  width: 100%;
+  @include center-margin;
+  @include padding-tablet;
+}
+
+.personal-area-section__personal-area {
+  border: 8px solid #232527;
+}
+
+
+//Desktop
+@include desktop {
+  .personal-area-section {
+    padding-top: 200px;
+  }
+}
+
+
+//Tablet
+@include tablet {
+  .personal-area--section__container {
+    width: $tablet-width;
+  }
+
+  .personal-area-section {
+    margin-top: -115px;
+    padding-top: 150px;
+  }
+}
+
+//Mobile
+@include mobile {
+  .personal-area-section__container {
+    width: 100%;
+    @include padding-mobile;
+  }
+
+  .personal-area-section__personal-area {
+    border: 0;
+  }
+}

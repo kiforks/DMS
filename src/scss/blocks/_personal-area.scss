@@ -5,6 +5,10 @@
   padding-top: 38px;
   text-transform: uppercase;
   background-color: #232527;
+
+  &--calculator {
+    padding-top: 45px;
+  }
 }
 
 .personal-area__list {
@@ -50,6 +54,12 @@
     background-size: 30px;
     background-position: left center;
   }
+
+  &--calculator {
+    @include before-clean {
+      display: none;
+    }
+  }
 }
 
 .personal-area__pagination {
@@ -60,6 +70,41 @@
   font-size: 18px;
   line-height: 25px;
   color: #BBBABA;
+
+  &--calculator {
+    width: 100%;
+    justify-content: space-between;
+
+    .personal-area__bullet {
+      &:first-of-type,
+      &:first-of-type.personal-area__bullet--active,
+      &:last-of-type,
+      &:last-of-type.personal-area__bullet--active {
+        flex-grow: 2;
+        justify-content: center;
+        @include padding-horizon(0);
+        background-image: none;
+      }
+
+      //&:first-of-type.personal-area__bullet--active,
+      //&:last-of-type.personal-area__bullet--active {
+      //  padding-left: 70px;
+      //}
+
+      &--active {
+        align-items: center;
+        //padding-right: 20px;
+        //@include before-clean {
+        //  content: '';
+        //  display: inline-block;
+        //  width: 53px;
+        //  height: 1px;
+        //  margin-right: 5px;
+        //  background-color: $black;
+        //}
+      }
+    }
+  }
 }
 
 .personal-area__bullet {
