@@ -1,0 +1,44 @@
+.main-calculator__slider {
+  margin-bottom: 72px;
+}
+
+.main-calculator__wish {
+  margin-bottom: 155px;
+}
+
+
+//Desktop
+@include desktop {
+  .main-calculator__slider {
+    margin-bottom: 50px;
+  }
+
+  .main-calculator__wish {
+    margin-bottom: 120px;
+  }
+}
+
+
+//Tablet
+@include tablet {
+  .main-calculator__slider {
+    margin-bottom: 30px;
+  }
+
+  .main-calculator__wish {
+    margin-bottom: 80px;
+  }
+}
+
+
+//Mobile
+@include mobile {
+  .main-calculator__slider {
+    margin-bottom: 15px;
+  }
+
+  .main-calculator__wish {
+    margin-bottom: 50px;
+  }
+}
+

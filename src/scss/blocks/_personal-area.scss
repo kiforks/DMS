@@ -31,6 +31,10 @@
   &--active {
     z-index: 10000;
   }
+
+  &--calculator {
+    min-height: 725px;
+  }
 }
 
 .personal-area__title {
@@ -76,6 +80,18 @@
     justify-content: space-between;
 
     .personal-area__bullet {
+      @include center-flex;
+      @include before-clean {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-right: 12px;
+        background-color: $black;
+        opacity: 0;
+        @include transition;
+      }
+
       &:first-of-type,
       &:first-of-type.personal-area__bullet--active,
       &:last-of-type,
@@ -86,22 +102,19 @@
         background-image: none;
       }
 
-      //&:first-of-type.personal-area__bullet--active,
-      //&:last-of-type.personal-area__bullet--active {
-      //  padding-left: 70px;
-      //}
+      &:first-of-type.personal-area__bullet--active,
+      &:last-of-type.personal-area__bullet--active,
+      &--active {
+        @include center-flex;
+        @include before-clean {
+          width: 53px;
+          height: 1px;
+          opacity: 1;
+        }
+      }
 
       &--active {
         align-items: center;
-        //padding-right: 20px;
-        //@include before-clean {
-        //  content: '';
-        //  display: inline-block;
-        //  width: 53px;
-        //  height: 1px;
-        //  margin-right: 5px;
-        //  background-color: $black;
-        //}
       }
     }
   }
@@ -114,6 +127,7 @@
   @include padding-vertical(23px, 18px);
   background-repeat: no-repeat;
   @include transition;
+  outline: 0;
 
   &:not(.personal-area__bullet--active) {
     cursor: pointer;
@@ -172,6 +186,10 @@
 
 .personal-area__form {
   width: 37.5%;
+
+  &--calculator {
+    padding-top: 131px;
+  }
 }
 
 .personal-area__inner {
@@ -186,6 +204,19 @@
     padding-right: 10px;
     margin-left: auto;
   }
+
+  &--calculator {
+    padding-top: 125px;
+  }
+
+  &--tarrifs {
+    width: 57%;
+    padding: 30px 43px 44px 53px;
+    align-self: flex-start;
+    margin-top: 97px;
+    margin-right: 45px;
+    background-color: $grey-lighter;
+  }
 }
 
 .personal-area__input {
@@ -194,6 +225,7 @@
   @include padding-horizon(17px);
   padding-bottom: 2px;
   border-bottom: 1px solid $black;
+  color: $black;
   @include placeholder {
     font-weight: 600;
     font-size: 18px;
@@ -213,6 +245,10 @@
   &--car {
     padding-top: 9px;
     margin-bottom: 7px;
+  }
+
+  &--cost {
+    width: 48%;
   }
 }
 
@@ -271,6 +307,21 @@
       background-image: url('../img/svg/services/track.svg');
       background-size: 21px;
       margin-right: 9px;
+    }
+  }
+
+  &--calculator {
+    padding-bottom: 17px;
+    padding-top: 16px;
+    @include before-clean {
+      width: 34px;
+      height: 34px;
+      background-image: url('../img/svg/calculator.svg');
+      background-size: 100%;
+      margin-right: 14px;
+    }
+    @include after-clean {
+      margin-left: 14px;
     }
   }
 }
@@ -399,6 +450,119 @@
   }
 }
 
+.personal-area__select-container {
+  position: relative;
+  width: 100%;
+  color: $black;
+  font-weight: 600;
+  text-transform: none;
+
+  &:not(.personal-area__select-container--currency) {
+    margin-bottom: 62px;
+  }
+
+  &:last-of-type:not(.personal-area__select-container--currency) {
+    margin-bottom: 74px;
+  }
+
+  &--currency {
+    width: 48%;
+    margin-bottom: 0;
+  }
+}
+
+.personal-area__form-inner {
+  @include flex;
+  justify-content: space-between;
+  margin-bottom: 62px;
+}
+
+.personal-area__new-select,
+.personal-area__select-item {
+  @include padding-horizon(17px);
+  padding-bottom: 2px;
+  border-bottom: 1px solid $black;
+}
+
+.personal-area__new-select {
+  position: relative;
+  padding-right: 50px;
+  cursor: pointer;
+  @include after {
+    right: 20px;
+    top: 12px;
+    z-index: 100;
+    width: 18px;
+    height: 18px;
+    border: 9px solid transparent;
+    border-top: 9px solid $black
+  }
+}
+
+.personal-area__select-list {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 10000;
+  width: 100%;
+  @include reset-list;
+}
+
+.personal-area__select-item {
+  background-color: #FAFAFA;
+  border-right: 1px solid $black;
+  border-left: 1px solid $black;
+  cursor: pointer;
+  @include color-focus($grey-dark);
+  @include transition;
+}
+
+.personal-area__table {
+  padding: 40px 45px;
+  width: 100%;
+  font-size: 18px;
+  line-height: 36px;
+  text-transform: none;
+  color: $black;
+  border-collapse: collapse;
+}
+
+.personal-area__caption {
+  padding-right: 25px;
+  margin-bottom: 37px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.personal-area__table-wrapper {
+  &--thead,
+  &--tfoot {
+    font-weight: bold;
+  }
+}
+
+.personal-area__cell {
+  position: relative;
+  padding: 0 0 34px 36px;
+
+  &--foot,
+  &--head {
+    position: relative;
+    @include after {
+      bottom: 33px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $black;
+    }
+  }
+
+  &--price {
+    padding-right: 75px;
+  }
+}
+
 
 //XXL
 @include desktop-xxl {
@@ -479,6 +643,12 @@
     &--password {
       margin-bottom: 50px;
     }
+
+    &--cost {
+      @include placeholder {
+        font-size: 14px;
+      }
+    }
   }
 
   .personal-area__label {
@@ -518,6 +688,50 @@
       padding: 20px 10px;
     }
   }
+
+  .personal-area__select-container {
+    font-size: 14px;
+
+    &:not(.personal-area__select-container--currency) {
+      margin-bottom: 45px;
+    }
+
+    &:last-of-type:not(.personal-area__select-container--currency) {
+      margin-bottom: 55px;
+    }
+
+    &--currency {
+      width: 48%;
+      margin-bottom: 0;
+    }
+  }
+
+  .personal-area__form-inner {
+    margin-bottom: 45px;
+  }
+
+  .personal-area__inner {
+    &--tarrifs {
+      padding: 20px 30px 30px;
+      margin-top: 100px;
+      margin-right: 20px;
+      margin-bottom: 45px;
+    }
+  }
+
+  .personal-area__table {
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  .personal-area__cell {
+    &--head,
+    &--foot {
+      @include after-clean {
+        bottom: 27px;
+      }
+    }
+  }
 }
 
 
@@ -538,6 +752,26 @@
 
   .personal-area__pagination {
     font-size: 10px;
+    width: 88%;
+
+    &--calculator {
+      width: 100%;
+    }
+
+    & .personal-area__bullet {
+      @include before-clean {
+        margin-right: 5px;
+      }
+
+      &:first-of-type.personal-area__bullet--active,
+      &:last-of-type.personal-area__bullet--active,
+      &--active {
+        @include center-flex;
+        @include before-clean {
+          width: 30px;
+        }
+      }
+    }
   }
 
   .personal-area__bullet {
@@ -550,6 +784,7 @@
   }
 
   .personal-area__output {
+    width: 12%;
     font-size: 12px;
   }
 
@@ -561,6 +796,10 @@
   .personal-area__item {
     padding-left: 30px;
     min-height: 300px;
+
+    &--calculator {
+      @include padding-tablet;
+    }
   }
 
   .personal-area__input {
@@ -575,6 +814,13 @@
 
     &--name {
       margin-bottom: 0;
+    }
+
+    &--cost {
+      font-size: 16px;
+      @include placeholder {
+        font-size: 16px;
+      }
     }
   }
 
@@ -628,6 +874,17 @@
       width: 55%;
       padding-right: 5px;
     }
+
+    &--calculator {
+      width: 100%;
+      padding: 0;
+    }
+
+    &--tarrifs {
+      width: 100%;
+      margin: 0 0 25px;
+      padding: 20px;
+    }
   }
 
   .personal-area__restoration {
@@ -637,6 +894,11 @@
 
   .personal-area__form {
     width: 40%;
+
+    &--calculator {
+      width: 100%;
+      margin-bottom: 30px;
+    }
   }
 
   .personal-area__photo {
@@ -683,9 +945,19 @@
     }
   }
 
-  .personal-area__track-box {
-    &:not(:last-of-type) {
-      margin-bottom: 10px;
+  .personal-area__form-inner {
+    margin-bottom: 30px;
+  }
+
+  .personal-area__select-container {
+    font-size: 16px;
+
+    &:not(.personal-area__select-container--currency) {
+      margin-bottom: 30px;
+    }
+
+    &:last-of-type:not(.personal-area__select-container--currency) {
+      margin-bottom: 40px;
     }
   }
 }
@@ -709,10 +981,14 @@
     margin-bottom: 10px;
     @include padding-horizon(10px);
     font-size: 9px;
+
+    &--calculator {
+      font-size: 14px;
+    }
   }
 
   .personal-area__bullet {
-    flex-grow: 0;
+    flex-grow: 1;
     align-items: center;
     margin-bottom: 5px;
     padding: 10px 6px;
@@ -727,7 +1003,7 @@
 
     &:first-of-type,
     &:last-of-type {
-      flex-grow: 0;
+      flex-grow: 1;
       padding-left: 25px;
       padding-right: 5px;
     }
@@ -755,6 +1031,14 @@
     padding-top: 15px;
   }
 
+  .personal-area__inner {
+    &--tarrifs {
+      padding: 10px;
+      margin-bottom: 0;
+      overflow-x: scroll;
+    }
+  }
+
   .personal-area__input {
     font-size: 12px;
     @include placeholder {
@@ -762,6 +1046,11 @@
     }
 
     &--password {
+      margin-bottom: 25px;
+    }
+
+    &--cost {
+      width: 100%;
       margin-bottom: 25px;
     }
   }
@@ -819,6 +1108,60 @@
   .personal-area__track-box {
     &:not(:last-of-type) {
       margin-bottom: 20px;
+    }
+  }
+
+  .personal-area__select-container {
+    font-size: 12px;
+    line-height: 170%;
+
+    &:not(.personal-area__select-container--currency) {
+      margin-bottom: 30px;
+    }
+
+    &:last-of-type:not(.personal-area__select-container--currency) {
+      margin-bottom: 30px;
+    }
+
+    &--currency {
+      width: 100%;
+    }
+  }
+
+  .personal-area__new-select {
+    @include after-clean {
+      @include center-transform-vertical;
+      width: 12px;
+      height: 12px;
+      border: 6px solid transparent;
+      border-top: 6px solid $black;
+    }
+  }
+
+  .personal-area__form-inner {
+    margin-bottom: 30px;
+  }
+
+  .personal-area__table {
+    font-size: 12px;
+    line-height: 120%;
+    overflow-x: scroll;
+    letter-spacing: 0;
+  }
+
+  .personal-area__caption {
+    padding-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .personal-area__cell {
+    padding: 0 0 15px 0;
+
+    &--foot,
+    &--head {
+      @include after-clean {
+        bottom: 5px;
+      }
     }
   }
 }

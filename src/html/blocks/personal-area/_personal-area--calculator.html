@@ -1,82 +1,289 @@
 <section class="personal-area-section personal-area-section--calculator personal-area-white">
   <div class="personal-area-section__container personal-area-section__container--calculator">
-    <div class="personal-area-section__personal-area personal-area personal-area--calculator">
+    <div class="personal-area-section__personal-area personal-area swiper-no-swiping personal-area--calculator">
       <h1 class="personal-area__title personal-area__title--calculator">КАЛЬКУЛЯТОР РОЗМИТНЕННЯ на 2020 рік</h1>
       <p class="personal-area__pagination personal-area__pagination--calculator"></p>
-      <ul class="personal-area__list">
-        <li class="personal-area__item">
+      <ul class="personal-area__list swiper-no-swiping ">
+        <li class="personal-area__item personal-area__item--calculator">
+
           <h3 class="personal-area__subtitle visually-hidden">Легкові</h3>
 
-          <form action="post" class="personal-area__form">
-            <input type="text" class="personal-area__input personal-area__input--name" name="personal-area__input--name" placeholder="Логін" id="personal-area__input--name">
-            <label for="personal-area__input--name" class="personal-area__label personal-area__label--name">(email або номер телефону в форматі
-              <span class="personal-area__tel">+380</span>) </label>
-            <input type="text" class="personal-area__input personal-area__input--password" name="personal-area__input--password" placeholder="Пароль" id="personal-area__input--password">
-            <label for="personal-area__input--password" class="visually-hidden">Введіть пароль</label>
-            <button class="personal-area__button personal-area__button--login" type="submit">Ввійти</button>
+          <form action="post" class="personal-area__form personal-area__form--calculator">
+
+            <div class="personal-area__form-inner">
+
+              <input type="text" class="personal-area__input personal-area__input--cost" name="personal-area__input--cars" placeholder="Вартість автомобіля" id="personal-area__input--cars">
+              <label for="personal-area__input--cars" class="visually-hidden">Вартість </label>
+
+              <ul class="personal-area__select">
+                <li class="personal-area__option personal-area__option--disabled">USD</li>
+                <li class="personal-area__option">RUB</li>
+                <li class="personal-area__option">EU</li>
+                <li class="personal-area__option">UAH</li>
+              </ul>
+
+            </div>
+
+            <ul class="personal-area__select-volume">
+              <li class="personal-area__option personal-area__option--disabled">Об’єм двигуна, куб.дм</li>
+              <li class="personal-area__option">Куб</li>
+              <li class="personal-area__option">Дм</li>
+              <li class="personal-area__option">Lorem</li>
+            </ul>
+
+            <ul class="personal-area__select-type">
+              <li class="personal-area__option personal-area__option--disabled">Тип двигуна</li>
+              <li class="personal-area__option">Lorem</li>
+              <li class="personal-area__option">Ipsum</li>
+              <li class="personal-area__option">Dolore</li>
+            </ul>
+
+            <ul class="personal-area__select-year">
+              <li class="personal-area__option personal-area__option--disabled">Рік випуску</li>
+              <li class="personal-area__option">2010</li>
+              <li class="personal-area__option">2015</li>
+              <li class="personal-area__option">2020</li>
+            </ul>
+
+            <button class="personal-area__button personal-area__button--calculator" type="submit">Розрахувати</button>
+
           </form>
 
-          <div class="personal-area__inner">
-            <p class="personal-area__subtitle-main">Вітаємо у нас на сайті</p>
-            <p class="personal-area__description">Для входу в кабінет введіть свій логін та пароль.</p>
-            <p class="personal-area__description">Не можете пригадати пароль? Скористайтеся формою для його відновлення.</p>
-            <a href="#" class="personal-area__restoration">Відновлення паролю</a>
+<!--          Таблиця з результатами-->
+          <div class="personal-area__inner personal-area__inner--tarrifs">
+            <table class="personal-area__table">
+              <caption class="personal-area__caption">Тарифи (закон №8487/8488)</caption>
+              <thead class="personal-area__table-wrapper personal-area__table-wrapper--thead">
+                <tr class="personal-area__row personal-area__row--head">
+                  <th class="personal-area__cell personal-area__cell--head">Ціна з розмитненням</th>
+                  <th class="personal-area__cell personal-area__cell--price personal-area__cell--head">13 336 USD</th>
+                </tr>
+              </thead>
+              <tbody class="personal-area__table-wrapper personal-area__table-wrapper--tbody">
+                <tr class="personal-area__row">
+                  <td class="personal-area__cell">НДС</td>
+                  <td class="personal-area__cell personal-area__cell--price">2 223 USD</td>
+                </tr>
+                <tr class="personal-area__row">
+                  <td class="personal-area__cell">Податок</td>
+                  <td class="personal-area__cell personal-area__cell--price">1 000 USD</td>
+                </tr>
+                <tr class="personal-area__row">
+                  <td class="personal-area__cell">Акцизний збір</td>
+                  <td class="personal-area__cell personal-area__cell--price">114 USD</td>
+                </tr>
+              </tbody>
+              <tfoot class="personal-area__table-wrapper personal-area__table-wrapper--tfoot">
+                <tr class="personal-area__row">
+                  <td class="personal-area__cell personal-area__cell--foot">Всього митних платежів</td>
+                  <td class="personal-area__cell personal-area__cell--foot personal-area__cell--price personal-area__cell--head">3 336 USD</td>
+                </tr>
+              </tfoot>
+            </table>
           </div>
 
         </li>
-        <li class="personal-area__item">
+        <li class="personal-area__item personal-area__item--calculator">
+
           <h3 class="personal-area__subtitle visually-hidden">Електро</h3>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores id ipsam nihil recusandae similique. Dolor eveniet facilis illum inventore laudantium neque odit quidem. Autem eaque eius molestiae neque omnis quibusdam sed? Accusamus ad animi corporis debitis dicta expedita fuga voluptatum. A alias assumenda doloribus, harum itaque molestias neque nostrum tempora.
+
+          <form action="post" class="personal-area__form personal-area__form--calculator">
+
+            <div class="personal-area__form-inner">
+
+              <input type="text" class="personal-area__input personal-area__input--cost" name="personal-area__input--electro" placeholder="Вартість автомобіля" id="personal-area__input--electro">
+              <label for="personal-area__input--electro" class="visually-hidden">Вартість </label>
+
+              <ul class="personal-area__select">
+                <li class="personal-area__option personal-area__option--disabled">USD</li>
+                <li class="personal-area__option">RUB</li>
+                <li class="personal-area__option">EU</li>
+                <li class="personal-area__option">UAH</li>
+              </ul>
+
+            </div>
+
+            <ul class="personal-area__select-volume">
+              <li class="personal-area__option personal-area__option--disabled">Об’єм двигуна, куб.дм</li>
+              <li class="personal-area__option">Куб</li>
+              <li class="personal-area__option">Дм</li>
+              <li class="personal-area__option">Lorem</li>
+            </ul>
+
+            <ul class="personal-area__select-type">
+              <li class="personal-area__option personal-area__option--disabled">Тип двигуна</li>
+              <li class="personal-area__option">Lorem</li>
+              <li class="personal-area__option">Ipsum</li>
+              <li class="personal-area__option">Dolore</li>
+            </ul>
+
+            <ul class="personal-area__select-year">
+              <li class="personal-area__option personal-area__option--disabled">Рік випуску</li>
+              <li class="personal-area__option">2010</li>
+              <li class="personal-area__option">2015</li>
+              <li class="personal-area__option">2020</li>
+            </ul>
+
+            <button class="personal-area__button personal-area__button--calculator" type="submit">Розрахувати</button>
+
+          </form>
+
+<!--          Блок з описом товару-->
+          <div class="personal-area__inner personal-area__inner--calculator">
+            <include src="src/html/blocks/attention/_attention--calculator.html"></include>
+          </div>
+
         </li>
-        <li class="personal-area__item">
+        <li class="personal-area__item personal-area__item--calculator">
+
           <h3 class="personal-area__subtitle visually-hidden">Гібрид</h3>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur debitis deleniti dolore earum in nostrum odio, officia, officiis possimus praesentium quae sed sunt tempora, voluptates.
+
+          <form action="post" class="personal-area__form personal-area__form--calculator">
+
+            <div class="personal-area__form-inner">
+
+              <input type="text" class="personal-area__input personal-area__input--cost" name="personal-area__input--hybrid" placeholder="Вартість автомобіля" id="personal-area__input--hybrid">
+              <label for="personal-area__input--hybrid" class="visually-hidden">Вартість </label>
+
+              <ul class="personal-area__select">
+                <li class="personal-area__option personal-area__option--disabled">USD</li>
+                <li class="personal-area__option">RUB</li>
+                <li class="personal-area__option">EU</li>
+                <li class="personal-area__option">UAH</li>
+              </ul>
+
+            </div>
+
+            <ul class="personal-area__select-volume">
+              <li class="personal-area__option personal-area__option--disabled">Об’єм двигуна, куб.дм</li>
+              <li class="personal-area__option">Куб</li>
+              <li class="personal-area__option">Дм</li>
+              <li class="personal-area__option">Lorem</li>
+            </ul>
+
+            <ul class="personal-area__select-type">
+              <li class="personal-area__option personal-area__option--disabled">Тип двигуна</li>
+              <li class="personal-area__option">Lorem</li>
+              <li class="personal-area__option">Ipsum</li>
+              <li class="personal-area__option">Dolore</li>
+            </ul>
+
+            <ul class="personal-area__select-year">
+              <li class="personal-area__option personal-area__option--disabled">Рік випуску</li>
+              <li class="personal-area__option">2010</li>
+              <li class="personal-area__option">2015</li>
+              <li class="personal-area__option">2020</li>
+            </ul>
+
+            <button class="personal-area__button personal-area__button--calculator" type="submit">Розрахувати</button>
+
+          </form>
+
+          <!--          Блок з описом товару-->
+          <div class="personal-area__inner personal-area__inner--calculator">
+            <include src="src/html/blocks/attention/_attention--calculator.html"></include>
+          </div>
+
         </li>
-        <li class="personal-area__item">
+        <li class="personal-area__item personal-area__item--calculator">
+
           <h3 class="personal-area__subtitle visually-hidden">Мото</h3>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A asperiores at dolores eaque earum ex explicabo illo in ipsam iste iure nulla porro quas, quo ratio
+
+          <form action="post" class="personal-area__form personal-area__form--calculator">
+
+            <div class="personal-area__form-inner">
+
+              <input type="text" class="personal-area__input personal-area__input--cost" name="personal-area__input--moto" placeholder="Вартість автомобіля" id="personal-area__input--moto">
+              <label for="personal-area__input--moto" class="visually-hidden">Вартість </label>
+
+              <ul class="personal-area__select">
+                <li class="personal-area__option personal-area__option--disabled">USD</li>
+                <li class="personal-area__option">RUB</li>
+                <li class="personal-area__option">EU</li>
+                <li class="personal-area__option">UAH</li>
+              </ul>
+
+            </div>
+
+            <ul class="personal-area__select-volume">
+              <li class="personal-area__option personal-area__option--disabled">Об’єм двигуна, куб.дм</li>
+              <li class="personal-area__option">Куб</li>
+              <li class="personal-area__option">Дм</li>
+              <li class="personal-area__option">Lorem</li>
+            </ul>
+
+            <ul class="personal-area__select-type">
+              <li class="personal-area__option personal-area__option--disabled">Тип двигуна</li>
+              <li class="personal-area__option">Lorem</li>
+              <li class="personal-area__option">Ipsum</li>
+              <li class="personal-area__option">Dolore</li>
+            </ul>
+
+            <ul class="personal-area__select-year">
+              <li class="personal-area__option personal-area__option--disabled">Рік випуску</li>
+              <li class="personal-area__option">2010</li>
+              <li class="personal-area__option">2015</li>
+              <li class="personal-area__option">2020</li>
+            </ul>
+
+            <button class="personal-area__button personal-area__button--calculator" type="submit">Розрахувати</button>
+
+          </form>
+
+          <!--          Блок з описом товару-->
+          <div class="personal-area__inner personal-area__inner--calculator">
+            <include src="src/html/blocks/attention/_attention--calculator.html"></include>
+          </div>
+
         </li>
-        <li class="personal-area__item">
+        <li class="personal-area__item personal-area__item--calculator">
+
           <h3 class="personal-area__subtitle visually-hidden">Вантажні</h3>
 
-          <form action="post" class="personal-area__form">
-            <input type="text" class="personal-area__input personal-area__input--car" name="personal-area__input--car" placeholder="ВІН номер авто" id="personal-area__input--car">
-            <label for="personal-area__input--car" class="personal-area__label personal-area__label--car">(тут можна додати роз’яснення для клієнта)</label>
-            <button class="personal-area__button personal-area__button--car" type="submit">ВІДСТЕЖИТИ</button>
+          <form action="post" class="personal-area__form personal-area__form--calculator">
+
+            <div class="personal-area__form-inner">
+
+              <input type="text" class="personal-area__input personal-area__input--cost" name="personal-area__input--freight" placeholder="Вартість автомобіля" id="personal-area__input--freight">
+              <label for="personal-area__input--freight" class="visually-hidden">Вартість </label>
+
+              <ul class="personal-area__select">
+                <li class="personal-area__option personal-area__option--disabled">USD</li>
+                <li class="personal-area__option">RUB</li>
+                <li class="personal-area__option">EU</li>
+                <li class="personal-area__option">UAH</li>
+              </ul>
+
+            </div>
+
+            <ul class="personal-area__select-volume">
+              <li class="personal-area__option personal-area__option--disabled">Об’єм двигуна, куб.дм</li>
+              <li class="personal-area__option">Куб</li>
+              <li class="personal-area__option">Дм</li>
+              <li class="personal-area__option">Lorem</li>
+            </ul>
+
+            <ul class="personal-area__select-type">
+              <li class="personal-area__option personal-area__option--disabled">Тип двигуна</li>
+              <li class="personal-area__option">Lorem</li>
+              <li class="personal-area__option">Ipsum</li>
+              <li class="personal-area__option">Dolore</li>
+            </ul>
+
+            <ul class="personal-area__select-year">
+              <li class="personal-area__option personal-area__option--disabled">Рік випуску</li>
+              <li class="personal-area__option">2010</li>
+              <li class="personal-area__option">2015</li>
+              <li class="personal-area__option">2020</li>
+            </ul>
+
+            <button class="personal-area__button personal-area__button--calculator" type="submit">Розрахувати</button>
+
           </form>
 
-          <div class="personal-area__inner">
-            <p class="personal-area__subtitle-main">Де зараз ваше авто?</p>
-            <p class="personal-area__description personal-area__description--car">Достатньо ввести ВІН номер автомобіля і Ви дізнаєтеся його статус та зможете переглянути відповідні документи. </p>
-          </div>
-
-<!--          Блок з статусом автомобіля-->
-          <div class="personal-area__inner personal-area__inner--track">
-
-            <div class="personal-area__box personal-area__box--photo">
-              <p class="personal-area__photo">
-                <img src="img/main/personal-area/photo-1.jpg" alt="Mini coupe 2017" class="personal-area__image">
-              </p>
-              <div class="personal-area__description-wrapper">
-                <div class="personal-area__description-inner">
-                  <p class="personal-area__description-photo">Mini coupe 2017</p>
-                  <p class="personal-area__description-photo personal-area__description-photo--door">2 door</p>
-                </div>
-                <p class="personal-area__price">$ 29 500</p>
-              </div>
-            </div>
-
-            <div class="personal-area__box personal-area__box--track">
-              <div class="personal-area__track-box">
-                <p class="personal-area__track">Статус</p>
-                <p class="personal-area__track-description">Авто очікує прибуття в порт доставки</p>
-              </div>
-              <div class="personal-area__track-box">
-                <p class="personal-area__track">Документи по відправці авто</p>
-                <a href="#" class="personal-area__track-description personal-area__track-description--download" download>Скачати</a>
-              </div>
-            </div>
-
+          <!--          Блок з описом товару-->
+          <div class="personal-area__inner personal-area__inner--calculator">
+            <include src="src/html/blocks/attention/_attention--calculator.html"></include>
           </div>
 
         </li>
