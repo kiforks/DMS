@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <title>Авто</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <include src="src/html/templates/favicon.html"></include>
+  <include src="src/html/templates/fonts.html"></include>
+</head>
+<body class="main-body">
+  <include src="src/html/templates/sprite.html"></include>
+  <include src="src/html/blocks/_header.html"></include>
+
+  <main class="main-car-slider">
+    <section class="main-car-slider__container">
+      <h1 class="visually-hidden">Авто</h1>
+      <div class="main-car-slider__wrapper">
+
+        <ul class="main-car-slider__list">
+          <li class="main-car-slider__item">
+            <a href="index.html" class="main-car-slider__link">Головна</a>
+          </li>
+          <li class="main-car-slider__item">
+            <a href="car.html" class="main-car-slider__link">Автомобілі в наявності</a>
+          </li>
+          <li class="main-car-slider__item">
+            <a class="main-car-slider__link main-car-slider__link--active">2020 BMW 3 Series 330i Sedan</a>
+          </li>
+        </ul>
+
+        <include src="src/html/blocks/_car-slider.html"></include>
+
+      </div>
+    </section>
+  </main>
+
+  <include src="src/html/blocks/footer/_footer.html"></include>
+
+  <!--JS-->
+  <script src="js/plugins/swiper.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    objectFitImages();
+  </script>
+</body>
+</html>
