@@ -13,10 +13,10 @@ function initCarSlider(slider) {
       bulletActiveClass: `${slider.container}__bullet--active`,
       clickable: true,
       renderBullet: function (index, className) {
-        return `<img class="car-slider__image" src="img/main/car/slider/photo-${index}.jpg">`;
+        return `<div class="${className}"><img class="${slider.container}__bullet-image" src="img/main/car/slider/photo-${index + 1}.jpg"></div>`;
       },
     },
-    effect: 'fade',
+    effect: 'slide',
     fadeEffect: {
       crossFade: true
     },

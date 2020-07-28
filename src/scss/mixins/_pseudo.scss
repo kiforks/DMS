@@ -31,6 +31,13 @@
   }
 }
 
+@mixin active-hover-clean {
+  &:hover,
+  &:active {
+    @content;
+  }
+}
+
 @mixin focus-opacity {
   @include hover-opacity;
   @include active-opacity;
@@ -43,6 +50,25 @@
 
   &:hover {
     color: $color;
+  }
+}
+
+@mixin disabled-before-after {
+  &::before,
+  &:active::before,
+  &:hover::before {
+    @content;
+  }
+}
+
+@mixin disabled-focus-opacity($opacity: 1) {
+  & {
+    opacity: $opacity;
+  }
+
+  &:active,
+  &:hover {
+    opacity: $opacity;
   }
 }
 
