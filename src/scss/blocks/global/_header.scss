@@ -174,21 +174,20 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
   @include hover {
     .header__button-burger {
-      @include before-after-clean {
-        background-color: white;
-      }
+      opacity: $hover-opacity;
     }
 
     .header__icon {
-      opacity: $hover-opacity;
+      transform: scale(0.9);
     }
   }
   @include active {
-    .header__button-burger {
+    .header__icon {
+      transform: scale(0.8);
       opacity: $down-opacity;
     }
 
-    .header__icon {
+    .header__button-burger {
       opacity: $down-opacity;
     }
   }
@@ -202,15 +201,14 @@
   position: absolute;
   left: 16px;
   z-index: 10;
-  width: 27px;
+  width: 28px;
   height: 1px;
   background-color: transparent;
   @include transition;
   @include center-transform-vertical;
   @include before-after {
     z-index: 10;
-    left: 0;
-    width: 29px;
+    width: 30px;
     height: 3px;
     background-color: $grey-lighter;
     @include transition;
@@ -255,11 +253,21 @@
   &:last-child {
     margin-right: 0;
   }
+  @include hover {
+    .header__icon {
+      transform: scale(0.9);
+    }
+  }
+  @include active {
+    .header__icon {
+      transform: scale(0.8);
+    }
+  }
 }
 
 .header__icon {
   fill: $grey-lighter;
-  @include transition-fade;
+  @include transition;
 }
 
 .header__call {

@@ -8,18 +8,31 @@
   border-radius: 4px;
   box-shadow: 16px 24px 24px rgba(0, 0, 0, 0.08);
   outline: 0;
+  @include transition;
+  @include active {
+    transform: scale(0.95);
+  }
+  @include hover {
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.08);
+  }
   @include before {
     z-index: 100;
     width: 18px;
     height: 18px;
     border: 9px solid transparent;
     @include center-transform-vertical;
+    @include transition;
   }
 
   &--prev {
     @include before-clean {
       left: 30px;
       border-left: 9px solid black;
+    }
+    @include hover {
+      @include before-clean {
+        border-left-color: $dark-blue;
+      }
     }
   }
 
@@ -29,6 +42,11 @@
       right: 30px;
       border-right: 9px solid black;
     }
+    @include hover {
+      @include before-clean {
+        border-right-color: $dark-blue;
+      }
+    }
   }
 
   &--disabled {
@@ -36,6 +54,24 @@
     background-color: $grey-light;
     @include before-clean {
       opacity: 50%;
+    }
+    @include active {
+      transform: scale(1);
+    }
+    @include hover {
+      box-shadow: 16px 24px 24px rgba(0, 0, 0, 0.08);
+
+      &.slider-button--next {
+        @include before-clean {
+          border-left-color: black;
+        }
+      }
+
+      &.slider-button--prev {
+        @include before-clean {
+          border-right-color: black;
+        }
+      }
     }
   }
 }

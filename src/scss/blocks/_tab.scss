@@ -391,8 +391,19 @@
 .tab__button {
   height: 70px;
   width: 77px;
+  @include transition;
   @include before-clean {
     border: 9px solid transparent;
+  }
+  @include active {
+    transform: scale(0.95);
+  }
+  @include hover {
+    color: $dark-blue;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.08);
+    @include before-clean {
+      border-left-color: $dark-blue;
+    }
   }
 
   &--prev {
@@ -402,12 +413,24 @@
       left: auto;
       border-right: 9px solid black;
     }
+    @include hover {
+      @include before-clean {
+        border-left-color: transparent;
+        border-right-color: $dark-blue;
+      }
+    }
   }
 
   &--next {
     @include before-clean {
       left: 34px;
       border-left: 9px solid black;
+    }
+    @include hover {
+      @include before-clean {
+        border-right-color: transparent;
+        border-left-color: $dark-blue;
+      }
     }
   }
 
@@ -416,6 +439,24 @@
     background-color: $grey-light;
     @include before-clean {
       opacity: 50%;
+    }
+    @include active {
+      transform: scale(1);
+    }
+    @include hover {
+      box-shadow: 16px 24px 24px rgba(0, 0, 0, 0.08);
+
+      &.tab__button--next {
+        @include before-clean {
+          border-left-color: black;
+        }
+      }
+
+      &.tab__button--prev {
+        @include before-clean {
+          border-right-color: black;
+        }
+      }
     }
   }
 }

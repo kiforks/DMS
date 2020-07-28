@@ -291,6 +291,27 @@
     @include before-clean {
       opacity: 50%;
     }
+    @include active {
+      transform: scale(1);
+    }
+
+    &.services__button--prev {
+      @include hover {
+        box-shadow: 16px 24px 24px rgba(0, 0, 0, 0.08);
+        @include before-clean {
+          border-right-color: black;
+        }
+      }
+    }
+
+    &.services__button--next {
+      @include hover {
+        box-shadow: 16px 24px 24px rgba(0, 0, 0, 0.08);
+        @include before-clean {
+          border-left-color: black;
+        }
+      }
+    }
   }
 }
 

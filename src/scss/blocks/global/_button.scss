@@ -10,7 +10,16 @@
   background: #FDFDFD;
   box-shadow: 16px 24px 24px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
-  @include focus-opacity;
+  @include active {
+    transform: scale(0.95);
+  }
+  @include hover {
+    color: $dark-blue;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.08);
+    @include before-clean {
+      border-left-color: $dark-blue;
+    }
+  }
   @include transition;
   @include before {
     @include center-transform-vertical;
@@ -20,6 +29,7 @@
     height: 18px;
     border: 9px solid transparent;
     border-left: 9px solid black;
+    @include transition;
   }
 }
 

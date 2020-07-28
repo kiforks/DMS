@@ -75,8 +75,11 @@
 }
 
 .slider__photo {
+  display: block;
   @include reset-margin-text;
   height: 504px;
+  overflow: hidden;
+  cursor: pointer;
 
   &--car {
     margin-bottom: 42px;
@@ -88,6 +91,11 @@
   height: 100%;
   max-height: 100%;
   @include object-fit(cover);
+  @include transition;
+  @include hover {
+    height: 103%;
+    max-height: 103%;
+  }
 }
 
 .slider__item {
@@ -192,12 +200,24 @@
       left: auto;
       border-right: 9px solid black;
     }
+    @include hover {
+      @include before-clean {
+        border-left-color: transparent;
+        border-right-color: $dark-blue;
+      }
+    }
   }
 
   &--next {
     @include before-clean {
       left: 30px;
       border-left: 9px solid black;
+    }
+    @include hover {
+      @include before-clean {
+        border-right-color: transparent;
+        border-left-color: $dark-blue;
+      }
     }
   }
 
@@ -206,6 +226,24 @@
     background-color: $grey-light;
     @include before-clean {
       opacity: 50%;
+    }
+    @include active {
+      transform: scale(1);
+    }
+    @include hover {
+      box-shadow: 16px 24px 24px rgba(0, 0, 0, 0.08);
+
+      &.slider__button--next {
+        @include before-clean {
+          border-left-color: black;
+        }
+      }
+
+      &.slider__button--prev {
+        @include before-clean {
+          border-right-color: black;
+        }
+      }
     }
   }
 }

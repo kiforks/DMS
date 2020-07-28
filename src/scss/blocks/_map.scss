@@ -40,6 +40,9 @@
   @include before-clean {
     right: 15px;
   }
+  @include active {
+    transform: scale(1) translateX(-50%);
+  }
 }
 
 
