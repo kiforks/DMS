@@ -362,6 +362,13 @@
       right: 20px;
     }
   }
+
+  &--auctions {
+    @include transition;
+    @include active {
+      transform: scale(1) translate(-50%);
+    }
+  }
 }
 
 .tab__link-shadow {

@@ -1,4 +1,4 @@
-<section class="main-auctions__selection selection">
+<section class="main-auctions__selection selection" data-aos="fade">
   <h2 class="visually-hidden">Покупка</h2>
   <div class="main-auctions__container-contacts container-left container-left--clean">
     <div class="tab tab--selection">
@@ -6,7 +6,16 @@
         <div class="tab__list tab__list--contacts tab__list--selection">
           <div class="tab__item tab__item--blue tab__item--selection tab__item--contacts">
             <h3 class="tab__text tab__text--contacts visually-hidden">Підбір авто</h3>
-            <div class="tab__wrapper tab__wrapper--blue tab__wrapper--selection">
+            <div data-aos="fade-up" class="tab__wrapper tab__wrapper--blue tab__wrapper--selection">
+              <p class="tab__subtitle tab__subtitle--blue tab__subtitle--selection title">Підбір авто за вашими параметрами</p>
+              <p class="tab__description tab__description--blue tab__description--selection">В даній формі Ви можете замовити пошук авто в США. Це безкоштовно і займе у Вас не більше хвилини!</p>
+              <p class="tab__description tab__description--blue tab__description--selection">Заповніть кілька важливих параметрів і ми підберемо Вам 5 підходящих авто протягом 24 годин.</p>
+              <p class="tab__description tab__description--blue tab__description--selection">Результатів очікуйте у вигляді повідомлення на вказаний номер телефону або на Ваш e-mail.</p>
+            </div>
+          </div>
+          <div class="tab__item tab__item--blue tab__item--selection tab__item--contacts">
+            <h3 class="tab__text tab__text--contacts visually-hidden">Відстеження замовленого авто</h3>
+            <div data-aos="fade-up" class="tab__wrapper tab__wrapper--blue tab__wrapper--selection">
               <p class="tab__subtitle tab__subtitle--blue tab__subtitle--selection title">Підбір авто за вашими параметрами</p>
               <p class="tab__description tab__description--blue tab__description--selection">В даній формі Ви можете замовити пошук авто в США. Це безкоштовно і займе у Вас не більше хвилини!</p>
               <p class="tab__description tab__description--blue tab__description--selection">Заповніть кілька важливих параметрів і ми підберемо Вам 5 підходящих авто протягом 24 годин.</p>
@@ -16,6 +25,14 @@
         </div>
         <!-- Add Pagination -->
         <p class="tab__pagination tab__pagination--blue tab__pagination--contacts"></p>
+        <div data-aos="fade" data-aos-delay="500" class="tab__slide-buttons tab__slide-buttons--selection">
+          <button class="tab__button slider-button slider-button--prev tab__button--prev">
+            <span class="visually-hidden">Назад</span>
+          </button>
+          <button class="tab__button slider-button slider-button--next tab__button--next">
+            <span class="visually-hidden">Вперед</span>
+          </button>
+        </div>
       </div>
     </div>
     <include src="src/html/blocks/form-window/_form-window.html"></include>

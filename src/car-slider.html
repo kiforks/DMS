@@ -17,7 +17,7 @@
     <section class="main-car-slider__container">
       <div class="main-car-slider__wrapper">
 
-        <ul class="main-car-slider__list">
+        <ul data-aos="fade" class="main-car-slider__list">
           <li class="main-car-slider__item">
             <a href="index.html" class="main-car-slider__link">Головна</a>
           </li>
@@ -31,13 +31,13 @@
 
         <div class="main-car-slider__inner">
 
-          <h1 class="main-car-slider__title">2020 BMW 3 Series 330i Sedan</h1>
+          <h1 data-aos="fade-right" class="main-car-slider__title">2020 BMW 3 Series 330i Sedan</h1>
 
-          <p class="main-car-slider__price">$ 29 500 </p>
+          <p data-aos="fade-left" class="main-car-slider__price">$ 29 500 </p>
 
           <include src="src/html/blocks/_car-slider.html"></include>
 
-          <div class="main-car-slider__box">
+          <div data-aos="fade" data-aos-delay="500" class="main-car-slider__box">
 
             <ul class="main-car-slider__list-description">
               <li class="main-car-slider__description-item main-car-slider__description-item--brand">
@@ -81,9 +81,13 @@
 
   <!--JS-->
   <script src="js/plugins/swiper.js"></script>
+  <script src="js/plugins/aos.js"></script>
   <script src="js/script.js"></script>
   <script>
     objectFitImages();
+    AOS.init({
+      duration: 1500
+    });
   </script>
 </body>
 </html>
