@@ -512,7 +512,15 @@
     width: 18px;
     height: 18px;
     border: 9px solid transparent;
-    border-top: 9px solid $black
+    border-top: 9px solid $black;
+    @include transition;
+  }
+
+  &.on {
+    @include after-clean {
+      transform: rotate(180deg);
+      top: 3px;
+    }
   }
 }
 
@@ -522,6 +530,8 @@
   top: 100%;
   z-index: 10000;
   width: 100%;
+  max-height: 197px;
+  overflow-y: scroll;
   @include reset-list;
 }
 
@@ -1152,6 +1162,12 @@
       height: 12px;
       border: 6px solid transparent;
       border-top: 6px solid $black;
+    }
+
+    &.on {
+      @include after-clean {
+        top: 0;
+      }
     }
   }
 
