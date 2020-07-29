@@ -13,7 +13,8 @@ const path = {
           retina: [buildFolder + '/img/@1x/', buildFolder + '/img/@2x/', buildFolder + '/img/@3x/'],
           fonts: buildFolder + '/fonts/',
           libs: buildFolder + '/libs/',
-          video:  buildFolder + '/video'
+          video:  buildFolder + '/video',
+          favIcons: buildFolder + '/favicons'
         },
         src: {
           html: [sourceFolder + '/*.html', '!' + sourceFolder + '/_*.html'],
@@ -26,7 +27,8 @@ const path = {
           otf: sourceFolder + '/fonts/**/*.otf',
           retina: sourceFolder + '/img/main/**/*{jpg,png}',
           libs: sourceFolder + '/libs/**/*',
-          video: sourceFolder + '/video/**/*'
+          video: sourceFolder + '/video/**/*',
+          favIcons: sourceFolder + '/favicons/**/*'
         },
         watch: {
           html: sourceFolder + '/**/*.html',
@@ -38,7 +40,8 @@ const path = {
           otf: sourceFolder + '/fonts/**/*.otf',
           svg: sourceFolder + '/img/**/icon-*.svg',
           video: sourceFolder + '/video/**/*',
-          libs: sourceFolder + '/libs/**/*'
+          libs: sourceFolder + '/libs/**/*',
+          favIcons: sourceFolder + '/favicons/**/*'
         },
         clean: './' + buildFolder + '/'
     };
@@ -193,6 +196,12 @@ function ignoreImagesBuild() {
     .pipe(dest(path.build.img))
 }
 
+function favIcons() {
+  return src(path.src.favIcons)
+    .pipe(dest(path.build.favIcons))
+    .pipe(browserSync.stream())
+}
+
   /* Resize to retina + sorting images */
 function retinaImages() {
   for(let i = 1; i < 2; i++) { // If you don’t need retina images x3 set the value 'i < 3' to 'i < 2' or vice versa
@@ -262,6 +271,7 @@ function watchFiles() {
     gulp.watch([path.watch.otf], ttfConversion);
     gulp.watch([path.watch.video], videoBuild);
     gulp.watch([path.watch.libs], libs);
+    gulp.watch([path.watch.favIcons], favIcons);
 }
 
 
@@ -291,7 +301,7 @@ function libs() {
 
 // Build
 const fonts = gulp.series(ttfConversion, woffConversion);
-const imageBuild = gulp.series(ignoreImagesBuild, sprite, imageSorting, /* retinaImages,  webpBuild, */ images);
+const imageBuild = gulp.series(ignoreImagesBuild, favIcons, sprite, imageSorting, /* retinaImages,  webpBuild, */ images);
 const build = gulp.series(clean, gulp.series(imageBuild, videoBuild, css, html, /* uncssInit, */ js, jsIgnoreBuild, libs, fonts));
 const watch = gulp.parallel(watchFiles, serve);
 
@@ -319,5 +329,6 @@ exports.fonts = fonts;
 exports.default = watch;
 exports.html = build;
 exports.watch = watch;
+exports.favIcons = favIcons;
 exports.imageBuild = imageBuild;
 

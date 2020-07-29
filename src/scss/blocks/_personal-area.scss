@@ -226,6 +226,7 @@
   padding-bottom: 2px;
   border-bottom: 1px solid $black;
   color: $black;
+  background-color: transparent;
   @include placeholder {
     font-weight: 600;
     font-size: 18px;
@@ -279,6 +280,22 @@
   color: $black;
   border: 1px solid $black;
   border-radius: 4px;
+  @include transition;
+  @include before-after-clean {
+    @include transition;
+  }
+  @include hover {
+    color: $dark-blue;
+    transform: scale(0.99);
+
+    &::after {
+      border-left-color: $dark-blue;
+    }
+  }
+  @include active {
+    opacity: $down-opacity;
+    transform: scale(0.98);
+  }
   @include before-clean {
     content: '';
     display: inline-block;

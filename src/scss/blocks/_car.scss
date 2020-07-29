@@ -33,6 +33,7 @@
 }
 
 .car__photo {
+  display: block;
   @include reset-margin-text;
   width: 100%;
   margin-bottom: 41px;

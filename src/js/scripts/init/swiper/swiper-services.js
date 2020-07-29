@@ -18,7 +18,10 @@ function initServices(slider) {
         prevEl: `.${slider.mainClass}__button--prev`,
         disabledClass: `${slider.mainClass}__button--disabled`,
       },
-      loop: false,
+      loop: true,
+      autoplay: {
+        delay: 5000
+      },
       speed: 500,
       slidesPerView: 1,
       wrapperClass: `${slider.mainClass}__list`,
