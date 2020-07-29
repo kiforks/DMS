@@ -85,7 +85,13 @@
   }
 
   &:not(.car-slider__button--disabled) {
-    @include focus-opacity;
+    @include hover {
+      transform: scale(0.9);
+    }
+    @include active {
+      opacity: $down-opacity;
+      transform: scale(0.85);
+    }
   }
 
   &--disabled {

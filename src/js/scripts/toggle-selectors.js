@@ -46,8 +46,8 @@ toggleSelectors('header__toggle-button','main-body');
 toggleSelectors('services__link--car','modal');
 toggleSelectors('wish__link','modal');
 toggleSelectors('modal__button','modal');
-toggleSelectors('header__auto-link','modal');
-toggleSelectors('header__auto-link','header');
-toggleSelectors('header__auto-link','main-body');
+toggleSelectors('header__auto-link--modal','modal');
+toggleSelectors('header__auto-link--modal','header');
+toggleSelectors('header__auto-link--modal','main-body');
 
 

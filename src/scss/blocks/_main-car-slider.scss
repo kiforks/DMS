@@ -192,6 +192,14 @@
   box-shadow: -16px 24px 24px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
   background-repeat: no-repeat;
+  @include transition;
+  @include hover {
+    color: $dark-blue;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.08);
+  }
+  @include active {
+    transform: scale(0.95);
+  }
   @include before {
     right: 16%;
     @include center-transform-vertical;
@@ -214,6 +222,7 @@
     background-size: 30px;
   }
 }
+
 
 //XXL
 @include desktop-xxl {

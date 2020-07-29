@@ -387,6 +387,16 @@
     background: #232527;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
+
+    .header__languages-link {
+      cursor: default;
+      @include hover {
+        color: $grey;
+      }
+      @include active {
+        color: $grey;
+      }
+    }
   }
 }
 

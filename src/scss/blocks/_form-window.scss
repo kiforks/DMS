@@ -52,6 +52,10 @@
     @include padding-vertical(7px);
     border-left: 2px solid #454994;
     border-right: 2px solid #454994;
+    @include transition;
+    @include hover {
+      background-color: $dark-blue;
+    }
   }
 }
 
@@ -127,6 +131,23 @@
   background-color: #FDFDFD;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
+  @include transition;
+  @include hover {
+    color: $dark-blue;
+    opacity: 1;
+    transform: scale(0.99);
+    @include after-clean {
+      border-left-color: $dark-blue;
+    }
+  }
+  @include active {
+    color: $dark-blue;
+    opacity: 1;
+    transform: scale(0.98);
+    @include after-clean {
+      border-left-color: $dark-blue;
+    }
+  }
   @include before-clean {
     content: '';
     display: block;
@@ -137,6 +158,7 @@
     background-repeat: no-repeat;
     background-size: 34px;
     background-position: left top;
+    @include transition;
   }
   @include after-clean {
     content: '';
@@ -147,6 +169,7 @@
     background-color: transparent;
     border: 9px solid transparent;
     border-left: 9px solid $black;
+    @include transition;
   }
 }
 
