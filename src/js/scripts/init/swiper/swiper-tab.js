@@ -23,8 +23,8 @@ function initBullets(slider) {
       crossFade: true
     },
     navigation: {
-      nextEl: `.${slider.container}__button--next`,
-      prevEl: `.${slider.container}__button--prev`,
+      nextEl: `.${slider.container}__button--next${slider.modify}`,
+      prevEl: `.${slider.container}__button--prev${slider.modify}`,
       disabledClass: `${slider.container}__button--disabled`,
     },
     loop: false,
@@ -57,7 +57,8 @@ function initBullets(slider) {
 const tabMain = {
   container: 'tab',
   containerClass: 'tab',
-  textClass: 'tab__text'
+  textClass: 'tab__text',
+  modify: '-main'
 };
 
 const tabBlue = {
@@ -69,49 +70,57 @@ const tabBlue = {
 const tabAbout = {
   container: 'tab',
   containerClass: 'tab--about',
-  textClass: 'tab__text--about'
+  textClass: 'tab__text--about',
+  modify: '-about'
 };
 
 const tabContacts = {
   container: 'tab',
   containerClass: 'tab__contacts',
-  textClass: 'tab__text--contacts'
+  textClass: 'tab__text--contacts',
+  modify: '-contacts'
 };
 
 const tabStory = {
   container: 'tab',
   containerClass: 'tab--story',
-  textClass: 'tab__text--story'
+  textClass: 'tab__text--story',
+  modify: '-story'
 };
 
 const tabCopart = {
   container: 'tab',
   containerClass: 'tab--copart',
-  textClass: 'tab__text--copart'
+  textClass: 'tab__text--copart',
+  modify: '-copart'
 };
 
 const tabIaai = {
   container: 'tab',
   containerClass: 'tab--iaai',
-  textClass: 'tab__text--iaai'
+  textClass: 'tab__text--iaai',
+  modify: '-iaai'
 };
 
 const tabAdesa = {
   container: 'tab',
   containerClass: 'tab--adesa',
-  textClass: 'tab__text--adesa'
+  textClass: 'tab__text--adesa',
+  modify: '-adesa'
 };
 
 const tabManheim = {
   container: 'tab',
   containerClass: 'tab--manheim',
-  textClass: 'tab__text--manheim'
+  textClass: 'tab__text--manheim',
+  modify: '-manheim'
 };
 
 const tabPurchase = {
   container: 'tab',
   containerClass: 'tab--purchase',
-  textClass: 'tab__text--purchase'
+  textClass: 'tab__text--purchase',
+  modify: '-purchase'
 };
 
 const tabInfo = {
@@ -123,13 +132,15 @@ const tabInfo = {
 const tabDelivery = {
   container: 'tab',
   containerClass: 'tab--delivery',
-  textClass: 'tab__text--delivery'
+  textClass: 'tab__text--delivery',
+  modify: '-delivery'
 };
 
 const tabSpeed = {
   container: 'tab',
   containerClass: 'tab--speed',
-  textClass: 'tab__text--speed'
+  textClass: 'tab__text--speed',
+  modify: '-speed'
 };
 
 const tabPort = {
@@ -141,7 +152,8 @@ const tabPort = {
 const personalArea = {
   container: 'personal-area',
   containerClass: 'personal-area',
-  textClass: 'personal-area__subtitle'
+  textClass: 'personal-area__subtitle',
+  modify: '-contacts'
 };
 
 
@@ -161,6 +173,17 @@ initBullets(tabDelivery);
 initBullets(tabSpeed);
 initBullets(tabPort);
 initBullets(personalArea);
+
+
+function disabledDelete(selector) {
+  let disabledButton = document.querySelector(`.${selector}`);
+
+  if(disabledButton && document.querySelector('.tab--disabled')) {
+    disabledButton.classList.remove(`${selector}`);
+  }
+}
+
+disabledDelete('tab__button--disabled');
 
 
 
