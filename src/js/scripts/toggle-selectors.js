@@ -51,3 +51,15 @@ toggleSelectors('header__auto-link--modal','header');
 toggleSelectors('header__auto-link--modal','main-body');
 
 
+function anchor() {
+  let link = document.querySelector('.header__link--contacts');
+  let header = document.querySelector('.header');
+  let body = document.querySelector('.main-body');
+
+  link.addEventListener('click', () => {
+    header.classList.add('header--closed');
+    body.classList.remove('main-body--closed');
+  })
+}
+
+anchor();
