@@ -16,10 +16,9 @@
               <label for="personal-area__input--cars" class="visually-hidden">Вартість </label>
 
               <ul class="personal-area__select">
-                <li class="personal-area__option personal-area__option--disabled">USD</li>
-                <li class="personal-area__option">RUB</li>
-                <li class="personal-area__option">EU</li>
-                <li class="personal-area__option">UAH</li>
+                <li class="personal-area__option personal-area__option--disabled">EURO</li>
+                <li class="personal-area__option">EURO</li>
+                <li class="personal-area__option">USD</li>
               </ul>
 
             </div>
@@ -38,13 +37,13 @@
 
             <ul class="personal-area__select-type">
               <li class="personal-area__option personal-area__option--disabled">Тип двигуна</li>
-              <li class="personal-area__option">Lorem</li>
-              <li class="personal-area__option">Ipsum</li>
-              <li class="personal-area__option">Dolore</li>
+              <li class="personal-area__option">Бензин</li>
+              <li class="personal-area__option">Дизель</li>
             </ul>
 
             <ul class="personal-area__select-year">
               <li class="personal-area__option personal-area__option--disabled">Рік випуску</li>
+              <li class="personal-area__option">1992</li>
               <li class="personal-area__option">2010</li>
               <li class="personal-area__option">2015</li>
               <li class="personal-area__option">2020</li>
@@ -61,27 +60,42 @@
               <thead class="personal-area__table-wrapper personal-area__table-wrapper--thead">
                 <tr class="personal-area__row personal-area__row--head">
                   <th class="personal-area__cell personal-area__cell--head">Ціна з розмитненням</th>
-                  <th class="personal-area__cell personal-area__cell--price personal-area__cell--head">13 336 USD</th>
+                  <th class="personal-area__cell personal-area__cell--price personal-area__cell--head">
+                    <span class="personal-area__value personal-area__value--full-price">0</span>
+                    <span class="personal-area__currency personal-area__currency--euro">€</span>
+                  </th>
                 </tr>
               </thead>
               <tbody class="personal-area__table-wrapper personal-area__table-wrapper--tbody">
                 <tr class="personal-area__row">
                   <td class="personal-area__cell">НДС</td>
-                  <td class="personal-area__cell personal-area__cell--price">2 223 USD</td>
+                  <td class="personal-area__cell personal-area__cell--price">
+                    <span class="personal-area__value personal-area__value--nds">0</span>
+                    <span class="personal-area__currency personal-area__currency--euro">€</span>
+                  </td>
                 </tr>
                 <tr class="personal-area__row">
-                  <td class="personal-area__cell">Податок</td>
-                  <td class="personal-area__cell personal-area__cell--price">1 000 USD</td>
+                  <td class="personal-area__cell">Мито</td>
+                  <td class="personal-area__cell personal-area__cell--price">
+                    <span class="personal-area__value personal-area__value--toll">0</span>
+                    <span class="personal-area__currency personal-area__currency--euro">€</span>
+                  </td>
                 </tr>
                 <tr class="personal-area__row">
                   <td class="personal-area__cell">Акцизний збір</td>
-                  <td class="personal-area__cell personal-area__cell--price">114 USD</td>
+                  <td class="personal-area__cell personal-area__cell--price personal-area__cell--excise-tax">
+                    <span class="personal-area__value personal-area__value--excise-tax">0</span>
+                    <span class="personal-area__currency personal-area__currency--euro">€</span>
+                  </td>
                 </tr>
               </tbody>
               <tfoot class="personal-area__table-wrapper personal-area__table-wrapper--tfoot">
                 <tr class="personal-area__row">
                   <td class="personal-area__cell personal-area__cell--foot">Всього митних платежів</td>
-                  <td class="personal-area__cell personal-area__cell--foot personal-area__cell--price personal-area__cell--head">3 336 USD</td>
+                  <td class="personal-area__cell personal-area__cell--foot personal-area__cell--price personal-area__cell--head">
+                    <span class="personal-area__value personal-area__value--total">0</span>
+                    <span class="personal-area__currency personal-area__currency--euro">€</span>
+                  </td>
                 </tr>
               </tfoot>
             </table>
