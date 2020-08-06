@@ -35,6 +35,16 @@
   &--calculator {
     min-height: 725px;
   }
+
+  &--moto {
+    .personal-area__select-container {
+      &--year {
+        &:last-of-type {
+          margin-bottom: 167px !important;
+        }
+      }
+    }
+  }
 }
 
 .personal-area__title {
@@ -250,6 +260,10 @@
 
   &--cost {
     width: 48%;
+  }
+
+  &--number {
+    margin-bottom: 262px;
   }
 }
 
@@ -492,6 +506,10 @@
   @include flex;
   justify-content: space-between;
   margin-bottom: 62px;
+
+  &--hybrid {
+    margin-bottom: 357px;
+  }
 }
 
 .personal-area__new-select,
@@ -591,6 +609,13 @@
 }
 
 
+.personal-area__number-box {
+  @include flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
 //XXL
 @include desktop-xxl {
   .personal-area__input {
@@ -644,6 +669,16 @@
   .personal-area__item {
     padding-left: 50px;
     min-height: 450px;
+
+    &--moto {
+      .personal-area__select-container {
+        &--year {
+          &:last-of-type {
+            margin-bottom: 133px !important;
+          }
+        }
+      }
+    }
   }
 
   .personal-area__title {
@@ -671,10 +706,15 @@
       margin-bottom: 50px;
     }
 
-    &--cost {
+    &--cost,
+    &--number {
       @include placeholder {
         font-size: 14px;
       }
+    }
+
+    &--number {
+      margin-bottom: 210px;
     }
   }
 
@@ -735,6 +775,10 @@
 
   .personal-area__form-inner {
     margin-bottom: 45px;
+
+    &--hybrid {
+      margin-bottom: 289px;
+    }
   }
 
   .personal-area__inner {
@@ -826,6 +870,16 @@
 
     &--calculator {
       @include padding-tablet;
+    }
+
+    &--moto {
+      .personal-area__select-container {
+        &--year {
+          &:last-of-type {
+            margin-bottom: 30px !important;
+          }
+        }
+      }
     }
   }
 
@@ -1049,6 +1103,16 @@
     min-height: 0;
     font-size: 12px;
     @include transition;
+
+    &--moto {
+      .personal-area__select-container {
+        &--year {
+          &:last-of-type {
+            margin-bottom: 25px !important;
+          }
+        }
+      }
+    }
   }
 
   .personal-area__inner,
@@ -1078,6 +1142,10 @@
 
     &--cost {
       width: 100%;
+      margin-bottom: 25px;
+    }
+
+    &--number {
       margin-bottom: 25px;
     }
   }

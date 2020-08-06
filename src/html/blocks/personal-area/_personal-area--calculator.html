@@ -114,42 +114,68 @@
               <label for="personal-area__input--electro" class="visually-hidden">Вартість </label>
 
               <ul class="personal-area__select">
-                <li class="personal-area__option personal-area__option--disabled">USD</li>
-                <li class="personal-area__option">RUB</li>
-                <li class="personal-area__option">EU</li>
-                <li class="personal-area__option">UAH</li>
+                <li class="personal-area__option personal-area__option--disabled">EURO</li>
+                <li class="personal-area__option">EURO</li>
+                <li class="personal-area__option">USD</li>
               </ul>
 
             </div>
 
-            <ul class="personal-area__select-volume">
-              <li class="personal-area__option personal-area__option--disabled">Об’єм двигуна, куб.дм</li>
-              <li class="personal-area__option">Куб</li>
-              <li class="personal-area__option">Дм</li>
-              <li class="personal-area__option">Lorem</li>
-            </ul>
+            <div class="personal-area__number-box">
+              <input type="number" class="personal-area__input personal-area__input--number" id="personal-area__input--number" placeholder="Потужність, кВт" required>
+              <label for="personal-area__input--number" class="visually-hidden">Потужність, кВт</label>
+            </div>
 
-            <ul class="personal-area__select-type">
-              <li class="personal-area__option personal-area__option--disabled">Тип двигуна</li>
-              <li class="personal-area__option">Lorem</li>
-              <li class="personal-area__option">Ipsum</li>
-              <li class="personal-area__option">Dolore</li>
-            </ul>
-
-            <ul class="personal-area__select-year">
-              <li class="personal-area__option personal-area__option--disabled">Рік випуску</li>
-              <li class="personal-area__option">2010</li>
-              <li class="personal-area__option">2015</li>
-              <li class="personal-area__option">2020</li>
-            </ul>
-
-            <button class="personal-area__button personal-area__button--calculator" type="submit">Розрахувати</button>
+            <button class="personal-area__button personal-area__button--calculator" type="button">Розрахувати</button>
 
           </form>
 
-<!--          Блок з описом товару-->
-          <div data-aos="fade" data-aos-delay="500" class="personal-area__inner personal-area__inner--calculator">
-            <include src="src/html/blocks/attention/_attention--calculator.html"></include>
+          <!--          Таблиця з результатами-->
+          <div data-aos="fade" data-aos-delay="500" class="personal-area__inner personal-area__inner--tarrifs">
+            <table class="personal-area__table">
+              <caption class="personal-area__caption">Тарифи (закон №8487/8488)</caption>
+              <thead class="personal-area__table-wrapper personal-area__table-wrapper--thead">
+              <tr class="personal-area__row personal-area__row--head">
+                <th class="personal-area__cell personal-area__cell--head">Ціна з розмитненням</th>
+                <th class="personal-area__cell personal-area__cell--price personal-area__cell--head">
+                  <span class="personal-area__value personal-area__value--full-price">0</span>
+                  <span class="personal-area__currency personal-area__currency--euro">€</span>
+                </th>
+              </tr>
+              </thead>
+              <tbody class="personal-area__table-wrapper personal-area__table-wrapper--tbody">
+              <tr class="personal-area__row">
+                <td class="personal-area__cell">НДС</td>
+                <td class="personal-area__cell personal-area__cell--price">
+                  <span class="personal-area__value personal-area__value--nds">0</span>
+                  <span class="personal-area__currency personal-area__currency--euro">€</span>
+                </td>
+              </tr>
+              <tr class="personal-area__row">
+                <td class="personal-area__cell">Мито</td>
+                <td class="personal-area__cell personal-area__cell--price">
+                  <span class="personal-area__value personal-area__value--toll">0</span>
+                  <span class="personal-area__currency personal-area__currency--euro">€</span>
+                </td>
+              </tr>
+              <tr class="personal-area__row">
+                <td class="personal-area__cell">Акцизний збір</td>
+                <td class="personal-area__cell personal-area__cell--price personal-area__cell--excise-tax">
+                  <span class="personal-area__value personal-area__value--excise-tax">0</span>
+                  <span class="personal-area__currency personal-area__currency--euro">€</span>
+                </td>
+              </tr>
+              </tbody>
+              <tfoot class="personal-area__table-wrapper personal-area__table-wrapper--tfoot">
+              <tr class="personal-area__row">
+                <td class="personal-area__cell personal-area__cell--foot">Всього митних платежів</td>
+                <td class="personal-area__cell personal-area__cell--foot personal-area__cell--price personal-area__cell--head">
+                  <span class="personal-area__value personal-area__value--total">0</span>
+                  <span class="personal-area__currency personal-area__currency--euro">€</span>
+                </td>
+              </tr>
+              </tfoot>
+            </table>
           </div>
 
         </li>
@@ -159,48 +185,69 @@
 
           <form data-aos="fade" data-aos-delay="500" action="post" class="personal-area__form personal-area__form--calculator">
 
-            <div class="personal-area__form-inner">
+            <div class="personal-area__form-inner personal-area__form-inner--hybrid">
 
               <input type="text" class="personal-area__input personal-area__input--cost" name="personal-area__input--hybrid" placeholder="Вартість автомобіля" id="personal-area__input--hybrid">
               <label for="personal-area__input--hybrid" class="visually-hidden">Вартість </label>
 
               <ul class="personal-area__select">
-                <li class="personal-area__option personal-area__option--disabled">USD</li>
-                <li class="personal-area__option">RUB</li>
-                <li class="personal-area__option">EU</li>
-                <li class="personal-area__option">UAH</li>
+                <li class="personal-area__option personal-area__option--disabled">EURO</li>
+                <li class="personal-area__option">EURO</li>
+                <li class="personal-area__option">USD</li>
               </ul>
 
             </div>
 
-            <ul class="personal-area__select-volume">
-              <li class="personal-area__option personal-area__option--disabled">Об’єм двигуна, куб.дм</li>
-              <li class="personal-area__option">Куб</li>
-              <li class="personal-area__option">Дм</li>
-              <li class="personal-area__option">Lorem</li>
-            </ul>
-
-            <ul class="personal-area__select-type">
-              <li class="personal-area__option personal-area__option--disabled">Тип двигуна</li>
-              <li class="personal-area__option">Lorem</li>
-              <li class="personal-area__option">Ipsum</li>
-              <li class="personal-area__option">Dolore</li>
-            </ul>
-
-            <ul class="personal-area__select-year">
-              <li class="personal-area__option personal-area__option--disabled">Рік випуску</li>
-              <li class="personal-area__option">2010</li>
-              <li class="personal-area__option">2015</li>
-              <li class="personal-area__option">2020</li>
-            </ul>
-
-            <button class="personal-area__button personal-area__button--calculator" type="submit">Розрахувати</button>
+            <button class="personal-area__button personal-area__button--calculator" type="button">Розрахувати</button>
 
           </form>
 
-          <!--          Блок з описом товару-->
-          <div data-aos="fade" data-aos-delay="500" class="personal-area__inner personal-area__inner--calculator">
-            <include src="src/html/blocks/attention/_attention--calculator.html"></include>
+          <!--          Таблиця з результатами-->
+          <div data-aos="fade" data-aos-delay="500" class="personal-area__inner personal-area__inner--tarrifs">
+            <table class="personal-area__table">
+              <caption class="personal-area__caption">Тарифи (закон №8487/8488)</caption>
+              <thead class="personal-area__table-wrapper personal-area__table-wrapper--thead">
+              <tr class="personal-area__row personal-area__row--head">
+                <th class="personal-area__cell personal-area__cell--head">Ціна з розмитненням</th>
+                <th class="personal-area__cell personal-area__cell--price personal-area__cell--head">
+                  <span class="personal-area__value personal-area__value--full-price">0</span>
+                  <span class="personal-area__currency personal-area__currency--euro">€</span>
+                </th>
+              </tr>
+              </thead>
+              <tbody class="personal-area__table-wrapper personal-area__table-wrapper--tbody">
+              <tr class="personal-area__row">
+                <td class="personal-area__cell">НДС</td>
+                <td class="personal-area__cell personal-area__cell--price">
+                  <span class="personal-area__value personal-area__value--nds">0</span>
+                  <span class="personal-area__currency personal-area__currency--euro">€</span>
+                </td>
+              </tr>
+              <tr class="personal-area__row">
+                <td class="personal-area__cell">Мито</td>
+                <td class="personal-area__cell personal-area__cell--price">
+                  <span class="personal-area__value personal-area__value--toll">0</span>
+                  <span class="personal-area__currency personal-area__currency--euro">€</span>
+                </td>
+              </tr>
+              <tr class="personal-area__row">
+                <td class="personal-area__cell">Акцизний збір</td>
+                <td class="personal-area__cell personal-area__cell--price personal-area__cell--excise-tax">
+                  <span class="personal-area__value personal-area__value--excise-tax">0</span>
+                  <span class="personal-area__currency personal-area__currency--euro">€</span>
+                </td>
+              </tr>
+              </tbody>
+              <tfoot class="personal-area__table-wrapper personal-area__table-wrapper--tfoot">
+              <tr class="personal-area__row">
+                <td class="personal-area__cell personal-area__cell--foot">Всього митних платежів</td>
+                <td class="personal-area__cell personal-area__cell--foot personal-area__cell--price personal-area__cell--head">
+                  <span class="personal-area__value personal-area__value--total">0</span>
+                  <span class="personal-area__currency personal-area__currency--euro">€</span>
+                </td>
+              </tr>
+              </tfoot>
+            </table>
           </div>
 
         </li>
@@ -212,46 +259,87 @@
 
             <div class="personal-area__form-inner">
 
-              <input type="text" class="personal-area__input personal-area__input--cost" name="personal-area__input--moto" placeholder="Вартість автомобіля" id="personal-area__input--moto">
-              <label for="personal-area__input--moto" class="visually-hidden">Вартість </label>
+              <input type="text" class="personal-area__input personal-area__input--cost" name="personal-area__input--moto" placeholder="Вартість мотоциклу" id="personal-area__input--moto">
+              <label for="personal-area__input--cars" class="visually-hidden">Вартість </label>
 
               <ul class="personal-area__select">
-                <li class="personal-area__option personal-area__option--disabled">USD</li>
-                <li class="personal-area__option">RUB</li>
-                <li class="personal-area__option">EU</li>
-                <li class="personal-area__option">UAH</li>
+                <li class="personal-area__option personal-area__option--disabled">EURO</li>
+                <li class="personal-area__option">EURO</li>
+                <li class="personal-area__option">USD</li>
               </ul>
 
             </div>
 
             <ul class="personal-area__select-volume">
-              <li class="personal-area__option personal-area__option--disabled">Об’єм двигуна, куб.дм</li>
-              <li class="personal-area__option">Куб</li>
-              <li class="personal-area__option">Дм</li>
-              <li class="personal-area__option">Lorem</li>
-            </ul>
-
-            <ul class="personal-area__select-type">
-              <li class="personal-area__option personal-area__option--disabled">Тип двигуна</li>
-              <li class="personal-area__option">Lorem</li>
-              <li class="personal-area__option">Ipsum</li>
-              <li class="personal-area__option">Dolore</li>
+              <li class="personal-area__option personal-area__option--disabled">Об’єм двигуна, куб.см</li>
+              <li class="personal-area__option">100</li>
+              <li class="personal-area__option">300</li>
+              <li class="personal-area__option">500</li>
+              <li class="personal-area__option">700</li>
+              <li class="personal-area__option">800</li>
+              <li class="personal-area__option">1000</li>
+              <li class="personal-area__option">1500</li>
+              <li class="personal-area__option">2000</li>
             </ul>
 
             <ul class="personal-area__select-year">
               <li class="personal-area__option personal-area__option--disabled">Рік випуску</li>
+              <li class="personal-area__option">1992</li>
               <li class="personal-area__option">2010</li>
               <li class="personal-area__option">2015</li>
               <li class="personal-area__option">2020</li>
             </ul>
 
-            <button class="personal-area__button personal-area__button--calculator" type="submit">Розрахувати</button>
+            <button class="personal-area__button personal-area__button--calculator" type="button">Розрахувати</button>
 
           </form>
 
-          <!--          Блок з описом товару-->
-          <div data-aos="fade" data-aos-delay="500" class="personal-area__inner personal-area__inner--calculator">
-            <include src="src/html/blocks/attention/_attention--calculator.html"></include>
+          <!--          Таблиця з результатами-->
+          <div data-aos="fade" data-aos-delay="500" class="personal-area__inner personal-area__inner--tarrifs">
+            <table class="personal-area__table">
+              <caption class="personal-area__caption">Тарифи (закон №8487/8488)</caption>
+              <thead class="personal-area__table-wrapper personal-area__table-wrapper--thead">
+              <tr class="personal-area__row personal-area__row--head">
+                <th class="personal-area__cell personal-area__cell--head">Ціна з розмитненням</th>
+                <th class="personal-area__cell personal-area__cell--price personal-area__cell--head">
+                  <span class="personal-area__value personal-area__value--full-price">0</span>
+                  <span class="personal-area__currency personal-area__currency--euro">€</span>
+                </th>
+              </tr>
+              </thead>
+              <tbody class="personal-area__table-wrapper personal-area__table-wrapper--tbody">
+              <tr class="personal-area__row">
+                <td class="personal-area__cell">НДС</td>
+                <td class="personal-area__cell personal-area__cell--price">
+                  <span class="personal-area__value personal-area__value--nds">0</span>
+                  <span class="personal-area__currency personal-area__currency--euro">€</span>
+                </td>
+              </tr>
+              <tr class="personal-area__row">
+                <td class="personal-area__cell">Мито</td>
+                <td class="personal-area__cell personal-area__cell--price">
+                  <span class="personal-area__value personal-area__value--toll">0</span>
+                  <span class="personal-area__currency personal-area__currency--euro">€</span>
+                </td>
+              </tr>
+              <tr class="personal-area__row">
+                <td class="personal-area__cell">Акцизний збір</td>
+                <td class="personal-area__cell personal-area__cell--price personal-area__cell--excise-tax">
+                  <span class="personal-area__value personal-area__value--excise-tax">0</span>
+                  <span class="personal-area__currency personal-area__currency--euro">€</span>
+                </td>
+              </tr>
+              </tbody>
+              <tfoot class="personal-area__table-wrapper personal-area__table-wrapper--tfoot">
+              <tr class="personal-area__row">
+                <td class="personal-area__cell personal-area__cell--foot">Всього митних платежів</td>
+                <td class="personal-area__cell personal-area__cell--foot personal-area__cell--price personal-area__cell--head">
+                  <span class="personal-area__value personal-area__value--total">0</span>
+                  <span class="personal-area__currency personal-area__currency--euro">€</span>
+                </td>
+              </tr>
+              </tfoot>
+            </table>
           </div>
 
         </li>
@@ -259,51 +347,98 @@
 
           <h3 class="personal-area__subtitle visually-hidden">Вантажні</h3>
 
-          <form data-aos="fade" data-aos-delay="500" action="post" class="personal-area__form personal-area__form--calculator">
+<!--          <form data-aos="fade" data-aos-delay="500" action="post" class="personal-area__form personal-area__form&#45;&#45;calculator">-->
 
-            <div class="personal-area__form-inner">
+<!--            <div class="personal-area__form-inner">-->
 
-              <input type="text" class="personal-area__input personal-area__input--cost" name="personal-area__input--freight" placeholder="Вартість автомобіля" id="personal-area__input--freight">
-              <label for="personal-area__input--freight" class="visually-hidden">Вартість </label>
+<!--              <input type="text" class="personal-area__input personal-area__input&#45;&#45;cost" name="personal-area__input&#45;&#45;freight" placeholder="Вартість автомобіля" id="personal-area__input&#45;&#45;freight">-->
+<!--              <label for="personal-area__input&#45;&#45;freight" class="visually-hidden">Вартість </label>-->
 
-              <ul class="personal-area__select">
-                <li class="personal-area__option personal-area__option--disabled">USD</li>
-                <li class="personal-area__option">RUB</li>
-                <li class="personal-area__option">EU</li>
-                <li class="personal-area__option">UAH</li>
-              </ul>
+<!--              <ul class="personal-area__select">-->
+<!--                <li class="personal-area__option personal-area__option&#45;&#45;disabled">EURO</li>-->
+<!--                <li class="personal-area__option">EURO</li>-->
+<!--                <li class="personal-area__option">USD</li>-->
+<!--              </ul>-->
 
-            </div>
+<!--            </div>-->
 
-            <ul class="personal-area__select-volume">
-              <li class="personal-area__option personal-area__option--disabled">Об’єм двигуна, куб.дм</li>
-              <li class="personal-area__option">Куб</li>
-              <li class="personal-area__option">Дм</li>
-              <li class="personal-area__option">Lorem</li>
-            </ul>
+<!--            <ul class="personal-area__select-volume">-->
+<!--              <li class="personal-area__option personal-area__option&#45;&#45;disabled">Об’єм двигуна, куб.дм</li>-->
+<!--              <li class="personal-area__option">0.5</li>-->
+<!--              <li class="personal-area__option">1.0</li>-->
+<!--              <li class="personal-area__option">1.5</li>-->
+<!--              <li class="personal-area__option">2.0</li>-->
+<!--              <li class="personal-area__option">2.5</li>-->
+<!--              <li class="personal-area__option">3.0</li>-->
+<!--              <li class="personal-area__option">3.5</li>-->
+<!--              <li class="personal-area__option">4.0</li>-->
+<!--            </ul>-->
 
-            <ul class="personal-area__select-type">
-              <li class="personal-area__option personal-area__option--disabled">Тип двигуна</li>
-              <li class="personal-area__option">Lorem</li>
-              <li class="personal-area__option">Ipsum</li>
-              <li class="personal-area__option">Dolore</li>
-            </ul>
+<!--            <ul class="personal-area__select-type">-->
+<!--              <li class="personal-area__option personal-area__option&#45;&#45;disabled">Тип двигуна</li>-->
+<!--              <li class="personal-area__option">Бензин</li>-->
+<!--              <li class="personal-area__option">Дизель</li>-->
+<!--            </ul>-->
 
-            <ul class="personal-area__select-year">
-              <li class="personal-area__option personal-area__option--disabled">Рік випуску</li>
-              <li class="personal-area__option">2010</li>
-              <li class="personal-area__option">2015</li>
-              <li class="personal-area__option">2020</li>
-            </ul>
+<!--            <ul class="personal-area__select-year">-->
+<!--              <li class="personal-area__option personal-area__option&#45;&#45;disabled">Рік випуску</li>-->
+<!--              <li class="personal-area__option">1992</li>-->
+<!--              <li class="personal-area__option">2010</li>-->
+<!--              <li class="personal-area__option">2015</li>-->
+<!--              <li class="personal-area__option">2020</li>-->
+<!--            </ul>-->
 
-            <button class="personal-area__button personal-area__button--calculator" type="submit">Розрахувати</button>
+<!--            <button class="personal-area__button personal-area__button&#45;&#45;calculator" type="button">Розрахувати</button>-->
 
-          </form>
+<!--          </form>-->
 
-          <!--          Блок з описом товару-->
-          <div data-aos="fade" data-aos-delay="500" class="personal-area__inner personal-area__inner--calculator">
-            <include src="src/html/blocks/attention/_attention--calculator.html"></include>
-          </div>
+<!--          &lt;!&ndash;          Таблиця з результатами&ndash;&gt;-->
+<!--          <div data-aos="fade" data-aos-delay="500" class="personal-area__inner personal-area__inner&#45;&#45;tarrifs">-->
+<!--            <table class="personal-area__table">-->
+<!--              <caption class="personal-area__caption">Тарифи (закон №8487/8488)</caption>-->
+<!--              <thead class="personal-area__table-wrapper personal-area__table-wrapper&#45;&#45;thead">-->
+<!--              <tr class="personal-area__row personal-area__row&#45;&#45;head">-->
+<!--                <th class="personal-area__cell personal-area__cell&#45;&#45;head">Ціна з розмитненням</th>-->
+<!--                <th class="personal-area__cell personal-area__cell&#45;&#45;price personal-area__cell&#45;&#45;head">-->
+<!--                  <span class="personal-area__value personal-area__value&#45;&#45;full-price">0</span>-->
+<!--                  <span class="personal-area__currency personal-area__currency&#45;&#45;euro">€</span>-->
+<!--                </th>-->
+<!--              </tr>-->
+<!--              </thead>-->
+<!--              <tbody class="personal-area__table-wrapper personal-area__table-wrapper&#45;&#45;tbody">-->
+<!--              <tr class="personal-area__row">-->
+<!--                <td class="personal-area__cell">НДС</td>-->
+<!--                <td class="personal-area__cell personal-area__cell&#45;&#45;price">-->
+<!--                  <span class="personal-area__value personal-area__value&#45;&#45;nds">0</span>-->
+<!--                  <span class="personal-area__currency personal-area__currency&#45;&#45;euro">€</span>-->
+<!--                </td>-->
+<!--              </tr>-->
+<!--              <tr class="personal-area__row">-->
+<!--                <td class="personal-area__cell">Мито</td>-->
+<!--                <td class="personal-area__cell personal-area__cell&#45;&#45;price">-->
+<!--                  <span class="personal-area__value personal-area__value&#45;&#45;toll">0</span>-->
+<!--                  <span class="personal-area__currency personal-area__currency&#45;&#45;euro">€</span>-->
+<!--                </td>-->
+<!--              </tr>-->
+<!--              <tr class="personal-area__row">-->
+<!--                <td class="personal-area__cell">Акцизний збір</td>-->
+<!--                <td class="personal-area__cell personal-area__cell&#45;&#45;price personal-area__cell&#45;&#45;excise-tax">-->
+<!--                  <span class="personal-area__value personal-area__value&#45;&#45;excise-tax">0</span>-->
+<!--                  <span class="personal-area__currency personal-area__currency&#45;&#45;euro">€</span>-->
+<!--                </td>-->
+<!--              </tr>-->
+<!--              </tbody>-->
+<!--              <tfoot class="personal-area__table-wrapper personal-area__table-wrapper&#45;&#45;tfoot">-->
+<!--              <tr class="personal-area__row">-->
+<!--                <td class="personal-area__cell personal-area__cell&#45;&#45;foot">Всього митних платежів</td>-->
+<!--                <td class="personal-area__cell personal-area__cell&#45;&#45;foot personal-area__cell&#45;&#45;price personal-area__cell&#45;&#45;head">-->
+<!--                  <span class="personal-area__value personal-area__value&#45;&#45;total">0</span>-->
+<!--                  <span class="personal-area__currency personal-area__currency&#45;&#45;euro">€</span>-->
+<!--                </td>-->
+<!--              </tr>-->
+<!--              </tfoot>-->
+<!--            </table>-->
+<!--          </div>-->
 
         </li>
       </ul>
