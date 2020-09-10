@@ -1,0 +1,178 @@
+.modal-email {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  opacity: 1;
+  visibility: visible;
+  background: rgba(11, 11, 11, 0.2);
+  transition: background-color 0.8s ease;
+
+  &--closed {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+    visibility: hidden;
+    background: transparent;
+
+    .modal-email__wrapper {
+      top: -1500px;
+    }
+  }
+}
+
+.modal-email__wrapper {
+  position: absolute;
+  @include center-transform;
+  z-index: 1000;
+  width: 705px;
+  padding-bottom: 120px;
+  padding-top: 110px;
+  background-image: url('../img/main/tab/buy/background.png'),linear-gradient(180deg, #121773 0,#0d1038 100%);
+  background-repeat: no-repeat,no-repeat;
+  background-size: 100%, cover;
+  background-position: left top, left top;
+  transition: top 0.8s ease;
+}
+
+.modal-email__title,
+.modal-email__description {
+  @include reset-margin-text;
+}
+
+.modal-email__title {
+  margin-bottom: 24px;
+  font-weight: bold;
+  font-family: $decima-nova;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $grey-lighter;
+}
+
+.modal-email__description {
+  margin-bottom: 51px;
+  font-size: 20px;
+  line-height: 30px;
+  color: #BBBABA;
+}
+
+.modal-email__button {
+  position: absolute;
+  top: 10px;
+  right: 13px;
+  width: 28px;
+  height: 28px;
+  @include focus-opacity;
+  @include reset-button;
+  @include before-after {
+    left: 0;
+    @include center-transform-vertical;
+    z-index: 100;
+    width: 100%;
+    height: 2px;
+    background-color: #BBBABA;
+  }
+  @include before-clean {
+    transform: rotate(45deg);
+  }
+  @include after-clean {
+    transform: rotate(-45deg);
+  }
+}
+
+.modal-email__wishes {
+  min-height: auto;
+  margin-bottom: 58px;
+}
+
+.modal-email__list {
+  margin-bottom: 75px;
+}
+
+//XXL
+@include desktop-xxl {
+  .modal-email__title {
+    font-size: 30px;
+    line-height: 120%;
+    margin-bottom: 15px;
+  }
+
+  .modal-email__wrapper {
+    padding-top: 110px;
+    padding-bottom: 120px;
+    width: 600px;
+  }
+
+  .modal-email__list {
+    margin-bottom: 60px;
+  }
+
+  .modal-email__description {
+    font-size: 16px;
+    line-height: 120%;
+    margin-bottom: 30px;
+  }
+
+  .modal-email__list {
+    margin-bottom: 35px;
+  }
+
+  .modal-email_item {
+    margin-bottom: 20px;
+  }
+
+  .modal-email__inner {
+    margin-bottom: 35px;
+  }
+}
+
+//Desktop
+@include desktop {
+  .modal-email__wrapper {
+    width: 600px;
+    padding-top: 90px;
+    padding-bottom: 100px;
+  }
+
+  .modal-email__list {
+    margin-bottom: 45px;
+  }
+}
+
+//Tablet
+@include tablet {
+  .modal-email__wrapper {
+    width: 600px;
+    padding-top: 90px;
+    padding-bottom: 100px;
+  }
+
+  .modal-email__wishes {
+    min-height: 50px;
+  }
+}
+
+//Mobile
+@include mobile {
+  .modal-email__wrapper {
+    width: 100%;
+    @include padding-mobile;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .modal-email__button {
+    right: 10px;
+    top: 10px;
+    width: 24px;
+    height: 24px;
+  }
+}

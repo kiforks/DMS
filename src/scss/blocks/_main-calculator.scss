@@ -33,6 +33,10 @@
 
 //Mobile
 @include mobile {
+  //.main-calculator {
+  //  overflow: hidden;
+  //}
+
   .main-calculator__slider {
     margin-bottom: 15px;
   }
