@@ -45,6 +45,11 @@
       }
     }
   }
+
+  &--track {
+    padding-top: 140px;
+    padding-right: 55px;
+  }
 }
 
 .personal-area__title {
@@ -210,9 +215,6 @@
     @include flex;
     width: 56.4%;
     justify-content: space-between;
-    padding-top: 88px;
-    padding-right: 10px;
-    margin-left: auto;
   }
 
   &--calculator {
@@ -226,6 +228,11 @@
     margin-top: 97px;
     margin-right: 45px;
     background-color: $grey-lighter;
+  }
+
+  &--location {
+    width: 50%;
+    padding-top: 0;
   }
 }
 
@@ -280,6 +287,12 @@
 .personal-area__tel {
   font-weight: bold;
   color: $grey-dark;
+}
+
+.personal-area__button-box {
+  width: 39%;
+  padding-top: 61px;
+  margin-bottom: 7%;
 }
 
 .personal-area__button {
@@ -338,6 +351,14 @@
       background-image: url('../img/svg/services/track.svg');
       background-size: 21px;
       margin-right: 9px;
+    }
+  }
+
+  &--photo {
+    @include before-clean {
+      background-image: url('../img/svg/personal-area/photo.svg');
+      background-size: 28px;
+      margin-right: 20px;
     }
   }
 
@@ -615,6 +636,211 @@
   width: 100%;
 }
 
+.personal-area__car-list {
+  @include reset-list;
+  @include flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.personal-area__car-item {
+  @include flex;
+  justify-content: space-between;
+  width: 48%;
+  margin-bottom: 3.1%;
+}
+
+.personal-area__car-photo-box {
+  width: 40%;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 144%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.personal-area__car-status-list {
+  @include reset-list;
+  width: 58%;
+}
+
+.personal-area__car-photo {
+  height: 290px;
+  margin-bottom: 7%;
+}
+
+.personal-area__car-image {
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+  @include object-fit(cover);
+}
+
+.personal-area__car-description,
+.personal-area__car-price,
+.personal-area__car-title,
+.personal-area__car-status-description {
+  @include reset-margin-text;
+}
+
+.personal-area__car-description {
+  margin-bottom: 6%;
+}
+
+.personal-area__car-price {
+  color: $dark-blue;
+}
+
+.personal-area__car-title {
+  @include flex;
+  align-items: center;
+  width: 30%;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 187%;
+  letter-spacing: 0.05em;
+
+  &--document {
+    align-self: flex-start;
+  }
+}
+
+.personal-area__car-status-item {
+  @include flex;
+  justify-content: space-between;
+  min-height: 75px;
+  padding-top: 6%;
+  padding-bottom: 6%;
+  padding-left: 3%;
+  margin-bottom: 3%;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 187%;
+  letter-spacing: 0.05em;
+  background-color: $grey-lighter;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &--main {
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+
+  &--wait {
+    background-color: #D8BAFF;
+  }
+
+  &--admission {
+    background-color: #BABDFF;
+  }
+
+  &--loaded {
+    background-color: #BFBFBF;
+  }
+
+  &--delivered {
+    background-color: #BCF7A0;
+  }
+
+  &--document {
+    padding-bottom: 9%;
+  }
+}
+
+.personal-area__car-status-description {
+  position: relative;
+  @include flex;
+  align-items: center;
+  width: 63.5%;
+
+  @include before-clean {
+    @include center-transform-vertical;
+    z-index: 5;
+    width: 19px;
+    height: 19px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  &--code {
+    padding-right: 70px;
+    font-size: 16px;
+    color: $black;
+
+    @include before {
+      @include center-transform-vertical;
+      right: 45px;
+      background-image: url('../img/svg/personal-area/code.svg');
+      background-position: 0 0;
+    }
+  }
+
+  &--main {
+    padding-right: 3%;
+    padding-left: 9%;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 162%;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    @include before {
+      left: 0;
+      background-position: 0 0;
+    }
+  }
+
+  &--wait {
+    @include before-clean {
+      background-image: url('../img/svg/personal-area/clock.svg');
+    }
+  }
+
+  &--admission {
+    @include before-clean {
+      background-image: url('../img/svg/personal-area/admiss.svg');
+    }
+  }
+
+  &--loaded {
+    @include before-clean {
+      background-image: url('../img/svg/personal-area/loaded.svg');
+    }
+  }
+
+  &--delivered {
+    @include before-clean {
+      background-image: url('../img/svg/personal-area/delivered.svg');
+    }
+  }
+}
+
+.personal-area__car-download {
+  display: block;
+  width: 100%;
+  color: $dark-blue;
+  text-transform: none;
+  padding-right: 19%;
+  margin-bottom: 6.5%;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @include after-clean {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-left: 10%;
+    background-image: url('../img/svg/personal-area/download.svg');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transform: translateY(2px);
+  }
+}
 
 //XXL
 @include desktop-xxl {
@@ -645,6 +871,22 @@
     &:not(:last-of-type) {
       margin-bottom: 57px;
     }
+  }
+
+  .personal-area__car-photo {
+    height: 236px;
+  }
+
+  .personal-area__car-photo-box {
+    font-size: 14px;
+  }
+
+  .personal-area__car-title {
+    font-size: 12px;
+  }
+
+  .personal-area__car-status-description {
+    font-size: 12px;
   }
 }
 
@@ -801,6 +1043,38 @@
       @include after-clean {
         bottom: 27px;
       }
+    }
+  }
+
+  .personal-area__car-photo {
+    height: 195px;
+  }
+
+  .personal-area__car-photo-box {
+    font-size: 12px;
+  }
+
+  .personal-area__car-title {
+    font-size: 10px;
+  }
+
+  .personal-area__car-status-description {
+    font-size: 10px;
+    @include before-clean {
+      right: 30px;
+      width: 14px;
+      height: 14px;
+    }
+
+    &--code {
+      padding-right: 40px;
+    }
+  }
+
+  .personal-area__car-download {
+    @include after-clean {
+      width: 14px;
+      height: 14px;
     }
   }
 }

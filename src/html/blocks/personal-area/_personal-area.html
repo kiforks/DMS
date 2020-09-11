@@ -37,48 +37,133 @@
           <h3 class="personal-area__subtitle visually-hidden">Персональні дані</h3>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. A asperiores at dolores eaque earum ex explicabo illo in ipsam iste iure nulla porro quas, quo ratio
         </li>
-        <li  class="personal-area__item">
+        <li  class="personal-area__item personal-area__item--track">
           <h3 class="personal-area__subtitle visually-hidden">Відстеження авто</h3>
 
-          <form action="post" class="personal-area__form">
-            <input type="text" class="personal-area__input personal-area__input--car" name="personal-area__input--car" placeholder="ВІН номер авто" id="personal-area__input--car">
-            <label for="personal-area__input--car" class="personal-area__label personal-area__label--car">(тут можна додати роз’яснення для клієнта)</label>
-            <button class="personal-area__button personal-area__button--car" type="submit">ВІДСТЕЖИТИ</button>
-          </form>
-
-          <div class="personal-area__inner">
+          <div class="personal-area__inner personal-area__inner--location">
             <p class="personal-area__subtitle-main">Де зараз ваше авто?</p>
-            <p class="personal-area__description personal-area__description--car">Достатньо ввести ВІН номер автомобіля і Ви дізнаєтеся його статус та зможете переглянути відповідні документи. </p>
+            <p class="personal-area__description personal-area__description--car">Фото Ваших авто можна переглянути натиснувши на “Показати фото”</p>
+          </div>
+
+          <div class="personal-area__button-box">
+            <a class="personal-area__button personal-area__button--photo">Показати фото</a>
           </div>
 
 <!--          Блок з статусом автомобіля-->
-<!--          <div class="personal-area__inner personal-area__inner&#45;&#45;track">-->
+          <ul class="personal-area__car-list">
+            <li class="personal-area__car-item">
+              <div class="personal-area__car-photo-box">
+                <div class="personal-area__car-photo">
+                  <img src="img/main/car/photo-3.jpg" alt="mini coupe 2017 black edition" class="personal-area__car-image">
+                </div>
+                <p class="personal-area__car-description">mini coupe 2017 black edition</p>
+                <p class="personal-area__car-price">$ 10 529 500</p>
+              </div>
+              <ul class="personal-area__car-status-list">
+                <li class="personal-area__car-status-item">
+                  <p class="personal-area__car-title">VIN-код</p>
+                  <p class="personal-area__car-status-description personal-area__car-status-description--code">1G1FX6S0XH4104188</p>
+                </li>
+                <li class="personal-area__car-status-item personal-area__car-status-item--main personal-area__car-status-item--wait">
+                  <p class="personal-area__car-title">Статус</p>
+                  <p class="personal-area__car-status-description personal-area__car-status-description--main personal-area__car-status-description--wait">Авто очікує прибуття в порт доставки</p>
+                </li>
+                <li class="personal-area__car-status-item personal-area__car-status-item--document">
+                  <p class="personal-area__car-title personal-area__car-title--document">Документи</p>
+                  <div class="personal-area__car-status-description">
+                    <a href="#" class="personal-area__car-download" download>Документ №1</a>
+                    <a href="#" class="personal-area__car-download" download>Документ по відправці авто №2</a>
+                    <a href="#" class="personal-area__car-download" download>Документ №3</a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="personal-area__car-item">
+              <div class="personal-area__car-photo-box">
+                <div class="personal-area__car-photo">
+                  <img src="img/main/car/photo-2.jpg" alt="mini coupe 2017 black edition" class="personal-area__car-image">
+                </div>
+                <p class="personal-area__car-description">mini coupe 2017 black edition</p>
+                <p class="personal-area__car-price">$ 99 500 </p>
+              </div>
+              <ul class="personal-area__car-status-list">
+                <li class="personal-area__car-status-item">
+                  <p class="personal-area__car-title">VIN-код</p>
+                  <p class="personal-area__car-status-description personal-area__car-status-description--code">1FM5K8HTXGGC29683</p>
+                </li>
+                <li class="personal-area__car-status-item personal-area__car-status-item--main personal-area__car-status-item--admission">
+                  <p class="personal-area__car-title">Статус</p>
+                  <p class="personal-area__car-status-description  personal-area__car-status-description--main personal-area__car-status-description--admission">Авто забрано з аукціону</p>
+                </li>
+                <li class="personal-area__car-status-item personal-area__car-status-item--document">
+                  <p class="personal-area__car-title personal-area__car-title--document">Документи</p>
+                  <div class="personal-area__car-status-description">
+                    <a href="#" class="personal-area__car-download" download>Документ №1</a>
+                    <a href="#" class="personal-area__car-download" download>Документ по відправці авто №2</a>
+                    <a href="#" class="personal-area__car-download" download>Документ №3</a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="personal-area__car-item">
+              <div class="personal-area__car-photo-box">
+                <div class="personal-area__car-photo">
+                  <img src="img/main/car/photo-1.jpg" alt="mini coupe 2017 black edition" class="personal-area__car-image">
+                </div>
+                <p class="personal-area__car-description">mini coupe 2017 black edition</p>
+                <p class="personal-area__car-price">$ 2 529 500 </p>
+              </div>
+              <ul class="personal-area__car-status-list">
+                <li class="personal-area__car-status-item">
+                  <p class="personal-area__car-title">VIN-код</p>
+                  <p class="personal-area__car-status-description personal-area__car-status-description--code">1C4RJFAGXFC736454</p>
+                </li>
+                <li class="personal-area__car-status-item personal-area__car-status-item--main personal-area__car-status-item--loaded">
+                  <p class="personal-area__car-title">Статус</p>
+                  <p class="personal-area__car-status-description   personal-area__car-status-description--main personal-area__car-status-description--loaded">Авто завантажено</p>
+                </li>
+                <li class="personal-area__car-status-item personal-area__car-status-item--document">
+                  <p class="personal-area__car-title personal-area__car-title--document">Документи</p>
+                  <div class="personal-area__car-status-description">
+                    <a href="#" class="personal-area__car-download" download>Документ №1</a>
+                    <a href="#" class="personal-area__car-download" download>Документ по відправці авто №2</a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="personal-area__car-item">
+              <div class="personal-area__car-photo-box">
+                <div class="personal-area__car-photo">
+                  <img src="img/main/car/photo-1.jpg" alt="mini coupe 2017 black edition" class="personal-area__car-image">
+                </div>
+                <p class="personal-area__car-description">mini coupe 2017 black edition</p>
+                <p class="personal-area__car-price">$ 2 529 500 </p>
+              </div>
+              <ul class="personal-area__car-status-list">
+                <li class="personal-area__car-status-item">
+                  <p class="personal-area__car-title">VIN-код</p>
+                  <p class="personal-area__car-status-description personal-area__car-status-description--code">1C4RJFAGXFC736454</p>
+                </li>
+                <li class="personal-area__car-status-item personal-area__car-status-item--main personal-area__car-status-item--delivered">
+                  <p class="personal-area__car-title">Статус</p>
+                  <p class="personal-area__car-status-description   personal-area__car-status-description--main personal-area__car-status-description--delivered">Авто доставлено</p>
+                </li>
+                <li class="personal-area__car-status-item personal-area__car-status-item--document">
+                  <p class="personal-area__car-title personal-area__car-title--document">Документи</p>
+                  <div class="personal-area__car-status-description">
+                    <a href="#" class="personal-area__car-download" download>Документ №1</a>
+                    <a href="#" class="personal-area__car-download" download>Документ по відправці авто №2</a>
+                    <a href="#" class="personal-area__car-download" download>Документ №3</a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
 
-<!--            <div class="personal-area__box personal-area__box&#45;&#45;photo">-->
-<!--              <p class="personal-area__photo">-->
-<!--                <img src="img/main/personal-area/photo-1.jpg" alt="Mini coupe 2017" class="personal-area__image">-->
-<!--              </p>-->
-<!--              <div class="personal-area__description-wrapper">-->
-<!--                <div class="personal-area__description-inner">-->
-<!--                  <p class="personal-area__description-photo">Mini coupe 2017</p>-->
-<!--                  <p class="personal-area__description-photo personal-area__description-photo&#45;&#45;door">2 door</p>-->
-<!--                </div>-->
-<!--                <p class="personal-area__price">$ 29 500</p>-->
-<!--              </div>-->
-<!--            </div>-->
 
-<!--            <div class="personal-area__box personal-area__box&#45;&#45;track">-->
-<!--              <div class="personal-area__track-box">-->
-<!--                <p class="personal-area__track">Статус</p>-->
-<!--                <p class="personal-area__track-description">Авто очікує прибуття в порт доставки</p>-->
-<!--              </div>-->
-<!--              <div class="personal-area__track-box">-->
-<!--                <p class="personal-area__track">Документи по відправці авто</p>-->
-<!--                <a href="#" class="personal-area__track-description personal-area__track-description&#45;&#45;download" download>Скачати</a>-->
-<!--              </div>-->
-<!--            </div>-->
+<!--          Пагінація    -->
 
-<!--          </div>-->
+          <include src="src/html/blocks/pagination/_pagination--personal-area.html"></include>
 
         </li>
       </ul>
