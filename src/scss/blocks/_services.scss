@@ -4,7 +4,11 @@
   @include swiper;
   margin-top: -111px;
   text-transform: uppercase;
-  background: radial-gradient(24.11% 128.12% at 67.21% 104.82%, rgba(26, 28, 30, 0.73) 0%, #1A1C1E 100%);
+  background-image: url("../img/main/404/background.png"),radial-gradient(24.11% 128.12% at 67.21% 104.82%, rgba(26, 28, 30, 0.73) 0%, #1A1C1E 100%);
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, 100%;
+  background-position: 0 0, 0 0;
+
   @include before {
     bottom: 0;
     right: 0;
@@ -12,6 +16,14 @@
     width: 100%;
     height: 110px;
     background-color: white;
+  }
+
+  &--error {
+    padding-bottom: 30px;
+
+    @include before-clean {
+      display: none;
+    }
   }
 }
 
@@ -77,6 +89,14 @@
   &--car {
     width: 56%;
   }
+
+  &--error {
+    padding-top: 160px;
+
+    @include before-clean {
+      display: none;
+    }
+  }
 }
 
 .services__gallery {
@@ -100,6 +120,10 @@
 
   &--gallery {
     width: 100%;
+  }
+
+  &--error {
+    width: 88%;
   }
 }
 
@@ -168,6 +192,14 @@
       font-size: 65px;
     }
   }
+
+  &--error {
+    margin-bottom: 53px;
+
+    @include before-clean {
+      display: none;
+    }
+  }
 }
 
 
@@ -193,6 +225,10 @@
 
   &--car {
     padding-right: 435px;
+  }
+
+  &--error {
+    margin-bottom: 47px;
   }
 }
 
@@ -225,6 +261,17 @@
     background-size: 30px;
     @include before-clean {
       right: 55px;
+    }
+  }
+
+  &--error {
+    padding-left: 20px;
+    padding-right: 142px;
+    text-align: right;
+    min-width: 390px;
+
+    @include before-clean {
+      right: 108px;
     }
   }
 }
@@ -633,6 +680,17 @@
         right: 0;
       }
     }
+
+    &--error {
+      padding-left: 15px;
+      padding-right: 90px;
+      text-align: right;
+      min-width: 260px;
+
+      @include before-clean {
+        right: 60px;
+      }
+    }
   }
 
   .services__numbers {
@@ -768,8 +826,18 @@
     }
   }
 
+  .services__item {
+    &--error {
+      width: 100%;
+    }
+  }
+
   .services__inner {
     width: 100%;
+
+    &--error {
+      width: 100%;
+    }
   }
 
   .services__description {
@@ -783,6 +851,19 @@
   .services__link {
     width: 100%;
     font-size: 13px;
+
+    &--error {
+      width: auto;
+      padding-left: 15px;
+      padding-right: 90px;
+      text-align: right;
+      min-width: 260px;
+
+      @include before-clean {
+        right: 60px;
+      }
+    }
+
   }
 
   .services__numbers {
