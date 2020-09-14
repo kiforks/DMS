@@ -105,6 +105,11 @@
     justify-content: center;
     width: 100%;
     @include padding-mobile;
+
+    &--personal-area {
+      @include padding-horizon(0);
+      font-size: 12px;
+    }
   }
 
   .pagination__wrapper {

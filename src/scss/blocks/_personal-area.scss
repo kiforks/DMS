@@ -307,6 +307,7 @@
   color: $black;
   border: 1px solid $black;
   border-radius: 4px;
+  cursor: pointer;
   @include transition;
   @include before-after-clean {
     @include transition;
@@ -1139,6 +1140,8 @@
   }
 
   .personal-area__item {
+    padding-top: 0;
+    padding-right: 30px;
     padding-left: 30px;
     min-height: 300px;
 
@@ -1185,7 +1188,7 @@
   }
 
   .personal-area__button {
-    font-size: 14px;
+    font-size: 10px;
     @include before-clean {
       width: 20px;
       height: 20px;
@@ -1197,6 +1200,11 @@
       border: 7px solid transparent;
       border-left: 7px solid $black;
       margin-left: 15px;
+    }
+    @include before-clean {
+      width: 18px;
+      height: 18px;
+      background-size: contain;
     }
 
     &--car {
@@ -1315,6 +1323,33 @@
       margin-bottom: 40px;
     }
   }
+
+  .personal-area__car-item {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .personal-area__car-photo {
+    height: 252px;
+  }
+
+  .personal-area__car-photo-box {
+    font-size: 16px;
+  }
+
+  .personal-area__car-title {
+    font-size: 14px;
+  }
+
+  .personal-area__car-status-description {
+    font-size: 14px;
+  }
+
+  .personal-area-white {
+    @include after-clean {
+      display: none;
+    }
+  }
 }
 
 //Mobile
@@ -1397,6 +1432,8 @@
   }
 
   .personal-area__inner {
+    padding-right: 0;
+
     &--tarrifs {
       padding: 10px;
       margin-bottom: 0;
@@ -1536,6 +1573,59 @@
     &--head {
       @include after-clean {
         bottom: 5px;
+      }
+    }
+  }
+
+  .personal-area__button-box {
+    width: 100%;
+    padding-top: 20px;
+  }
+
+  .personal-area__car-photo-box,
+  .personal-area__car-status-list {
+    width: 100%;
+  }
+
+  .personal-area__car-item {
+    margin-bottom: 20px;
+  }
+
+  .personal-area__car-photo {
+    height: 260px;
+  }
+
+  .personal-area__car-photo-box {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  .personal-area__car-title {
+    @include flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+
+  .personal-area__car-status-description {
+    @include flex;
+    justify-content: center;
+    @include padding-horizon(45px);
+    width: 100%;
+    font-size: 12px;
+
+    @include before-clean {
+      left: 15px;
+    }
+  }
+
+  .personal-area__car-status-item {
+    padding-left: 0;
+
+    &--document {
+      .personal-area__car-status-description {
+        @include padding-horizon(15px);
       }
     }
   }

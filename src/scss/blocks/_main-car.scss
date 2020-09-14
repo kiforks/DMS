@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.main-car__pagination {
+  overflow: hidden;
+}
+
 .main-car__button-down {
   position: absolute;
   bottom: 65px;
