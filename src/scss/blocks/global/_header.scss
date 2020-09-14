@@ -117,6 +117,12 @@
         height: 0;
       }
     }
+
+    &.header {
+      &--single-page {
+        background-color: $black;
+      }
+    }
   }
 }
 

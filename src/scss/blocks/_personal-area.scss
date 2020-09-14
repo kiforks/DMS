@@ -769,6 +769,7 @@
     padding-right: 70px;
     font-size: 16px;
     color: $black;
+    cursor: pointer;
 
     @include before {
       @include center-transform-vertical;

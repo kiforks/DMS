@@ -10,7 +10,8 @@
     color: $black;
   }
 
-  &--calculator {
+  &--calculator,
+  &--single-page {
     text-align: left;
   }
 }
@@ -34,6 +35,10 @@
   &--advantages {
     padding-left: 75px;
   }
+
+  &--single-page {
+    padding-left: 0;
+  }
 }
 
 .attention__title-span {
@@ -53,6 +58,10 @@
   @include reset-margin-text;
   @include padding-horizon(30px);
   margin-bottom: 29px;
+
+  &--single-page {
+    @include padding-horizon(0);
+  }
 }
 
 .attention__description {
@@ -115,10 +124,24 @@
     margin-bottom: 0;
     text-transform: none;
   }
+
+  &--single-page {
+    height: auto;
+    overflow-y: visible;
+    margin-bottom: 0;
+  }
 }
 
 .attention__item {
   margin-bottom: 30px;
+}
+
+ol.attention__list {
+  .attention__text {
+    @include before-clean {
+      display: none;
+    }
+  }
 }
 
 
@@ -174,6 +197,10 @@
     &--calculator {
       padding-left: 0;
       padding-right: 30px;
+    }
+
+    &--single-page {
+      height: auto;
     }
   }
 
@@ -232,6 +259,10 @@
       height: 230px;
       padding-right: 45px;
     }
+
+    &--single-page {
+      height: auto;
+    }
   }
 }
 
@@ -274,6 +305,10 @@
   .attention__list {
     &--calculator {
       height: 215px;
+    }
+
+    &--single-page {
+      height: auto;
     }
   }
 }

@@ -1,0 +1,25 @@
+.main-single-page__attention {
+  width: 100%;
+  max-width: 1330px;
+  @include padding-horizon(60px);
+  padding-top: 40px;
+  padding-bottom: 70px;
+  @include center-margin;
+}
+
+// Tablet
+@include tablet {
+  .main-single-page__attention {
+    width: $tablet-width;
+    @include padding-tablet;
+  }
+}
+
+// Mobile
+@include mobile {
+  .main-single-page__attention {
+    width: 100%;
+    @include padding-mobile;
+    @include padding-vertical(30px);
+  }
+}

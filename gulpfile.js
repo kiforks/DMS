@@ -14,7 +14,12 @@ const path = {
           fonts: buildFolder + '/fonts/',
           libs: buildFolder + '/libs/',
           video:  buildFolder + '/video',
-          favIcons: buildFolder + '/favicons'
+          favIcons: buildFolder + '/favicons',
+          uncompressed: {
+            js:  `${buildFolder}/uncompressed/js`,
+            html:  `${buildFolder}/uncompressed/html`,
+            plugins: `${buildFolder}/uncompressed/js/plugins`
+          }
         },
         src: {
           html: [sourceFolder + '/*.html', '!' + sourceFolder + '/_*.html'],
@@ -101,6 +106,7 @@ function html() {
       ]))
       .pipe(htmlValidator())
       .pipe(bemValidator())
+      .pipe(dest(path.build.uncompressed.html))
       .pipe(htmlmin({
         collapseWhitespace: true
       }))
@@ -152,6 +158,7 @@ function js() {
       .pipe(plumber())
       .pipe(eslint())
       .pipe(eslint.format())
+      .pipe(dest(path.build.uncompressed.js))
       .pipe(babel({
           presets: ['@babel/env']
       }))
@@ -165,6 +172,7 @@ function jsIgnoreBuild() {
   return src(path.src.jsIgnore)
     .pipe(plumber())
     .pipe(dest(path.build.js + 'plugins/'))
+    .pipe(dest(path.build.uncompressed.plugins))
     .pipe(browserSync.stream())
 }
 
