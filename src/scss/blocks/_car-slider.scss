@@ -32,14 +32,45 @@
   @include object-fit(cover);
 }
 
-.car-slider__bullet-image {
+.car-slider__thumbs {
+  display: flex;
+  @include reset-list;
+}
+
+.car-slider__thumbs-image {
   height: 100%;
   max-height: 100%;
   width: 100%;
+  @include object-fit(cover);
 }
 
 .car-slider__item {
   height: 504px;
+}
+
+.car-slider__thumbs-item {
+  flex-shrink: 0;
+  width: 15%;
+  height: 94px;
+  margin-bottom: 20px;
+  background-color: #FAFAFA;
+  opacity: 0.5;
+  cursor: pointer;
+
+  &--active {
+    position: relative;
+    background-color: transparent;
+    opacity: 1;
+    cursor: default;
+    @include after {
+      @include center-transform-horizon;
+      bottom: -12px;
+      z-index: 100;
+      width: 40px;
+      height: 2px;
+      background-color: #232527;
+    }
+  }
 }
 
 .car-slider__buttons {
@@ -104,34 +135,6 @@
   margin-bottom: 15px;
 }
 
-.car-slider__bullet-image {
-  @include object-fit(cover);
-}
-
-.car-slider__bullet {
-  width: 15%;
-  height: 94px;
-  margin-bottom: 20px;
-  background-color: #FAFAFA;
-  opacity: 0.5;
-  cursor: pointer;
-
-  &--active {
-    position: relative;
-    background-color: transparent;
-    opacity: 1;
-    cursor: default;
-    @include after {
-      @include center-transform-horizon;
-      bottom: -12px;
-      z-index: 100;
-      width: 40px;
-      height: 2px;
-      background-color: #232527;
-    }
-  }
-}
-
 //XXL
 @include desktop-xxl {
   .car-slider__item {
@@ -143,7 +146,7 @@
     @include padding-horizon(20px);
   }
 
-  .car-slider__bullet {
+  .car-slider__thumbs-item {
     height: 89px;
     margin-bottom: 0;
     padding-bottom: 10px;
@@ -163,12 +166,12 @@
     height: 338px;
   }
 
-  .car-slider__bullet {
+  .car-slider__thumbs-item {
     height: 76px;
   }
 
   .car-slider__buttons {
-    top: 25%;
+    @include center-transform-vertical;
     @include padding-horizon(15px);
   }
 }
@@ -181,7 +184,7 @@
   }
 
   .car-slider__buttons {
-    top: 80px;
+    @include center-transform-vertical;
   }
 
   .car-slider__button {
@@ -208,7 +211,7 @@
     margin-bottom: 10px;
   }
 
-  .car-slider__bullet {
+  .car-slider__thumbs-item {
     height: 50px;
 
     &--active {
@@ -228,5 +231,15 @@
 
   .car-slider__buttons {
     @include padding-horizon(10px);
+  }
+
+  .car-slider__thumbs-item {
+    height: 89px;
+
+    &--active {
+      @include after-clean {
+        width: 50px;
+      }
+    }
   }
 }
