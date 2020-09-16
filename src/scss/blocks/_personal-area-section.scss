@@ -22,6 +22,32 @@
   border: 8px solid #232527;
 }
 
+.personal-area-section__title {
+  @include center-flex;
+  @include reset-margin-text;
+  width: 100%;
+  padding-top: 43px;
+  padding-bottom: 35px;
+  font-weight: bold;
+  font-size: 40px;
+  font-family: $decima-nova;
+  line-height: 48px;
+  text-align: center;
+  color: $grey-light;
+  text-transform: uppercase;
+  background-color: $black-2;
+  @include before-clean {
+    content: '';
+    margin-right: 26px;
+    width: 30px;
+    height: 30px;
+    background-image: url('../img/svg/user.svg');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: left center;
+  }
+}
+
 
 //Desktop
 @include desktop {
@@ -30,6 +56,17 @@
 
     &--calculator {
       margin-bottom: 0;
+    }
+  }
+
+  .personal-area-section__title {
+    font-size: 35px;
+    line-height: 120%;
+    @include before-clean {
+      margin-right: 15px;
+      width: 28px;
+      height: 28px;
+      background-size: 100%;
     }
   }
 }
@@ -45,6 +82,16 @@
     margin-top: -115px;
     padding-top: 150px;
   }
+
+  .personal-area-section__title {
+    font-size: 30px;
+    @include padding-vertical(20px);
+    @include before-clean {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
 }
 
 //Mobile
@@ -62,5 +109,15 @@
 
   .personal-area-section__personal-area {
     border: 0;
+  }
+
+  .personal-area-section__title {
+    @include padding-horizon(10px);
+    font-size: 20px;
+    @include before-clean {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
   }
 }

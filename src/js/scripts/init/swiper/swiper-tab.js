@@ -150,9 +150,9 @@ try {
     textClass: 'tab__text--port'
   };
 
-  const personalArea = {
+  const personalAreaCalc = {
     container: 'personal-area',
-    containerClass: 'personal-area',
+    containerClass: 'personal-area--calculator',
     textClass: 'personal-area__subtitle',
     modify: '-contacts'
   };
@@ -173,7 +173,7 @@ try {
   initBullets(tabDelivery);
   initBullets(tabSpeed);
   initBullets(tabPort);
-  initBullets(personalArea);
+  initBullets(personalAreaCalc);
 
 
   function disabledDelete(selector) {

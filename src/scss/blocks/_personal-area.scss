@@ -2,12 +2,16 @@
   @include swiper;
   @include flex;
   justify-content: space-between;
-  padding-top: 38px;
   text-transform: uppercase;
+  border-top: 0;
   background-color: #232527;
 
   &--calculator {
     padding-top: 45px;
+  }
+
+  &--thumbs {
+    border: 0;
   }
 }
 
@@ -56,13 +60,16 @@
   @include center-flex;
   @include reset-margin-text;
   width: 100%;
-  margin-bottom: 32px;
+  padding-top: 43px;
+  padding-bottom: 35px;
   font-weight: bold;
   font-size: 40px;
   font-family: $decima-nova;
   line-height: 48px;
   text-align: center;
   color: $grey-light;
+  text-transform: uppercase;
+  background-color: $black-2;
   @include before-clean {
     content: '';
     margin-right: 26px;
@@ -81,10 +88,11 @@
   }
 }
 
-.personal-area__pagination {
+.personal-area__thumbs {
   @include flex;
-  width: 86%;
+  width: 85%;
   @include reset-list;
+  padding-left: 8px;
   font-weight: 600;
   font-size: 18px;
   line-height: 25px;
@@ -93,98 +101,47 @@
   &--calculator {
     width: 100%;
     justify-content: space-between;
-
-    .personal-area__bullet {
-      @include center-flex;
-      @include before-clean {
-        content: '';
-        display: inline-block;
-        width: 0;
-        height: 0;
-        margin-right: 12px;
-        background-color: $black;
-        opacity: 0;
-        @include transition;
-      }
-
-      &:first-of-type,
-      &:first-of-type.personal-area__bullet--active,
-      &:last-of-type,
-      &:last-of-type.personal-area__bullet--active {
-        flex-grow: 2;
-        justify-content: center;
-        @include padding-horizon(0);
-        background-image: none;
-      }
-
-      &:first-of-type.personal-area__bullet--active,
-      &:last-of-type.personal-area__bullet--active,
-      &--active {
-        @include center-flex;
-        @include before-clean {
-          width: 53px;
-          height: 1px;
-          opacity: 1;
-        }
-      }
-
-      &--active {
-        align-items: center;
-      }
-    }
   }
 }
 
-.personal-area__bullet {
+.personal-area__thumbs-description {
+  @include reset-margin-text;
+}
+
+.personal-area__thumbs-item {
   @include flex;
+  align-items: center;
   justify-content: center;
-  flex-grow: 2;
-  @include padding-vertical(23px, 18px);
-  background-repeat: no-repeat;
   @include transition;
-  outline: 0;
+  @include padding-vertical(1.5%, 1%);
+  @include padding-horizon(10px);
+  width: 20%;
+  cursor: pointer;
 
-  &:not(.personal-area__bullet--active) {
-    cursor: pointer;
-    @include color-focus();
-    @include transition;
-  }
-
-  &:first-of-type {
-    justify-content: flex-start;
-    flex-grow: 1;
-    @include padding-horizon(0, 105px);
-    background-image: url('../img/svg/personal-area/entrance--gray.svg');
-    background-size: 25px;
-    background-position: left 67px center;
-
-    &.personal-area__bullet--active {
-      background-image: url('../img/svg/personal-area/entrance.svg');
-    }
-  }
-
-  &:last-of-type {
-    @include center-flex;
-    justify-content: flex-start;
-    flex-grow: 0;
-    @include padding-horizon(12px, 60px);
-    background-image: url('../img/svg/header/track.svg');
-    background-size: 21px;
-    background-position: left 23px center;
-    animation: animation-background 1s ease 12s infinite;
-
-    &.personal-area__bullet--active {
-      background-image: url('../img/svg/personal-area/track--active.svg');
-    }
+  &--entrance {
+    @include flex;
   }
 
   &--active {
-    cursor: default;
     color: $black;
-    background-color: #FAFAFA;
+    background-color: white;
+
+    .personal-area__thumbs-icon {
+      fill: $black;
+    }
   }
 }
 
+.personal-area__thumbs-icon {
+  @include transition;
+  margin-right: 14px;
+  fill: #BBBABA;
+}
+
+.personal-area__thumbs-description {
+  display: flex;
+  align-items: center;
+}
 
 .personal-area__output {
   @include center-flex;
@@ -844,6 +801,121 @@
   }
 }
 
+.personal-area__pagination {
+  @include flex;
+  width: 86%;
+  @include reset-list;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  color: #BBBABA;
+
+  &--calculator {
+    width: 100%;
+    justify-content: space-between;
+
+    .personal-area__bullet {
+      @include center-flex;
+      @include before-clean {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-right: 12px;
+        background-color: $black;
+        opacity: 0;
+        @include transition;
+      }
+
+      &:first-of-type,
+      &:first-of-type.personal-area__bullet--active,
+      &:last-of-type,
+      &:last-of-type.personal-area__bullet--active {
+        flex-grow: 2;
+        justify-content: center;
+        @include padding-horizon(0);
+        background-image: none;
+      }
+
+      &:first-of-type.personal-area__bullet--active,
+      &:last-of-type.personal-area__bullet--active,
+      &--active {
+        @include center-flex;
+        @include before-clean {
+          width: 53px;
+          height: 1px;
+          opacity: 1;
+        }
+      }
+
+      &--active {
+        align-items: center;
+      }
+    }
+  }
+}
+
+.personal-area__bullet {
+  @include flex;
+  justify-content: center;
+  flex-grow: 2;
+  @include padding-vertical(23px, 18px);
+  background-repeat: no-repeat;
+  @include transition;
+  outline: 0;
+
+  &:not(.personal-area__bullet--active) {
+    cursor: pointer;
+    @include color-focus();
+    @include transition;
+  }
+
+  &:first-of-type {
+    justify-content: flex-start;
+    flex-grow: 1;
+    @include padding-horizon(0, 105px);
+    background-image: url('../img/svg/personal-area/entrance--gray.svg');
+    background-size: 25px;
+    background-position: left 67px center;
+
+    &.personal-area__bullet--active {
+      background-image: url('../img/svg/personal-area/entrance.svg');
+    }
+  }
+
+  &:last-of-type {
+    @include center-flex;
+    justify-content: flex-start;
+    flex-grow: 0;
+    @include padding-horizon(12px, 60px);
+    background-image: url('../img/svg/header/track.svg');
+    background-size: 21px;
+    background-position: left 23px center;
+    animation: animation-background 1s ease 12s infinite;
+
+    &.personal-area__bullet--active {
+      background-image: url('../img/svg/personal-area/track--active.svg');
+    }
+  }
+
+  &--active {
+    cursor: default;
+    color: $black;
+    background-color: #FAFAFA;
+  }
+}
+
+.personal-area__input {
+  &--personal {
+    display: block;
+    margin-bottom: 5%;
+
+    &:last-of-type {
+      margin-bottom: 10%;
+    }
+  }
+}
+
 //XXL
 @include desktop-xxl {
   .personal-area__input {
@@ -890,18 +962,18 @@
   .personal-area__car-status-description {
     font-size: 12px;
   }
+
+  .personal-area__thumbs {
+    font-size: 14px;
+    line-height: 120%;
+  }
 }
 
 
 //Desktop
 @include desktop {
-  .personal-area__pagination {
-    font-size: 14px;
-    line-height: 120%;
-  }
-
-  .personal-area__bullet {
-    @include padding-vertical(15px);
+  .personal-area__thumbs {
+    font-size: 12px;
   }
 
   .personal-area__output {
@@ -1079,6 +1151,15 @@
       height: 14px;
     }
   }
+
+  .personal-area__pagination {
+    font-size: 14px;
+    line-height: 120%;
+  }
+
+  .personal-area__bullet {
+    @include padding-vertical(15px);
+  }
 }
 
 
@@ -1097,36 +1178,12 @@
     }
   }
 
-  .personal-area__pagination {
+  .personal-area__thumbs {
     font-size: 10px;
     width: 88%;
 
     &--calculator {
       width: 100%;
-    }
-
-    & .personal-area__bullet {
-      @include before-clean {
-        margin-right: 5px;
-      }
-
-      &:first-of-type.personal-area__bullet--active,
-      &:last-of-type.personal-area__bullet--active,
-      &--active {
-        @include center-flex;
-        @include before-clean {
-          width: 30px;
-        }
-      }
-    }
-  }
-
-  .personal-area__bullet {
-    &:first-of-type,
-    &:last-of-type {
-      padding-left: 30px;
-      background-size: 15px;
-      background-position: left 5px center;
     }
   }
 
@@ -1351,6 +1408,71 @@
       display: none;
     }
   }
+
+  .personal-area__pagination {
+    font-size: 10px;
+    width: 88%;
+
+    &--calculator {
+      width: 100%;
+    }
+
+    & .personal-area__bullet {
+      @include before-clean {
+        margin-right: 5px;
+      }
+
+      &:first-of-type.personal-area__bullet--active,
+      &:last-of-type.personal-area__bullet--active,
+      &--active {
+        @include center-flex;
+        @include before-clean {
+          width: 30px;
+        }
+      }
+    }
+  }
+
+  .personal-area__bullet {
+    &:first-of-type,
+    &:last-of-type {
+      padding-left: 30px;
+      background-size: 15px;
+      background-position: left 5px center;
+    }
+  }
+
+  .personal-area__thumbs-icon {
+    margin-right: 5px;
+
+    &--entrance {
+      width: 15px;
+      height: 15px;
+    }
+
+    &--track {
+      width: 15px;
+      height: 23px;
+    }
+  }
+
+  .personal-area__thumbs {
+    font-size: 7px;
+  }
+
+  .personal-area__thumbs-item {
+    @include padding-horizon(5px);
+  }
+
+  .personal-area {
+    &--thumbs {
+      padding-top: 0;
+    }
+
+    &--main {
+      padding-top: 0;
+    }
+  }
 }
 
 //Mobile
@@ -1366,7 +1488,7 @@
     }
   }
 
-  .personal-area__pagination {
+  .personal-area__thumbs {
     justify-content: space-between;
     width: 100%;
     margin-bottom: 10px;
@@ -1378,27 +1500,6 @@
     }
   }
 
-  .personal-area__bullet {
-    flex-grow: 1;
-    align-items: center;
-    margin-bottom: 5px;
-    padding: 10px 6px;
-
-    &:nth-child(3n+2) {
-      justify-content: center;
-    }
-
-    &:nth-child(3n+3) {
-      justify-content: flex-end;
-    }
-
-    &:first-of-type,
-    &:last-of-type {
-      flex-grow: 1;
-      padding-left: 25px;
-      padding-right: 5px;
-    }
-  }
 
   .personal-area__output {
     width: 100%;
@@ -1628,6 +1729,58 @@
       .personal-area__car-status-description {
         @include padding-horizon(15px);
       }
+    }
+  }
+
+  .personal-area__pagination {
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    @include padding-horizon(10px);
+    font-size: 9px;
+
+    &--calculator {
+      font-size: 14px;
+    }
+  }
+
+  .personal-area__bullet {
+    flex-grow: 1;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 10px 6px;
+
+    &:nth-child(3n+2) {
+      justify-content: center;
+    }
+
+    &:nth-child(3n+3) {
+      justify-content: flex-end;
+    }
+
+    &:first-of-type,
+    &:last-of-type {
+      flex-grow: 1;
+      padding-left: 25px;
+      padding-right: 5px;
+    }
+  }
+
+  .personal-area__thumbs-item {
+    min-width: 50%;
+    width: auto;
+  }
+
+  .personal-area__thumbs {
+    justify-content: center;
+  }
+
+  .personal-area__thumbs-item {
+    margin-bottom: 15px;
+    @include padding-vertical(7px);
+
+    &:last-of-type {
+      margin-bottom: 0;
     }
   }
 }

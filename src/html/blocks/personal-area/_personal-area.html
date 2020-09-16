@@ -1,9 +1,42 @@
 <section class="personal-area-section personal-area-white">
   <div class="personal-area-section__container">
-    <div class="personal-area-section__personal-area swiper-no-swiping  personal-area">
-      <h1 data-aos="fade" class="personal-area__title">Особистий кабінет</h1>
-      <p data-aos="fade" class="personal-area__pagination"></p>
+    <h1 data-aos="fade" class="personal-area-section__title">Особистий кабінет</h1>
+    <div class="personal-area-section__personal-area personal-area personal-area--thumbs">
+      <ul data-aos="fade" class="personal-area__thumbs">
+        <li class="personal-area__thumbs-item personal-area__thumbs-item--entrance">
+          <!--SVG-->
+          <svg class="personal-area__thumbs-icon personal-area__thumbs-icon--entrance" width="22" height="22">
+            <use xlink:href="#icon-entrance"></use>
+          </svg>
+          <p class="personal-area__thumbs-description">Вхід</p>
+        </li>
+        <li class="personal-area__thumbs-item">
+          <p class="personal-area__thumbs-description">Реєстрація</p>
+        </li>
+        <li class="personal-area__thumbs-item">
+          <p class="personal-area__thumbs-description">Забули пароль?</p>
+        </li>
+        <li class="personal-area__thumbs-item">
+<!--          &lt;!&ndash;SVG&ndash;&gt;-->
+<!--          <svg class="personal-area__thumbs-icon personal-area__thumbs-icon&#45;&#45;entrance" width="22" height="22">-->
+<!--            <use xlink:href="#icon-entrance"></use>-->
+<!--          </svg>-->
+          <p class="personal-area__thumbs-description">Персональні дані</p>
+        </li>
+        <li class="personal-area__thumbs-item">
+          <p class="personal-area__thumbs-description">
+            <!--SVG-->
+            <svg class="personal-area__thumbs-icon personal-area__thumbs-icon--track" width="21" height="28">
+              <use xlink:href="#icon-track"></use>
+            </svg>
+            Відстеження авто
+          </p>
+        </li>
+        <li class="no-swipe visually-hidden"></li>
+      </ul>
       <a data-aos="fade" href="#" class="personal-area__output">Вихід</a>
+    </div>
+    <div class="personal-area-section__personal-area swiper-no-swiping personal-area--main  personal-area">
       <ul class="personal-area__list swiper-no-swiping ">
         <li  class="personal-area__item">
           <h3 class="personal-area__subtitle visually-hidden">Вхід</h3>
@@ -12,7 +45,7 @@
             <input type="text" class="personal-area__input personal-area__input--name" name="personal-area__input--name" placeholder="Логін" id="personal-area__input--name">
             <label for="personal-area__input--name" class="personal-area__label personal-area__label--name">(email або номер телефону в форматі
               <span class="personal-area__tel">+380</span>) </label>
-            <input type="text" class="personal-area__input personal-area__input--password" name="personal-area__input--password" placeholder="Пароль" id="personal-area__input--password">
+            <input type="password" class="personal-area__input personal-area__input--password" name="personal-area__input--password" placeholder="Пароль" id="personal-area__input--password">
             <label for="personal-area__input--password" class="visually-hidden">Введіть пароль</label>
             <button class="personal-area__button personal-area__button--login" type="submit">Ввійти</button>
           </form>
@@ -35,7 +68,17 @@
         </li>
         <li  class="personal-area__item">
           <h3 class="personal-area__subtitle visually-hidden">Персональні дані</h3>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A asperiores at dolores eaque earum ex explicabo illo in ipsam iste iure nulla porro quas, quo ratio
+          <form data-aos="fade" data-aos-delay="500" action="post" class="personal-area__form">
+            <input type="text" class="personal-area__input personal-area__input--personal" name="personal-area__input--name" placeholder="Ім'я" id="personal-area__input--personal-name">
+            <label for="personal-area__input--personal-name" class="visually-hidden">
+             Ім'я
+            </label>
+            <input type="tel" class="personal-area__input personal-area__input--personal" name="personal-area__input--name" placeholder="Телефон" id="personal-area__input--personal-tel">
+            <label for="personal-area__input--personal-tel" class="visually-hidden">Введіть номер телефону</label>
+            <input type="password" class="personal-area__input personal-area__input--personal" name="personal-area__input--personal-password" placeholder="Пароль" id="personal-area__input--personal-password">
+            <label for="personal-area__input--password" class="visually-hidden">Введіть пароль</label>
+            <button class="personal-area__button personal-area__button--login" type="submit">Зберегти</button>
+          </form>
         </li>
         <li  class="personal-area__item personal-area__item--track">
           <h3 class="personal-area__subtitle visually-hidden">Відстеження авто</h3>
