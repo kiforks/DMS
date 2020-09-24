@@ -204,6 +204,16 @@
       display: none;
     }
   }
+
+  &--main {
+    font-size: 76px;
+    @media(max-width: 1919px) {
+      font-size: 70px;
+    }
+    @media(max-width: 1780px) {
+      font-size: 60px;
+    }
+  }
 }
 
 
@@ -443,6 +453,10 @@
     &--car {
       font-size: 58px;
     }
+
+    &--main {
+      font-size: 54px;
+    }
   }
 
   .services__description {
@@ -514,6 +528,10 @@
     &--car {
       font-size: 49px;
       line-height: 174%;
+    }
+
+    &--main {
+      font-size: 46px;
     }
   }
 
@@ -650,6 +668,10 @@
     &--car {
       font-size: 27px;
       line-height: 157%;
+    }
+
+    &--main {
+      font-size: 27px;
     }
   }
 
