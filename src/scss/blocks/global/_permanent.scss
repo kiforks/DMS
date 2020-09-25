@@ -33,11 +33,15 @@ body {
   &--closed {
     overflow: hidden;
     @include mobile {
-      overflow: visible;
 
       main,
       footer {
         display: block;
+      }
+
+      .header {
+        height: 100vh;
+        overflow: scroll;
       }
     }
 
